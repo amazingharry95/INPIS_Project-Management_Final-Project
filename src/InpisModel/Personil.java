@@ -7,7 +7,6 @@ package InpisModel;
 
 import java.sql.*;
 import javax.swing.*;
-import net.proteanit.sql.DbUtils;
 import inpis.Database;
 /**
  *
@@ -35,15 +34,16 @@ public class Personil {
     
     public ResultSet getPersonilbyID(String nrp){
         try{
-             String sql = "select *from personil where NRP='"+nrp+"'";
+             String sql = "select * from personil where NRP='"+nrp+"'";
              pst = conn.prepareStatement(sql);
              rs = pst.executeQuery();
              
-             if(rs.next()){
-                 
-             }
+//             if(rs.next()){
+//                 
+//             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
+        return rs;
     }
 }

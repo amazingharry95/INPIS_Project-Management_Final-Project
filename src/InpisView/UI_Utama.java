@@ -18,14 +18,14 @@ public class UI_Utama extends javax.swing.JFrame {
     /**
      * Creates new form UI_Utama
      */
-    ControlMaster controlUtama = new ControlMaster();
+    ControlMaster controlMaster = new ControlMaster();
     public UI_Utama() {
         initComponents();
         getAllPersonil();
     }
     
     private void getAllPersonil(){
-        Table_Personil.setModel(DbUtils.resultSetToTableModel(controlUtama.getPersonilData()));
+        Table_Personil.setModel(DbUtils.resultSetToTableModel(controlMaster.getPersonilData()));
     }
 
     /**
