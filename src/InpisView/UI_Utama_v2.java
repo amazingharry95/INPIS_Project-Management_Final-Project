@@ -199,7 +199,8 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     }//GEN-LAST:event_comboFilterActionPerformed
 
     private void btnTambahPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahPersonilActionPerformed
-        // TODO add your handling code here:
+        UI_Insert_Personil ui_personil = new UI_Insert_Personil();
+        ui_personil.setVisible(true);
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
     private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed

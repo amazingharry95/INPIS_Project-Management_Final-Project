@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inpis;
+package InpisView;
 
 /**
  *
@@ -79,7 +79,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         button_insert_tambah_istri = new javax.swing.JButton();
         button_insert_tambah_anak = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(449, 736));
 
