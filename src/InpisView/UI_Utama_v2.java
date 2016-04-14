@@ -3,58 +3,61 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inpis;
+package InpisView;
 
-import com.mysql.jdbc.PreparedStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.table.DefaultTableModel;
+import InpisController.ControlMaster;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author Goronald
  */
 
-public class UI_Utama extends javax.swing.JFrame {
+public class UI_Utama_v2 extends javax.swing.JFrame {
 
     /**
      * Creates new form UI_Utama
      */
     
-    private DefaultTableModel tabelModel;
+//    private DefaultTableModel tabelModel;
     
-    public UI_Utama() {
+    ControlMaster controlMaster = new ControlMaster();
+    
+    public UI_Utama_v2() {
         initComponents();
-        
-        tabelModel = new DefaultTableModel();
-        tabelPersonil.setModel(tabelModel);
-        tabelModel.addColumn("NRP");
-        tabelModel.addColumn("Nama_Personil");
-        tabelModel.addColumn("Agama");
-        
-        loadTabelPersonil();
+        getAllData();
+//        tabelModel = new DefaultTableModel();
+//        tabelPersonil.setModel(tabelModel);
+//        tabelModel.addColumn("NRP");
+//        tabelModel.addColumn("Nama_Personil");
+//        tabelModel.addColumn("Agama");
+//        
+//        loadTabelPersonil();
     }
     
-    private void loadTabelPersonil() {
-        Connection connection = Database.getConnection();
-        String sql = "SELECT * from Personil";
-        try {
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
-            ResultSet result = statement.executeQuery();
-            while(result.next()) {
-                Object[] o = new Object[3];
-                o[0] = result.getString("NRP");
-                o[1] = result.getString("Nama_Personil");
-                o[2] = result.getString("Agama_Personil");
-                
-                tabelModel.addRow(o);
-            }
-        }catch(SQLException e) {
-            System.out.println(e);
-        }
-                
+    private void getAllData(){
+        tablePersonil.setModel(DbUtils.resultSetToTableModel(controlMaster.getPersonilData()));
     }
+    
+//    private void loadTabelPersonil() {
+//        Connection connection = Database.getConnection();
+//        String sql = "SELECT * from Personil";
+//        try {
+//            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+//            ResultSet result = statement.executeQuery();
+//            while(result.next()) {
+//                Object[] o = new Object[3];
+//                o[0] = result.getString("NRP");
+//                o[1] = result.getString("Nama_Personil");
+//                o[2] = result.getString("Agama_Personil");
+//                
+//                tabelModel.addRow(o);
+//            }
+//        }catch(SQLException e) {
+//            System.out.println(e);
+//        }
+//                
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,12 +74,11 @@ public class UI_Utama extends javax.swing.JFrame {
         textSearch = new javax.swing.JTextField();
         btnTambahPersonil = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelPersonil = new javax.swing.JTable();
+        tablePersonil = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UI_Utama");
         setName("UI_Utama"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         setSize(new java.awt.Dimension(1024, 768));
 
         label_datapersonil.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -84,7 +86,8 @@ public class UI_Utama extends javax.swing.JFrame {
 
         comboFilter.setEditable(true);
         comboFilter.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        comboFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NRP", "Agama Personil", "Gol. Darah Personil", "Jabatan", "KORPS", "Nama Personil", "No. ASABRI", "No. BPJS", "No. KTA", "No. NPWP", "No. Telepon", "Pangkat", "Pendidikan Militer", "Pendidikan Pengembang", "Pendidikan Umum", "Status Keluarga", "Status Rumah", "Tamat Jabatan", "Tamat TNI", "Tanggal Lahir Personil", "Tempat Lahir Personil", "TMT Pangkat Pertama", "TMT Pangkat Terakhir", "Alamat Personil" }));
+        comboFilter.setToolTipText("pencarian berdasarkan :");
         comboFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboFilterActionPerformed(evt);
@@ -92,8 +95,12 @@ public class UI_Utama extends javax.swing.JFrame {
         });
 
         textSearch.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        textSearch.setText("search");
-        textSearch.setToolTipText("");
+        textSearch.setToolTipText("kata kunci pencarian");
+        textSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSearchActionPerformed(evt);
+            }
+        });
 
         btnTambahPersonil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTambahPersonil.setText("TAMBAH PERSONIL");
@@ -103,7 +110,7 @@ public class UI_Utama extends javax.swing.JFrame {
             }
         });
 
-        tabelPersonil.setModel(new javax.swing.table.DefaultTableModel(
+        tablePersonil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -125,9 +132,9 @@ public class UI_Utama extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tabelPersonil.setCellSelectionEnabled(true);
-        tabelPersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(tabelPersonil);
+        tablePersonil.setCellSelectionEnabled(true);
+        tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(tablePersonil);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -195,6 +202,10 @@ public class UI_Utama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
+    private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -212,20 +223,21 @@ public class UI_Utama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UI_Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI_Utama_v2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UI_Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI_Utama_v2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UI_Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI_Utama_v2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UI_Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI_Utama_v2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UI_Utama().setVisible(true);
+                new UI_Utama_v2().setVisible(true);
             }
         });
     }
@@ -236,7 +248,7 @@ public class UI_Utama extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_datapersonil;
-    private javax.swing.JTable tabelPersonil;
+    private javax.swing.JTable tablePersonil;
     private javax.swing.JTextField textSearch;
     // End of variables declaration//GEN-END:variables
 }
