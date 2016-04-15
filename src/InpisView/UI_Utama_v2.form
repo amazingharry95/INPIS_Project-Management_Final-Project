@@ -60,11 +60,13 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="label_datapersonil" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="189" max="32767" attributes="0"/>
-                          <Component id="comboFilter" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="textSearch" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace pref="185" max="32767" attributes="0"/>
+                          <Component id="comboFilter" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="textSearch" min="-2" pref="134" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnCari" min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTambahPersonil" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -85,7 +87,8 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="comboFilter" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="textSearch" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="btnTambahPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnTambahPersonil" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCari" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -114,29 +117,29 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="24">
                 <StringItem index="0" value="NRP"/>
-                <StringItem index="1" value="Agama Personil"/>
-                <StringItem index="2" value="Gol. Darah Personil"/>
-                <StringItem index="3" value="Jabatan"/>
+                <StringItem index="1" value="AGAMA_PERSONIL"/>
+                <StringItem index="2" value="GOL_DARAH_PERSONIL"/>
+                <StringItem index="3" value="JABATAN"/>
                 <StringItem index="4" value="KORPS"/>
-                <StringItem index="5" value="Nama Personil"/>
-                <StringItem index="6" value="No. ASABRI"/>
-                <StringItem index="7" value="No. BPJS"/>
-                <StringItem index="8" value="No. KTA"/>
-                <StringItem index="9" value="No. NPWP"/>
-                <StringItem index="10" value="No. Telepon"/>
-                <StringItem index="11" value="Pangkat"/>
-                <StringItem index="12" value="Pendidikan Militer"/>
-                <StringItem index="13" value="Pendidikan Pengembang"/>
-                <StringItem index="14" value="Pendidikan Umum"/>
-                <StringItem index="15" value="Status Keluarga"/>
-                <StringItem index="16" value="Status Rumah"/>
-                <StringItem index="17" value="Tamat Jabatan"/>
-                <StringItem index="18" value="Tamat TNI"/>
-                <StringItem index="19" value="Tanggal Lahir Personil"/>
-                <StringItem index="20" value="Tempat Lahir Personil"/>
-                <StringItem index="21" value="TMT Pangkat Pertama"/>
-                <StringItem index="22" value="TMT Pangkat Terakhir"/>
-                <StringItem index="23" value="Alamat Personil"/>
+                <StringItem index="5" value="NAMA_PERSONIL"/>
+                <StringItem index="6" value="NO_ASABRI"/>
+                <StringItem index="7" value="NO_BPJS"/>
+                <StringItem index="8" value="NO_KTA"/>
+                <StringItem index="9" value="NO_NPWP"/>
+                <StringItem index="10" value="NO_TELPON"/>
+                <StringItem index="11" value="PANGKAT"/>
+                <StringItem index="12" value="PENDIDIKAN_MILITER"/>
+                <StringItem index="13" value="PENDIDIKAN_PENGEMBANG"/>
+                <StringItem index="14" value="PENDIDIKAN_UMUM"/>
+                <StringItem index="15" value="STATUS_KELUARGA"/>
+                <StringItem index="16" value="STATUS_RUMAH"/>
+                <StringItem index="17" value="TAMAT_JABATAN"/>
+                <StringItem index="18" value="TAMAT_TNI"/>
+                <StringItem index="19" value="TANGGAL_LAHIR_PERSONIL"/>
+                <StringItem index="20" value="TEMPAT_LAHIR_PERSONIL"/>
+                <StringItem index="21" value="TMT_PANGKAT_PERTAMA"/>
+                <StringItem index="22" value="TMT_PANGKAT_TERAKHIR"/>
+                <StringItem index="23" value="ALAMAT_PERSONIL"/>
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="pencarian berdasarkan :"/>
@@ -157,6 +160,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textSearchActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textSearchKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnTambahPersonil">
@@ -180,31 +184,23 @@
             <Component class="javax.swing.JTable" name="tablePersonil">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="24" rowCount="7">
-                    <Column editable="true" title="NRP" type="java.lang.String"/>
-                    <Column editable="true" title="Nama Personil" type="java.lang.String"/>
-                    <Column editable="true" title="Agama Personil" type="java.lang.String"/>
-                    <Column editable="true" title="Gol. Darah Personil" type="java.lang.String"/>
-                    <Column editable="true" title="Jabatan" type="java.lang.String"/>
-                    <Column editable="true" title="KORPS" type="java.lang.String"/>
-                    <Column editable="true" title="No. ASABRI" type="java.lang.String"/>
-                    <Column editable="true" title="No. BPJS" type="java.lang.String"/>
-                    <Column editable="true" title="No. KTA" type="java.lang.String"/>
-                    <Column editable="true" title="No. NPWP" type="java.lang.String"/>
-                    <Column editable="true" title="No. Telepon" type="java.lang.String"/>
-                    <Column editable="true" title="Pangkat" type="java.lang.String"/>
-                    <Column editable="true" title="Pendidikan Militer" type="java.lang.String"/>
-                    <Column editable="true" title="Pendidikan Pengembang" type="java.lang.String"/>
-                    <Column editable="true" title="Pendidikan Umum" type="java.lang.String"/>
-                    <Column editable="true" title="Status Keluarga" type="java.lang.String"/>
-                    <Column editable="true" title="Status Rumah" type="java.lang.String"/>
-                    <Column editable="true" title="Tamat Jabatan" type="java.lang.String"/>
-                    <Column editable="true" title="Tamat TNI" type="java.lang.String"/>
-                    <Column editable="true" title="Tanggal Lahir Personil" type="java.lang.String"/>
-                    <Column editable="true" title="Tempat Lahir Personil" type="java.lang.String"/>
-                    <Column editable="true" title="TMT Pangkat Pertama" type="java.lang.String"/>
-                    <Column editable="true" title="TMT Pangkat Terakhir" type="java.lang.String"/>
-                    <Column editable="true" title="Alamat Personil" type="java.lang.String"/>
+                  <Table columnCount="8" rowCount="1">
+                    <Column editable="false" title="NRP" type="java.lang.String"/>
+                    <Column editable="false" title="Nama Personil" type="java.lang.String"/>
+                    <Column editable="false" title="Jabatan" type="java.lang.String"/>
+                    <Column editable="false" title="KORPS" type="java.lang.String"/>
+                    <Column editable="false" title="action #1" type="java.lang.Object">
+                      <Data value="Lihat"/>
+                    </Column>
+                    <Column editable="false" title="action #2" type="java.lang.Object">
+                      <Data value="Istri"/>
+                    </Column>
+                    <Column editable="false" title="action #3" type="java.lang.Object">
+                      <Data value="Anak"/>
+                    </Column>
+                    <Column editable="false" title="action #4" type="java.lang.Object">
+                      <Data value="Hapus"/>
+                    </Column>
                   </Table>
                 </Property>
                 <Property name="cellSelectionEnabled" type="boolean" value="true"/>
@@ -215,6 +211,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btnCari">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CARI"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCariActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

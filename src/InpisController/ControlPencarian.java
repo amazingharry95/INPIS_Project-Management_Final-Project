@@ -5,10 +5,17 @@
  */
 package InpisController;
 
+import InpisModel.*;
+import java.sql.ResultSet;
+
 /**
  *
  * @author amazingharry95
  */
 public class ControlPencarian {
+    Personil personil = new Personil();
     
+    public ResultSet ambilDataPersonil(String filter, String keyword) {
+        return personil.cariPersonilByKeyword(filter, keyword);
+    }
 }

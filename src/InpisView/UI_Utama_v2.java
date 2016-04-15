@@ -5,7 +5,9 @@
  */
 package InpisView;
 
-import InpisController.ControlMaster;
+import InpisController.*;
+import javax.swing.JOptionPane;
+//import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -19,9 +21,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
      * Creates new form UI_Utama
      */
     
-//    private DefaultTableModel tabelModel;
+//    private DefaultTableModel tablePersonil;
     
     ControlMaster controlMaster = new ControlMaster();
+    ControlPencarian controlPencarian = new ControlPencarian();
     
     public UI_Utama_v2() {
         initComponents();
@@ -38,7 +41,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void getAllData(){
         tablePersonil.setModel(DbUtils.resultSetToTableModel(controlMaster.getPersonilData()));
     }
-    
+ 
+    private void cariPersonilByKeyword(String filter, String keyword) {
+        tablePersonil.setModel(DbUtils.resultSetToTableModel(controlPencarian.ambilDataPersonil(filter, keyword)));
+    }
 //    private void loadTabelPersonil() {
 //        Connection connection = Database.getConnection();
 //        String sql = "SELECT * from Personil";
@@ -75,6 +81,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         btnTambahPersonil = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePersonil = new javax.swing.JTable();
+        btnCari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UI_Utama");
@@ -86,7 +93,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
 
         comboFilter.setEditable(true);
         comboFilter.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        comboFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NRP", "Agama Personil", "Gol. Darah Personil", "Jabatan", "KORPS", "Nama Personil", "No. ASABRI", "No. BPJS", "No. KTA", "No. NPWP", "No. Telepon", "Pangkat", "Pendidikan Militer", "Pendidikan Pengembang", "Pendidikan Umum", "Status Keluarga", "Status Rumah", "Tamat Jabatan", "Tamat TNI", "Tanggal Lahir Personil", "Tempat Lahir Personil", "TMT Pangkat Pertama", "TMT Pangkat Terakhir", "Alamat Personil" }));
+        comboFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NRP", "AGAMA_PERSONIL", "GOL_DARAH_PERSONIL", "JABATAN", "KORPS", "NAMA_PERSONIL", "NO_ASABRI", "NO_BPJS", "NO_KTA", "NO_NPWP", "NO_TELPON", "PANGKAT", "PENDIDIKAN_MILITER", "PENDIDIKAN_PENGEMBANG", "PENDIDIKAN_UMUM", "STATUS_KELUARGA", "STATUS_RUMAH", "TAMAT_JABATAN", "TAMAT_TNI", "TANGGAL_LAHIR_PERSONIL", "TEMPAT_LAHIR_PERSONIL", "TMT_PANGKAT_PERTAMA", "TMT_PANGKAT_TERAKHIR", "ALAMAT_PERSONIL" }));
         comboFilter.setToolTipText("pencarian berdasarkan :");
         comboFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +108,11 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 textSearchActionPerformed(evt);
             }
         });
+        textSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textSearchKeyReleased(evt);
+            }
+        });
 
         btnTambahPersonil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTambahPersonil.setText("TAMBAH PERSONIL");
@@ -112,29 +124,37 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
 
         tablePersonil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, "Lihat", "Istri", "Anak", "Hapus"}
             },
             new String [] {
-                "NRP", "Nama Personil", "Agama Personil", "Gol. Darah Personil", "Jabatan", "KORPS", "No. ASABRI", "No. BPJS", "No. KTA", "No. NPWP", "No. Telepon", "Pangkat", "Pendidikan Militer", "Pendidikan Pengembang", "Pendidikan Umum", "Status Keluarga", "Status Rumah", "Tamat Jabatan", "Tamat TNI", "Tanggal Lahir Personil", "Tempat Lahir Personil", "TMT Pangkat Pertama", "TMT Pangkat Terakhir", "Alamat Personil"
+                "NRP", "Nama Personil", "Jabatan", "KORPS", "action #1", "action #2", "action #3", "action #4"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         tablePersonil.setCellSelectionEnabled(true);
         tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tablePersonil);
+
+        btnCari.setText("CARI");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,11 +168,13 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(label_datapersonil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
-                        .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTambahPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
         );
@@ -168,11 +190,14 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTambahPersonil))))
+                            .addComponent(btnTambahPersonil)
+                            .addComponent(btnCari))))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(191, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCari, btnTambahPersonil});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +231,16 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textSearchActionPerformed
+
+    private void textSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textSearchKeyReleased
+
+    }//GEN-LAST:event_textSearchKeyReleased
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        String filter = comboFilter.getSelectedItem().toString();
+        String keyword = textSearch.getText();
+        cariPersonilByKeyword(filter, keyword);
+    }//GEN-LAST:event_btnCariActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +279,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCari;
     private javax.swing.JButton btnTambahPersonil;
     private javax.swing.JComboBox<String> comboFilter;
     private javax.swing.JPanel jPanel1;

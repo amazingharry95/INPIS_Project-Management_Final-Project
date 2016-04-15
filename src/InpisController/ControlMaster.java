@@ -15,7 +15,13 @@ import java.sql.ResultSet;
 public class ControlMaster {
     Personil personil = new Personil();
     
+    //control untuk mengambil seluruh data personil
     public ResultSet getPersonilData(){
         return personil.getAllData();
+    }
+    
+    // control untuk lihat detail personil yang dipilih
+    public ResultSet getPersonilData(String NRP) {
+        return personil.getPersonilbyID(NRP);
     }
 }
