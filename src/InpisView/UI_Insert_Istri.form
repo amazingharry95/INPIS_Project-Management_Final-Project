@@ -34,7 +34,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="600" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" pref="512" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -59,34 +59,50 @@
                           <Component id="label_insert_istri" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="156" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label_pendidikan_terakhir_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_kta_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_kpi_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_hobby_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_gol_darah_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_agama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_nrp_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_kb_istri" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_ttl_istri" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_id_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_nama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField1" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField8" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField9" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField10" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="jTextField11" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="button_simpan_insert_istri" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txt_hobi1" max="32767" attributes="0"/>
+                                      <Component id="txt_hobi2" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label_pendidikan_terakhir_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_kta_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_kpi_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_gol_darah_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_agama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_nrp_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_kb_istri" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_tmptlahir_istri" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_nama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txt_namaIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_NRP" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_agamaIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_golDarahIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_KPIIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_KTAJalasenastri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_metodeKb" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_penTerakhirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="txt_tmptLahirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="date_tglLahirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="button_simpan_insert_istri" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
@@ -101,62 +117,67 @@
                   <Component id="label_insert_istri" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_id_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_nama_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_namaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_nrp_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_NRP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_agama_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_agamaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_gol_darah_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_hobby_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_golDarahIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_kpi_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_KPIIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_kta_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_KTAJalasenastri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_kb_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_metodeKb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_pendidikan_terakhir_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_penTerakhirIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_ttl_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_tmptlahir_istri" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_tmptLahirIstri" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="date_tglLahirIstri" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_hobi1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_hobi2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="button_simpan_insert_istri" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="140" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -179,11 +200,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_id_istri">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID Istri :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="label_nama_istri">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nama Istri :"/>
@@ -204,11 +220,6 @@
             <Property name="text" type="java.lang.String" value="Golongan Darah Istri :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_hobby_istri">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Hobby :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="label_kpi_istri">
           <Properties>
             <Property name="text" type="java.lang.String" value="KPI Istri :"/>
@@ -216,7 +227,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="label_kta_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="KTA Jalansenastri :"/>
+            <Property name="text" type="java.lang.String" value="KTA Jalasenastri :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_kb_istri">
@@ -229,9 +240,9 @@
             <Property name="text" type="java.lang.String" value="Pendidikan Terakhir Istri :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_ttl_istri">
+        <Component class="javax.swing.JLabel" name="label_tmptlahir_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tempat Tanggal Lahir Istri :"/>
+            <Property name="text" type="java.lang.String" value="Tempat Lahir Istri :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="button_simpan_insert_istri">
@@ -242,27 +253,44 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_simpan_insert_istriActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txt_namaIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txt_NRP">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="txt_agamaIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txt_golDarahIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="txt_KPIIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="txt_KTAJalasenastri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="txt_metodeKb">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="txt_penTerakhirIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="txt_tmptLahirIstri">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tanggal Lahir Istri :"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="com.toedter.calendar.JDateChooser" name="date_tglLahirIstri">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hobi 1 :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hobi 2 :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_hobi1">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_hobi2">
         </Component>
       </SubComponents>
     </Container>

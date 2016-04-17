@@ -6,6 +6,8 @@
 package InpisView;
 
 import InpisController.ControlMaster;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -593,8 +595,9 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         String statusRumah = txt_statusRumah.getText();
         Date tamatJabatan = date_tamatJabatan.getDate();
         Date tamatTNI = date_tamatTNI.getDate();
-        Date tglLahirPersonil = date_tanggalLahirPersonil.getDate();
-        String tmptLahirPersonil = txt_tempatLahirPersonil.getText(); 
+        String tmptLahirPersonil = txt_tempatLahirPersonil.getText();
+        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
+        String tglLahirPersonil= fmt.format(this.date_tanggalLahirPersonil.getDate());
         Date tmtPangkatPertama = date_TMTPangkatPertama.getDate();
         Date tmtPangkatTerakhir = date_TMTPangkatTerakhir.getDate(); 
         String alamatPersonil = txt_alamatPersonil.getText();
