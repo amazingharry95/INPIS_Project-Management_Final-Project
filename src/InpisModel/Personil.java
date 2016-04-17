@@ -58,34 +58,13 @@ public class Personil {
 //        }
 //                
 //    }
-    
-    public ResultSet cariPersonilByKeyword(String filter, String keyword) {
-        try{
-            String sql = "select NRP, NAMA_PERSONIL, JABATAN, KORPS from personil where " + filter + " LIKE '%"+ keyword +"%'";
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-        return rs;
-    }
-    
-    public ResultSet getPersonilbyID(String nrp){
-        try{
-             String sql = "select * from personil where NRP='"+nrp+"'";
-             pst = conn.prepareStatement(sql);
-             rs = pst.executeQuery();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-        return rs;
-    }
-    
+
     public ResultSet setPersonilData(String NRP, String agamaPersonil, String golDarahPersonil, String jabatan, 
             String korps, String namaPersonil, String noASABRI, String noBPJS, String noKTA, String noNPWP, 
             String noTelepon, String pangkat, String penMiliter, String penPengembang, String penUmum, 
-            String statusKeluarga, String statusRumah, Date tamatJabatan, Date tamatTNI, Date tglLahirPersonil, 
-            String tmptLahirPersonil, Date tmtPangkatPertama, Date tmtPangkatTerakhir, String alamatPersonil) {
+            String statusKeluarga, String statusRumah, java.util.Date tamatJabatan, 
+            java.util.Date tamatTNI, java.util.Date tglLahirPersonil, String tmptLahirPersonil, 
+            java.util.Date tmtPangkatPertama, java.util.Date tmtPangkatTerakhir, String alamatPersonil) {
         try{
             String sql = "Insert into personil (NRP, AGAMA_PERSONIL, GOL_DARAH_PERSONIL,"
                     + "JABATAN, KORPS, NAMA_PERSONIL, NO_ASABRI, NO_BPJS, NO_KTA, NO_NPWP,"
@@ -94,6 +73,13 @@ public class Personil {
                     + "TEMPAT_LAHIR_PERSONIL, TMT_PANGKAT_PERTAMA, TMT_PANGKAT_TERAKHIR, ALAMAT_PERSONIL) "
                     + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  
+            java.sql.Date TamatTNI, TglLahirPersonil, TamatJabatan, TmtPangkatPertama, TmtPangkatTerakhir;
+            TamatJabatan = new java.sql.Date(tamatJabatan.getTime());
+            TamatTNI = new java.sql.Date(tamatTNI.getTime());
+            TmtPangkatPertama = new java.sql.Date(tmtPangkatPertama.getTime());
+            TmtPangkatTerakhir = new java.sql.Date(tmtPangkatTerakhir.getTime());
+            TglLahirPersonil = new java.sql.Date(tglLahirPersonil.getTime());
+            
             pst = conn.prepareStatement(sql);
             pst.setString(1, NRP);
             pst.setString(2, agamaPersonil);
@@ -112,12 +98,12 @@ public class Personil {
             pst.setString(15, penUmum);
             pst.setString(16, statusKeluarga);
             pst.setString(17, statusRumah);
-            pst.setDate(18, tamatJabatan);
-            pst.setDate(19, tamatTNI);
-            pst.setDate(20, tglLahirPersonil);
+            pst.setDate(18, TamatJabatan);
+            pst.setDate(19, TamatTNI);
+            pst.setDate(20, TglLahirPersonil);
             pst.setString(21, tmptLahirPersonil);
-            pst.setDate(22, tmtPangkatPertama);
-            pst.setDate(23, tmtPangkatTerakhir);
+            pst.setDate(22, TmtPangkatPertama);
+            pst.setDate(23, TmtPangkatTerakhir);
             pst.setString(24, alamatPersonil);
            
             pst.execute();
@@ -128,4 +114,16 @@ public class Personil {
         }
         return getAllData();
     }
+
+    public ResultSet cariPersonilByKeyword(String filter, String keyword) {
+        try{
+            String sql = "select NRP, NAMA_PERSONIL, JABATAN, KORPS from personil where " + filter + " LIKE '%"+ keyword +"%'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return rs;
+    }
+
 }
