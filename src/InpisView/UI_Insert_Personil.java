@@ -158,6 +158,11 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         });
 
         button_insert_tambah_istri.setText("Tambah Data Istri");
+        button_insert_tambah_istri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_insert_tambah_istriActionPerformed(evt);
+            }
+        });
 
         button_insert_tambah_anak.setText("Tambah Data Anak");
         button_insert_tambah_anak.addActionListener(new java.awt.event.ActionListener() {
@@ -282,15 +287,15 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
         jLabel26.setText("Tanggal Lahir Personil :");
 
-        date_tamatJabatan.setDateFormatString("yyyy-MM-dd");
+        date_tamatJabatan.setDateFormatString("dd-MM-yyyy");
 
-        date_tamatTNI.setDateFormatString("yyyy-MM-dd");
+        date_tamatTNI.setDateFormatString("dd-MM-yyyy");
 
-        date_tanggalLahirPersonil.setDateFormatString("yyyy-MM-dd");
+        date_tanggalLahirPersonil.setDateFormatString("dd MMMM yyyy");
 
-        date_TMTPangkatPertama.setDateFormatString("yyyy-MM-dd");
+        date_TMTPangkatPertama.setDateFormatString("dd-MM-yyyy");
 
-        date_TMTPangkatTerakhir.setDateFormatString("yyyy-MM-dd");
+        date_TMTPangkatTerakhir.setDateFormatString("dd-MM-yyyy");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -303,22 +308,14 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(51, 51, 51)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(date_TMTPangkatPertama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_TMTPangkatTerakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(button_insert_tambah_istri)
                                 .addGap(18, 18, 18)
                                 .addComponent(button_insert_tambah_anak)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                                 .addComponent(btnInsertPersonil))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -362,10 +359,18 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                                     .addComponent(txt_statusKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(txt_statusRumah, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(txt_tempatLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_namaPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(date_tamatJabatan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(date_tamatTNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_tanggalLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(date_tanggalLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(51, 51, 51)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(date_TMTPangkatPertama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(date_TMTPangkatTerakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(35, 35, 35))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -461,7 +466,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel26)
                     .addComponent(date_tanggalLahirPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel23)
                     .addComponent(date_TMTPangkatPertama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -487,9 +492,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -572,7 +575,8 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_namaPersonilActionPerformed
 
     private void button_insert_tambah_anakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_anakActionPerformed
-        // TODO add your handling code here:
+        UI_Insert_Anak ui_insert_anak = new UI_Insert_Anak();
+        ui_insert_anak.setVisible(true);
     }//GEN-LAST:event_button_insert_tambah_anakActionPerformed
 
     private void btnInsertPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPersonilActionPerformed
@@ -607,6 +611,11 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir,
                 alamatPersonil);
     }//GEN-LAST:event_btnInsertPersonilActionPerformed
+
+    private void button_insert_tambah_istriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_istriActionPerformed
+        UI_Insert_Istri ui_insert_istri = new UI_Insert_Istri();
+        ui_insert_istri.setVisible(true);
+    }//GEN-LAST:event_button_insert_tambah_istriActionPerformed
 
     /**
      * @param args the command line arguments
