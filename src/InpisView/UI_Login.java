@@ -133,7 +133,7 @@ public class UI_Login extends javax.swing.JFrame {
         System.out.print(pass);
         if(username.equals(id) && password.equals(pass))
             {
-                new UI_Utama_v2().setVisible(true);
+                //new UI_Utama_v2().setVisible(true);
                 this.dispose();
             }
     }//GEN-LAST:event_cmd_loginActionPerformed

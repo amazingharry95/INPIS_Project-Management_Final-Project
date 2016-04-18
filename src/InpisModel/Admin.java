@@ -5,6 +5,7 @@
  */
 package InpisModel;
 
+import InpisView.UI_Utama_v2;
 import java.sql.*;
 import javax.swing.*;
 import inpis.Database;
@@ -26,7 +27,7 @@ public class Admin {
     public ResultSet Login(String username, String password) {
         try{
             Statement st = conn.createStatement();
-            String sql = "SELECT username, password FROM admin WHERE username='"+username+"' AND password='"+password+"'";
+            String sql = "SELECT username, password FROM user WHERE username='"+username+"' AND password='"+password+"'";
             
             rs = st.executeQuery(sql);
             if(rs.next())
@@ -37,6 +38,8 @@ public class Admin {
             if(id != null && pass != null && username.equals(id) && password.equals(pass))
             {
                 JOptionPane.showMessageDialog(null, "Berhasil Login");
+                new UI_Utama_v2().setVisible(true);
+
                 return rs;
             }
             else
