@@ -6,6 +6,8 @@
 package InpisView;
 
 import InpisController.*;
+import java.util.List;
+import javax.swing.WindowConstants;
 //import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -24,6 +26,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     
     ControlMaster controlMaster = new ControlMaster();
     ControlPencarian controlPencarian = new ControlPencarian();
+    UI_Edit_Personil jtRowData = new UI_Edit_Personil();
     
     public UI_Utama_v2() {
         initComponents();
@@ -241,6 +244,48 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         cariPersonilByKeyword(filter, keyword);
     }//GEN-LAST:event_btnCariActionPerformed
 
+    private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {                                           
+        try{
+            int row = tablePersonil.getSelectedRow();
+            String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
+            List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
+            
+            this.jtRowData.setVisible(true);
+            this.jtRowData.pack();
+            //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            this.jtRowData.jTextField_Nama.setText(Personil.get(0));
+            this.jtRowData.jTextField_Pangkat.setText(Personil.get(1));
+            this.jtRowData.jTextField_Korps.setText(Personil.get(2));
+            this.jtRowData.jTextField_NRP.setText(Personil.get(3));
+            this.jtRowData.jTextField_Jabatan.setText(Personil.get(4));
+            this.jtRowData.jTextField_TamatJabatan.setText(Personil.get(5));
+            this.jtRowData.jTextField_TamatTNI.setText(Personil.get(6));
+            this.jtRowData.jTextField_TamatPangkatPertama.setText(Personil.get(7));
+            this.jtRowData.jTextField_TamatPangkatTerakhir.setText(Personil.get(8));
+            this.jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
+            this.jtRowData.jTextField_TanggalLahir.setText(Personil.get(10));
+            this.jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
+            this.jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
+            //ini pendidikan pengembangan
+            this.jtRowData.jTextField_Agama.setText(Personil.get(14));
+            this.jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
+            this.jtRowData.jTextField_NoKTA.setText(Personil.get(16));
+            this.jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
+            this.jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
+            this.jtRowData.jTextField_NoNPWP.setText(Personil.get(19));
+            this.jtRowData.jTextField_Alamat.setText(Personil.get(20));
+            this.jtRowData.jTextField_StatusRumah.setText(Personil.get(21));
+            this.jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
+            this.jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
+            this.jtRowData.jTextField_Istri.setText(Personil.get(24));
+            this.jtRowData.jTextField_Anak.setText(Personil.get(25));
+            
+            
+            
+        }catch(Exception e){
+            
+        }
+    }    
     /**
      * @param args the command line arguments
      */

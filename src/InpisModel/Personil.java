@@ -9,6 +9,8 @@ import java.sql.*;
 import javax.swing.*;
 import inpis.Database;
 import java.awt.HeadlessException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author amazingharry95
@@ -17,6 +19,7 @@ public class Personil {
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    List<String> Personil = new ArrayList<String>();
     
     public Personil(){
         conn = Database.getConnection();
@@ -98,5 +101,74 @@ public class Personil {
         }
         return rs;
     }
+    
+    public List<String> getPersonilbyID(String nrp){
+        try{
+             String sql = "select * from personil where NRP='"+nrp+"'";
+             pst = conn.prepareStatement(sql);
+             rs = pst.executeQuery();
+             
+             if(rs.next()){
+                 Personil.add(rs.getString("NAMA_PERSONIL"));
+                 Personil.add(rs.getString("PANGKAT"));
+                 Personil.add(rs.getString("KORPS"));
+                 Personil.add(rs.getString("NRP"));
+                 Personil.add(rs.getString("JABATAN"));
+                 Personil.add(rs.getString("TAMAT_JABATAN"));
+                 Personil.add(rs.getString("TAMAT_TNI"));
+                 Personil.add(rs.getString("TMT_PANGKAT_PERTAMA"));
+                 Personil.add(rs.getString("TMT_PANGKAT_TERAKHIR"));
+                 Personil.add(rs.getString("TEMPAT_LAHIR_PERSONIL"));
+                 Personil.add(rs.getString("TANGGAL_LAHIR_PERSONIL"));
+                 Personil.add(rs.getString("PENDIDIKAN_UMUM"));
+                 Personil.add(rs.getString("PENDIDIKAN_MILITER"));
+                 Personil.add(rs.getString("PENDIDIKAN_PENGEMBANG"));
+                 Personil.add(rs.getString("AGAMA_PERSONIL"));
+                 Personil.add(rs.getString("GOL_DARAH_PERSONIL"));
+                 Personil.add(rs.getString("NO_KTA"));
+                 Personil.add(rs.getString("NO_ASABRI"));
+                 Personil.add(rs.getString("NO_BPJS"));
+                 Personil.add(rs.getString("NO_NPWP"));
+                 Personil.add(rs.getString("ALAMAT_PERSONIL"));
+                 Personil.add(rs.getString("STATUS_RUMAH"));
+                 Personil.add(rs.getString("NO_TELPON"));
+                 Personil.add(rs.getString("STATUS_KELUARGA"));
+             }
+             this.getPersonilIstriNama(nrp);
+             this.getPersonilAnakNama(nrp);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return Personil;
+    }
+    
+    public void getPersonilIstriNama(String nrp){
+        try{
+            String sql = "select NAMA_ISTRI from istri WHERE NRP='"+nrp+"'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                Personil.add(rs.getString("NAMA_ISTRI"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    public void getPersonilAnakNama(String nrp){
+        try{
+            String sql = "select NAMA_ANAK from anak WHERE NRP='"+nrp+"'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                Personil.add(rs.getString("NAMA_ANAK"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
 
 }

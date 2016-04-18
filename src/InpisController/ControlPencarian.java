@@ -7,6 +7,7 @@ package InpisController;
 
 import InpisModel.*;
 import java.sql.ResultSet;
+import java.util.List;
 
 /**
  *
@@ -17,5 +18,9 @@ public class ControlPencarian {
     
     public ResultSet ambilDataPersonil(String filter, String keyword) {
         return personil.cariPersonilByKeyword(filter, keyword);
+    }
+    
+    public List<String> ambilDataPersonilbyID(String nrp){
+        return personil.getPersonilbyID(nrp);
     }
 }
