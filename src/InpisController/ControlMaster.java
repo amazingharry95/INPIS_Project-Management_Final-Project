@@ -16,6 +16,7 @@ public class ControlMaster {
     Personil personil = new Personil();
     Istri istri = new Istri();
     Anak anak = new Anak();
+    Admin admin = new Admin();
     
     //control untuk mengambil seluruh data personil
     public ResultSet getPersonilData(){
@@ -46,6 +47,11 @@ public class ControlMaster {
     public ResultSet InsertAnakData(String NRP, String tglLahirAnak, String tmptLahirAnak, 
             String namaAnak) {
         return anak.setAnakData(NRP, tglLahirAnak, tmptLahirAnak, namaAnak);
+    }
+    
+    //control untuk login
+    public ResultSet Login(String username, String password) {
+        return admin.Login(username, password);
     }
         
 //    // control untuk lihat detail personil yang dipilih

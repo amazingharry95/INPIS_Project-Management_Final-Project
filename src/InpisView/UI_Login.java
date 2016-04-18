@@ -3,14 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inpis;
+package InpisView;
 
+import InpisController.ControlMaster;
+import java.awt.HeadlessException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Laurensius Adi
  */
 public class UI_Login extends javax.swing.JFrame {
-
+    ControlMaster controlMaster = new ControlMaster();
     /**
      * Creates new form UI_Login
      */
@@ -43,14 +48,12 @@ public class UI_Login extends javax.swing.JFrame {
             }
         });
 
-        field_password.setText("jPasswordField1");
         field_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 field_passwordActionPerformed(evt);
             }
         });
 
-        field_username.setText("jTextField1");
         field_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 field_usernameActionPerformed(evt);
@@ -112,7 +115,27 @@ public class UI_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_field_passwordActionPerformed
 
     private void cmd_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmd_loginActionPerformed
-        // TODO add your handling code here:
+        String username = field_username.getText();
+        char[] passw = field_password.getPassword();
+        String password = new String(passw);
+        ResultSet rs = null;
+        String id = null;
+        String pass = null;
+        rs=controlMaster.Login(username,password);
+        try{if(rs.next())
+            {
+                id = rs.getString("username");
+                pass = rs.getString("password");
+            }}catch(SQLException | HeadlessException e){
+            JOptionPane.showMessageDialog(null, e);
+            }
+        System.out.println(id);
+        System.out.print(pass);
+        if(username.equals(id) && password.equals(pass))
+            {
+                new UI_Utama_v2().setVisible(true);
+                this.dispose();
+            }
     }//GEN-LAST:event_cmd_loginActionPerformed
 
     /**
