@@ -169,6 +169,21 @@ public class Personil {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    public Boolean deletePersonil(String nrp){
+        String sql = "delete from personil where NRP=?";
+        Boolean status = false;
+        try{
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, nrp);
+            pst.execute();
+           JOptionPane.showMessageDialog(null, "Terhapus");
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return status;
+    }
 
 
 }

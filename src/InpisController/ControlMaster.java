@@ -53,6 +53,10 @@ public class ControlMaster {
     public ResultSet Login(String username, String password) {
         return admin.Login(username, password);
     }
+    
+    public Boolean deletePersonil(String nrp){
+        return personil.deletePersonil(nrp);
+    }
         
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {
