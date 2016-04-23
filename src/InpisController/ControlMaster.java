@@ -8,6 +8,7 @@ package InpisController;
 import InpisModel.*;
 import java.util.Date;
 import java.sql.ResultSet;
+import java.util.List;
 /**
  *
  * @author amazingharry95
@@ -21,6 +22,12 @@ public class ControlMaster {
     //control untuk mengambil seluruh data personil
     public ResultSet getPersonilData(){
         return personil.getAllData();
+    }
+    public ResultSet getIstriData(String nrp){
+        return istri.getDataIstri(nrp);
+    }
+    public List<String> ambilDataIstrilbyID(String nrp){
+        return istri.getIstribyID(nrp);
     }
     
     //control untuk insert data Personil
@@ -37,6 +44,13 @@ public class ControlMaster {
     
     //control untuk insert data Istri
     public ResultSet InsertIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
+            String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
+            String tglLahirIstri, String hobi1, String hobi2) {
+        return istri.setIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
+                tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
+    }
+    
+    public ResultSet EditIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
             String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
             String tglLahirIstri, String hobi1, String hobi2) {
         return istri.setIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
