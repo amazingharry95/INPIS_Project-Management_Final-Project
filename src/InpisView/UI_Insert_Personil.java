@@ -6,9 +6,12 @@
 package InpisView;
 
 import InpisController.ControlMaster;
+import java.awt.HeadlessException;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -492,7 +495,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -576,7 +579,17 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
     private void button_insert_tambah_anakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_anakActionPerformed
         UI_Insert_Anak ui_insert_anak = new UI_Insert_Anak();
-        ui_insert_anak.setVisible(true);
+        String NRPPersonil = txt_NRPPersonil.getText();
+        try {
+            if(NRPPersonil != null) {
+                UI_Insert_Anak.txt_NRP.setText(txt_NRPPersonil.getText());
+                ui_insert_anak.setVisible(true);
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Pastikan NRP Personil sudah diisi dan disimpan terlebih dahulu");
+        }catch(HeadlessException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_button_insert_tambah_anakActionPerformed
 
     private void btnInsertPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPersonilActionPerformed
@@ -613,8 +626,19 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertPersonilActionPerformed
 
     private void button_insert_tambah_istriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_istriActionPerformed
+        String NRPPersonil = txt_NRPPersonil.getText();
         UI_Insert_Istri ui_insert_istri = new UI_Insert_Istri();
-        ui_insert_istri.setVisible(true);
+
+        try {
+            if(NRPPersonil != null) {
+                UI_Insert_Istri.txt_NRP.setText(txt_NRPPersonil.getText());
+                ui_insert_istri.setVisible(true);
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Pastikan NRP Personil sudah diisi dan disimpan terlebih dahulu");
+        }catch(HeadlessException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_button_insert_tambah_istriActionPerformed
 
     /**
@@ -689,7 +713,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txt_NRPPersonil;
+    public static javax.swing.JTextField txt_NRPPersonil;
     private javax.swing.JTextField txt_agamaPersonil;
     private javax.swing.JTextField txt_alamatPersonil;
     private javax.swing.JTextField txt_golDarahPersonil;

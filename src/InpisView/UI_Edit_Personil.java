@@ -7,12 +7,19 @@ package InpisView;
 
 import javax.swing.JOptionPane;
 import InpisController.ControlMaster;
+import InpisModel.Personil;
+import inpis.UI_Edit_Istri;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author amazingharry95
  */
 public class UI_Edit_Personil extends javax.swing.JFrame {
+    UI_Edit_Istri jtRowDataIstri = new UI_Edit_Istri();
 
     /**
      * Creates new form UI_Edit_Personil
@@ -84,9 +91,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         jTextField_StatusKeluarga = new javax.swing.JTextField();
         jTextField_Istri = new javax.swing.JTextField();
         jTextField_Anak = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         buttonDelete = new javax.swing.JButton();
+        lihatIstri = new javax.swing.JButton();
 
         jTextField23.setText("jTextField1");
 
@@ -200,8 +207,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
         jTextField_Anak.setText("jTextField24");
 
-        jButton1.setText("LIHAT ISTRI");
-
         jButton2.setText("LIHAT ANAK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +224,13 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         buttonDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonDeleteActionPerformed(evt);
+            }
+        });
+
+        lihatIstri.setText("LIHAT ISTRI");
+        lihatIstri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatIstriActionPerformed(evt);
             }
         });
 
@@ -273,10 +285,8 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                     .addComponent(jLabel21)
                     .addComponent(jLabel22)
                     .addComponent(jLabel23)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(15, 15, 15)))
-                .addGap(15, 15, Short.MAX_VALUE)
+                    .addComponent(jLabel13))
+                .addGap(20, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField_PendidikanMiliter, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField_PendidikanUmum, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,8 +302,8 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(lihatIstri)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel25)
@@ -301,7 +311,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                         .addComponent(jTextField_Istri, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addComponent(jTextField_StatusKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel26)
@@ -357,8 +367,8 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))))
+                            .addComponent(jButton2)
+                            .addComponent(lihatIstri))))
                 .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -423,6 +433,40 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonDeleteActionPerformed
 
+    private void lihatIstriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatIstriActionPerformed
+        // TODO add your handling code here:
+        try{
+            String nrp = jTextField_NRP.getText();
+           /*List<String> Istri = new ArrayList<String>();
+            Istri = ControlMaster.ambilDataIstrilbyID(nrp);*/
+           List<String> Istri = controlMaster.ambilDataIstrilbyID(nrp);
+           String lahirIstri = Istri.get(11);
+           java.util.Date lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
+            
+            this.jtRowDataIstri.setVisible(true);
+            this.jtRowDataIstri.pack();
+            //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(0));
+            this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(1));
+            this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(2));
+            this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(3));
+            this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(4));
+            this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(5));
+            this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(6));
+            this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(7));
+            this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(8));
+            this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(9));
+            this.jtRowDataIstri.hobi_2.setText(Istri.get(10));
+            this.jtRowDataIstri.jDateChooser1.setDate(lahirIstriDate);
+            
+            
+            
+            
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_lihatIstriActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -460,7 +504,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonDelete;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -514,5 +557,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField_TamatTNI;
     public javax.swing.JTextField jTextField_TanggalLahir;
     public javax.swing.JTextField jTextField_TempatLahir;
+    private javax.swing.JButton lihatIstri;
     // End of variables declaration//GEN-END:variables
 }
