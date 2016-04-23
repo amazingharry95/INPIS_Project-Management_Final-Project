@@ -149,6 +149,11 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         });
         tablePersonil.setCellSelectionEnabled(true);
         tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablePersonil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablePersonilMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablePersonil);
 
         btnCari.setText("CARI");
@@ -244,11 +249,14 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         cariPersonilByKeyword(filter, keyword);
     }//GEN-LAST:event_btnCariActionPerformed
 
-    private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {                                           
-        try{
+    private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePersonilMouseClicked
+        // TODO add your handling code here:
+         try{
             int row = tablePersonil.getSelectedRow();
             String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
             List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
+            
+            //if(evt.getClickCount() == 2){
             
             this.jtRowData.setVisible(true);
             this.jtRowData.pack();
@@ -279,13 +287,15 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             this.jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
             this.jtRowData.jTextField_Istri.setText(Personil.get(24));
             this.jtRowData.jTextField_Anak.setText(Personil.get(25));
+            //}
             
             
             
         }catch(Exception e){
             
         }
-    }    
+    }//GEN-LAST:event_tablePersonilMouseClicked
+
     /**
      * @param args the command line arguments
      */

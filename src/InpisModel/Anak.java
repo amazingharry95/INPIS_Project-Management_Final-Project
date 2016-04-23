@@ -23,17 +23,21 @@ public class Anak {
         conn = Database.getConnection();
     }
     
-    public ResultSet setAnakData(String NRP, String tglLahirAnak, String tmptLahirAnak, 
+    public ResultSet setAnakData(String NRP, java.util.Date tglLahirAnak, String tmptLahirAnak, 
             String namaAnak) {
         try{
-            String sql = "Insert into anak (NRP, NAMA_ANAK, TTL_ANAK) VALUES (?,?,?)";
+            String sql = "Insert into anak (NRP, NAMA_ANAK, TEMPAT_LAHIR_ANAK, TANGGAL_LAHIR_ANAK) VALUES (?,?,?,?)";
             
-            String TTLAnak = tmptLahirAnak.concat(", ").concat(tglLahirAnak);
+//            String TTLAnak = tmptLahirAnak.concat(", ").concat(tglLahirAnak);
+            java.sql.Date TglLahirAnak;
+            TglLahirAnak = new java.sql.Date(tglLahirAnak.getTime());
             
             pst = conn.prepareStatement(sql);
             pst.setString(1, NRP);
             pst.setString(2, namaAnak);
-            pst.setString(3, TTLAnak);
+            pst.setString(3, tmptLahirAnak);
+            pst.setDate(4, TglLahirAnak);
+            
           
             pst.execute();
             

@@ -16,25 +16,28 @@ import java.util.List;
  *
  * @author amazingharry95
  */
-public class Istri {
+public class Pasangan {
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
     List<String> Istri = new ArrayList<String>();
     
-    public Istri(){
+    public Pasangan(){
         conn = Database.getConnection();
     }
     
     public ResultSet setIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
-            String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String tglLahirIstri, 
+            String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, java.util.Date tglLahirIstri, 
             String namaIstri, String hobi1, String hobi2) {
         try{
-            String sql = "Insert into istri (NRP, AGAMA_ISTRI, GOL_DARAH_ISTRI,"
-                    + "KPI_ISTRI, KTA_JALASENASTRI, METODE_KB, PENDIDIKAN_TERAKHIR_ISTRI,"
-                    + "TTL_ISTRI, NAMA_ISTRI, HOBBY1, HOBBY2) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into pasangan (NRP, AGAMA, GOL_DARAH,"
+                    + "KPI, KTA_JALASENASTRI, METODE_KB, PENDIDIKAN_TERAKHIR,"
+                    + "TEMPAT_LAHIR, TANGGAL_LAHIR, NAMA, HOBBY1, HOBBY2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
             
-            String TTLIstri = tmptLahirIstri.concat(", ").concat(tglLahirIstri);
+            java.sql.Date TglLahirIstri;
+            TglLahirIstri = new java.sql.Date(tglLahirIstri.getTime());
+            
+//            String TTLIstri = tmptLahirIstri.concat(", ").concat(tglLahirIstri);
             
             pst = conn.prepareStatement(sql);
             pst.setString(1, NRP);
@@ -44,10 +47,11 @@ public class Istri {
             pst.setString(5, KTAJalasenastri);
             pst.setString(6, metodeKb);
             pst.setString(7, penTerakhirIstri);
-            pst.setString(8, TTLIstri);
-            pst.setString(9, namaIstri);
-            pst.setString(10, hobi1);
-            pst.setString(11, hobi2);
+            pst.setString(8, tmptLahirIstri);
+            pst.setDate(9, TglLahirIstri);
+            pst.setString(10, namaIstri);
+            pst.setString(11, hobi1);
+            pst.setString(12, hobi2);
           
             pst.execute();
             

@@ -8,6 +8,7 @@ package InpisView;
 import InpisController.ControlMaster;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -142,8 +143,9 @@ public class UI_Insert_Anak extends javax.swing.JFrame {
         String NRP = txt_NRP.getText();
         String namaAnak = txt_namaAnak.getText();
         String tmptLahirAnak = txt_tmptLahirAnak.getText();
-        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
-        String tglLahirAnak = fmt.format(this.date_tglLahirAnak.getDate());
+//        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
+//        String tglLahirAnak = fmt.format(this.date_tglLahirAnak.getDate());
+        Date tglLahirAnak = date_tglLahirAnak.getDate();
         
         controlMaster.InsertAnakData(NRP, tglLahirAnak, tmptLahirAnak, namaAnak);
     }//GEN-LAST:event_button_simpan_insert_anakActionPerformed

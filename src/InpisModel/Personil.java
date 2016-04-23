@@ -40,22 +40,23 @@ public class Personil {
             String korps, String namaPersonil, String noASABRI, String noBPJS, String noKTA, String noNPWP, 
             String noTelepon, String pangkat, String penMiliter, String penPengembang, String penUmum, 
             String statusKeluarga, String statusRumah, java.util.Date tamatJabatan, 
-            java.util.Date tamatTNI, String tglLahirPersonil, String tmptLahirPersonil, 
+            java.util.Date tamatTNI, java.util.Date tglLahirPersonil, String tmptLahirPersonil, 
             java.util.Date tmtPangkatPertama, java.util.Date tmtPangkatTerakhir, String alamatPersonil) {
         try{
             String sql = "Insert into personil (NRP, AGAMA_PERSONIL, GOL_DARAH_PERSONIL,"
                     + "JABATAN, KORPS, NAMA_PERSONIL, NO_ASABRI, NO_BPJS, NO_KTA, NO_NPWP,"
                     + "NO_TELPON, PANGKAT, PENDIDIKAN_MILITER, PENDIDIKAN_PENGEMBANG, PENDIDIKAN_UMUM,"
-                    + "STATUS_KELUARGA, STATUS_RUMAH, TAMAT_JABATAN, TAMAT_TNI, TTL_PERSONIL,"
-                    + "TMT_PANGKAT_PERTAMA, TMT_PANGKAT_TERAKHIR, ALAMAT_PERSONIL) "
-                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "STATUS_KELUARGA, STATUS_RUMAH, TMT_JABATAN, TMT_TNI, TEMPAT_LAHIR_PERSONIL,"
+                    + "TANGGAL_LAHIR_PERSONIL, TMT_PANGKAT_PERTAMA, TMT_PANGKAT_TERAKHIR, ALAMAT_PERSONIL) "
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  
-            java.sql.Date TamatTNI, TamatJabatan, TmtPangkatPertama, TmtPangkatTerakhir;
+            java.sql.Date TamatTNI, TamatJabatan, TmtPangkatPertama, TmtPangkatTerakhir, TglLahirPersonil;
             TamatJabatan = new java.sql.Date(tamatJabatan.getTime());
             TamatTNI = new java.sql.Date(tamatTNI.getTime());
             TmtPangkatPertama = new java.sql.Date(tmtPangkatPertama.getTime());
             TmtPangkatTerakhir = new java.sql.Date(tmtPangkatTerakhir.getTime());
-            String TTLPersonil = tmptLahirPersonil.concat(", ").concat(tglLahirPersonil);
+            TglLahirPersonil = new java.sql.Date(tglLahirPersonil.getTime());
+//            String TTLPersonil = tmptLahirPersonil.concat(", ").concat(tglLahirPersonil);
             
             pst = conn.prepareStatement(sql);
             pst.setString(1, NRP);
@@ -77,10 +78,11 @@ public class Personil {
             pst.setString(17, statusRumah);
             pst.setDate(18, TamatJabatan);
             pst.setDate(19, TamatTNI);
-            pst.setString(20, TTLPersonil);
-            pst.setDate(21, TmtPangkatPertama);
-            pst.setDate(22, TmtPangkatTerakhir);
-            pst.setString(23, alamatPersonil);
+            pst.setString(20, tmptLahirPersonil);
+            pst.setDate(21, TglLahirPersonil);
+            pst.setDate(22, TmtPangkatPertama);
+            pst.setDate(23, TmtPangkatTerakhir);
+            pst.setString(24, alamatPersonil);
            
             pst.execute();
             

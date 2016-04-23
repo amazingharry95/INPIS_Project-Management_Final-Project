@@ -96,7 +96,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         date_tamatJabatan = new com.toedter.calendar.JDateChooser();
         date_tamatTNI = new com.toedter.calendar.JDateChooser();
-        date_tanggalLahirPersonil = new com.toedter.calendar.JDateChooser();
+        date_tglLahirPersonil = new com.toedter.calendar.JDateChooser();
         date_TMTPangkatPertama = new com.toedter.calendar.JDateChooser();
         date_TMTPangkatTerakhir = new com.toedter.calendar.JDateChooser();
 
@@ -294,7 +294,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
         date_tamatTNI.setDateFormatString("dd-MM-yyyy");
 
-        date_tanggalLahirPersonil.setDateFormatString("dd MMMM yyyy");
+        date_tglLahirPersonil.setDateFormatString("dd MMMM yyyy");
 
         date_TMTPangkatPertama.setDateFormatString("dd-MM-yyyy");
 
@@ -364,7 +364,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                                     .addComponent(txt_tempatLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(date_tamatJabatan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(date_tamatTNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_tanggalLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(date_tglLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -468,7 +468,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel26)
-                    .addComponent(date_tanggalLahirPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date_tglLahirPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel23)
@@ -613,8 +613,9 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         Date tamatJabatan = date_tamatJabatan.getDate();
         Date tamatTNI = date_tamatTNI.getDate();
         String tmptLahirPersonil = txt_tempatLahirPersonil.getText();
-        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
-        String tglLahirPersonil= fmt.format(this.date_tanggalLahirPersonil.getDate());
+//        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
+//        String tglLahirPersonil= fmt.format(this.date_tanggalLahirPersonil.getDate());
+        Date tglLahirPersonil = date_tglLahirPersonil.getDate();
         Date tmtPangkatPertama = date_TMTPangkatPertama.getDate();
         Date tmtPangkatTerakhir = date_TMTPangkatTerakhir.getDate(); 
         String alamatPersonil = txt_alamatPersonil.getText();
@@ -685,7 +686,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser date_TMTPangkatTerakhir;
     private com.toedter.calendar.JDateChooser date_tamatJabatan;
     private com.toedter.calendar.JDateChooser date_tamatTNI;
-    private com.toedter.calendar.JDateChooser date_tanggalLahirPersonil;
+    private com.toedter.calendar.JDateChooser date_tglLahirPersonil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

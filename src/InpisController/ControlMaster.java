@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ControlMaster {
     Personil personil = new Personil();
-    Istri istri = new Istri();
+    Pasangan istri = new Pasangan();
     Anak anak = new Anak();
     Admin admin = new Admin();
     
@@ -34,7 +34,7 @@ public class ControlMaster {
     public ResultSet InsertPersonilData(String NRP, String agamaPersonil, String golDarahPersonil, String jabatan, String korps, 
             String namaPersonil, String noASABRI, String noBPJS, String noKTA, String noNPWP, String noTelepon, String pangkat, 
             String penMiliter, String penPengembang, String penUmum, String statusKeluarga, String statusRumah, Date tamatJabatan, 
-            Date tamatTNI, String tglLahirPersonil, String tmptLahirPersonil, Date tmtPangkatPertama, Date tmtPangkatTerakhir, 
+            Date tamatTNI, Date tglLahirPersonil, String tmptLahirPersonil, Date tmtPangkatPertama, Date tmtPangkatTerakhir, 
             String alamatPersonil) {
         return personil.setPersonilData(NRP, agamaPersonil, golDarahPersonil, jabatan, korps, namaPersonil, noASABRI, noBPJS, 
                 noKTA, noNPWP, noTelepon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah,
@@ -42,29 +42,29 @@ public class ControlMaster {
                 alamatPersonil);
     }
     
-    //control untuk insert data Istri
+    //control untuk insert data Pasangan
     public ResultSet InsertIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
             String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
-            String tglLahirIstri, String hobi1, String hobi2) {
+            Date tglLahirIstri, String hobi1, String hobi2) {
         return istri.setIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
                 tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
     }
     
     public ResultSet EditIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
             String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
-            String tglLahirIstri, String hobi1, String hobi2) {
+            Date tglLahirIstri, String hobi1, String hobi2) {
         return istri.setIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
                 tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
     }
             
     //control untuk insert data Anak
-    public ResultSet InsertAnakData(String NRP, String tglLahirAnak, String tmptLahirAnak, 
+    public ResultSet InsertAnakData(String NRP, Date tglLahirAnak, String tmptLahirAnak, 
             String namaAnak) {
         return anak.setAnakData(NRP, tglLahirAnak, tmptLahirAnak, namaAnak);
     }
     
     //control untuk login
-    public List<String> Login(String username, String password) {
+    public ResultSet Login(String username, String password) {
         return admin.Login(username, password);
     }
     

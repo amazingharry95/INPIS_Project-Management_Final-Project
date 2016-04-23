@@ -8,6 +8,7 @@ package InpisView;
 import InpisController.ControlMaster;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -244,8 +245,9 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         String namaIstri = txt_namaIstri.getText();
         String penTerakhirIstri = txt_penTerakhirIstri.getText();
         String tmptLahirIstri = txt_tmptLahirIstri.getText();
-        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
-        String tglLahirIstri = fmt.format(this.date_tglLahirIstri.getDate());
+//        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
+//        String tglLahirIstri = fmt.format(this.date_tglLahirIstri.getDate());
+        Date tglLahirIstri = date_tglLahirIstri.getDate();
         
         controlMaster.InsertIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, 
                 metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2);
