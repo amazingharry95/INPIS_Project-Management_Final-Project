@@ -8,6 +8,7 @@ package InpisController;
 import InpisModel.*;
 import java.util.Date;
 import java.sql.ResultSet;
+import java.util.List;
 /**
  *
  * @author amazingharry95
@@ -50,7 +51,7 @@ public class ControlMaster {
     }
     
     //control untuk login
-    public ResultSet Login(String username, String password) {
+    public List<String> Login(String username, String password) {
         return admin.Login(username, password);
     }
     

@@ -9,6 +9,7 @@ import InpisController.ControlMaster;
 import java.awt.HeadlessException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 /**
  *
@@ -118,20 +119,12 @@ public class UI_Login extends javax.swing.JFrame {
         String username = field_username.getText();
         char[] passw = field_password.getPassword();
         String password = new String(passw);
-        ResultSet rs = null;
+        List<String> rs = null;
         String id = null;
         String pass = null;
         rs=controlMaster.Login(username,password);
-        try{if(rs.next())
-            {
-                id = rs.getString("username");
-                pass = rs.getString("password");
-            }}catch(SQLException | HeadlessException e){
-            JOptionPane.showMessageDialog(null, e);
-            }
-        System.out.println(id);
-        System.out.print(pass);
-        if(username.equals(id) && password.equals(pass))
+        System.out.println(rs);
+        if(username.equals(rs.get(0)) && password.equals(rs.get(1)))
             {
                 //new UI_Utama_v2().setVisible(true);
                 this.dispose();

@@ -10,6 +10,8 @@ import java.sql.*;
 import javax.swing.*;
 import inpis.Database;
 import java.awt.HeadlessException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,15 +22,15 @@ public class Admin {
     ResultSet rs = null;
     String id = null;
     String pass = null;
+    List<String> hasil = new ArrayList<String>();
     public Admin(){
         conn = Database.getConnection();
     }
     
-    public ResultSet Login(String username, String password) {
+    public List<String> Login(String username, String password) {
         try{
             Statement st = conn.createStatement();
             String sql = "SELECT username, password FROM user WHERE username='"+username+"' AND password='"+password+"'";
-            
             rs = st.executeQuery(sql);
             if(rs.next())
             {
@@ -37,10 +39,11 @@ public class Admin {
             }
             if(id != null && pass != null && username.equals(id) && password.equals(pass))
             {
+                hasil.add(id);
+                hasil.add(pass);
                 JOptionPane.showMessageDialog(null, "Berhasil Login");
                 new UI_Utama_v2().setVisible(true);
-
-                return rs;
+               
             }
             else
             {
@@ -49,6 +52,6 @@ public class Admin {
         }catch(SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(null, "Username atau password salah");
         }
-        return rs;
+        return hasil;
     }
 }
