@@ -8,10 +8,12 @@ package InpisView;
 import javax.swing.JOptionPane;
 import InpisController.ControlMaster;
 import InpisModel.Personil;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -438,12 +440,26 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
            String nrp = jTextField_NRP.getText();
            /*List<String> Istri = new ArrayList<String>();
             Istri = ControlMaster.ambilDataIstrilbyID(nrp);*/
+          // System.out.println("Masuk sini");
            List<String> Istri = controlMaster.ambilDataIstrilbyID(nrp);
-           String lahirIstri = Istri.get(11);
-           java.util.Date lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
-            
+           System.out.println("Data istri:"+Istri);
+           String lahirIstri = Istri.get(4);
+           System.out.println("Atas tangal");
+           System.out.println("Lahir Istri: "+lahirIstri);
+           //java.util.Date lahirIstriTanggal = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
+           DateFormat lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+           Date lahirIstriTanggal = lahirIstriDate.parse(lahirIstri);
+           System.out.println("Tangal Lahir istri: " + lahirIstriTanggal);
+          
+           
+           
+           
+           //System.out.println(lahirIstriDate);
+          
+           System.out.println("masuk bawah tabwl"); 
            this.jtRowDataIstri.setVisible(true);
            this.jtRowDataIstri.pack();
+           
             //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
            this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(0));
            this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(1));
@@ -456,7 +472,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
            this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(8));
            this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(9));
            this.jtRowDataIstri.hobi_2.setText(Istri.get(10));
-           this.jtRowDataIstri.date_tglLahirIstri.setDate(lahirIstriDate);
+           this.jtRowDataIstri.date_tglLahirIstri.setDate(lahirIstriTanggal);
             
             
             

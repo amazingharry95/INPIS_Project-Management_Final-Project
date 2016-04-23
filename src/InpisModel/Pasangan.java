@@ -63,22 +63,22 @@ public class Pasangan {
     }
     public List<String> getIstribyID(String nrp){
         try{
-             String sql = "select * from istri where NRP='"+nrp+"'";
+             String sql = "select * from pasangan where NRP='"+nrp+"'";
              pst = conn.prepareStatement(sql);
              rs = pst.executeQuery();
              
              if(rs.next()){
-                 Istri.add(rs.getString("ID_ISTRI"));
+                 Istri.add(rs.getString("ID_PASANGAN"));
                  Istri.add(rs.getString("NRP"));
-                 Istri.add(rs.getString("NAMA_ISTRI"));
-                 Istri.add(rs.getString("TEMPAT_LAHIR_ISTRI"));
-                 Istri.add(rs.getString("TANGGAL_LAHIR_ISTRI"));
-                 Istri.add(rs.getString("AGAMA_ISTRI"));
-                 Istri.add(rs.getString("GOL_DARAH_ISTRI"));
-                 Istri.add(rs.getString("KPI_ISTRI"));
+                 Istri.add(rs.getString("NAMA"));
+                 Istri.add(rs.getString("TEMPAT_LAHIR"));
+                 Istri.add(rs.getString("TANGGAL_LAHIR"));
+                 Istri.add(rs.getString("AGAMA"));
+                 Istri.add(rs.getString("GOL_DARAH"));
+                 Istri.add(rs.getString("KPI"));
                  Istri.add(rs.getString("KTA_JALASENASTRI"));
                  Istri.add(rs.getString("METODE_KB"));
-                 Istri.add(rs.getString("PENDIDIKAN_TERAKHIR_ISTRI"));
+                 Istri.add(rs.getString("PENDIDIKAN_TERAKHIR"));
                  Istri.add(rs.getString("HOBBY1"));
                  Istri.add(rs.getString("HOBBY2"));
              }
@@ -89,7 +89,7 @@ public class Pasangan {
     }
     public ResultSet getDataIstri(String nrp){
         try{
-            String sql = "select * from istri where NRP='"+nrp+"'";
+            String sql = "select * from pasangan where NRP='"+nrp+"'";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
         }catch(Exception e){
@@ -98,14 +98,14 @@ public class Pasangan {
         return rs; 
     }
     public ResultSet updateIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
-            String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String tglLahirIstri, 
+            String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, Date tglLahirIstri, 
             String namaIstri, String hobi1, String hobi2) {
         try{
-            String sql = "Insert into istri (NRP, AGAMA_ISTRI, GOL_DARAH_ISTRI,"
-                    + "KPI_ISTRI, KTA_JALASENASTRI, METODE_KB, PENDIDIKAN_TERAKHIR_ISTRI,"
-                    + "TTL_ISTRI, NAMA_ISTRI, HOBBY1, HOBBY2) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into pasangan (NRP, AGAMA, GOL_DARAH,"
+                    + "KPI, KTA_JALASENASTRI, METODE_KB, PENDIDIKAN_TERAKHIR,"
+                    + "TEMPAT_LAHIR, TANGGAL_LAHIR, NAMA, HOBBY1, HOBBY2) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
             
-            String TTLIstri = tmptLahirIstri.concat(", ").concat(tglLahirIstri);
+            //String TTLIstri = tmptLahirIstri.concat(", ").concat(tglLahirIstri);
             
             pst = conn.prepareStatement(sql);
             pst.setString(1, NRP);
@@ -115,10 +115,11 @@ public class Pasangan {
             pst.setString(5, KTAJalasenastri);
             pst.setString(6, metodeKb);
             pst.setString(7, penTerakhirIstri);
-            pst.setString(8, TTLIstri);
-            pst.setString(9, namaIstri);
-            pst.setString(10, hobi1);
-            pst.setString(11, hobi2);
+            pst.setString(8, tmptLahirIstri);
+            pst.setDate(9, tglLahirIstri);
+            pst.setString(10, namaIstri);
+            pst.setString(11, hobi1);
+            pst.setString(12, hobi2);
           
             pst.execute();
             

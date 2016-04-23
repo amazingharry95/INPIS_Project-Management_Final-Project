@@ -116,8 +116,8 @@ public class Personil {
                  Personil.add(rs.getString("KORPS"));
                  Personil.add(rs.getString("NRP"));
                  Personil.add(rs.getString("JABATAN"));
-                 Personil.add(rs.getString("TAMAT_JABATAN"));
-                 Personil.add(rs.getString("TAMAT_TNI"));
+                 Personil.add(rs.getString("TMT_JABATAN"));
+                 Personil.add(rs.getString("TMT_TNI"));
                  Personil.add(rs.getString("TMT_PANGKAT_PERTAMA"));
                  Personil.add(rs.getString("TMT_PANGKAT_TERAKHIR"));
                  Personil.add(rs.getString("TEMPAT_LAHIR_PERSONIL"));
@@ -146,12 +146,12 @@ public class Personil {
     
     public void getPersonilIstriNama(String nrp){
         try{
-            String sql = "select NAMA_ISTRI from istri WHERE NRP='"+nrp+"'";
+            String sql = "select NAMA from pasangan WHERE NRP='"+nrp+"'";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             
             if(rs.next()){
-                Personil.add(rs.getString("NAMA_ISTRI"));
+                Personil.add(rs.getString("NAMA"));
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
