@@ -51,26 +51,21 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="button_simpan_insert_anak" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="label_nama_anak" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label_nrp_anak" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="132" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txt_namaAnak" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_NRP" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="label_tmptLahirAnak" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_tglLahirAnak" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_nama_anak" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_nrp_anak" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txt_tmptLahirAnak" pref="195" max="32767" attributes="0"/>
-                                      <Component id="date_tglLahirAnak" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txt_namaAnak" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txt_tmptLahirAnak" pref="195" max="32767" attributes="0"/>
+                                          <Component id="date_tglLahirAnak" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="txt_NRP" min="-2" pref="195" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -85,15 +80,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="label_data_anak" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_nama_anak" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_namaAnak" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_nrp_anak" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_NRP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="label_nama_anak" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_namaAnak" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -105,7 +100,7 @@
                       <Component id="label_tglLahirAnak" min="-2" max="-2" attributes="0"/>
                       <Component id="date_tglLahirAnak" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="button_simpan_insert_anak" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
@@ -150,6 +145,12 @@
         <Component class="javax.swing.JTextField" name="txt_namaAnak">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_NRP">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_tmptLahirAnak">
         </Component>
@@ -159,9 +160,6 @@
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="date_tglLahirAnak">
-          <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="dd MMMM yyyy"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

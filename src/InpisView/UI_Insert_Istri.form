@@ -34,7 +34,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" pref="512" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" pref="639" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -55,6 +58,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="label_nrp_istri" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="label_insert_istri" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="156" max="32767" attributes="0"/>
@@ -62,11 +69,11 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabel2" pref="122" max="32767" attributes="0"/>
+                                      <Component id="jLabel3" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txt_hobi1" max="32767" attributes="0"/>
                                       <Component id="txt_hobi2" max="32767" attributes="0"/>
@@ -79,24 +86,23 @@
                                       <Component id="label_kpi_istri" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_gol_darah_istri" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_agama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label_nrp_istri" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_kb_istri" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_tmptlahir_istri" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_nama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txt_namaIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_NRP" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_agamaIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_golDarahIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_KPIIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_KTAJalasenastri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_metodeKb" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_penTerakhirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="txt_tmptLahirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                      <Component id="date_tglLahirIstri" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txt_penTerakhirIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="date_tglLahirIstri" alignment="1" pref="195" max="32767" attributes="0"/>
+                                      <Component id="txt_tmptLahirIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_KTAJalasenastri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_KPIIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_golDarahIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_agamaIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_namaIstri" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_NRP" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txt_metodeKb" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -115,15 +121,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="label_insert_istri" min="-2" pref="49" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_nama_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_namaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_nrp_istri" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_NRP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txt_namaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_nama_istri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -177,7 +183,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="button_simpan_insert_istri" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace pref="130" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -256,6 +262,12 @@
         <Component class="javax.swing.JTextField" name="txt_namaIstri">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_NRP">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_agamaIstri">
         </Component>
