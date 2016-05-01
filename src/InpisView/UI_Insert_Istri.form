@@ -58,14 +58,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="label_nrp_istri" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="label_insert_istri" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="156" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -91,18 +83,18 @@
                                       <Component id="label_nama_istri" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="txt_penTerakhirIstri" alignment="1" max="32767" attributes="0"/>
                                       <Component id="date_tglLahirIstri" alignment="1" pref="195" max="32767" attributes="0"/>
                                       <Component id="txt_tmptLahirIstri" alignment="1" max="32767" attributes="0"/>
                                       <Component id="txt_KTAJalasenastri" alignment="1" max="32767" attributes="0"/>
                                       <Component id="txt_KPIIstri" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txt_golDarahIstri" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txt_agamaIstri" alignment="1" max="32767" attributes="0"/>
                                       <Component id="txt_namaIstri" alignment="1" max="32767" attributes="0"/>
                                       <Component id="txt_NRP" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txt_metodeKb" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="combo_agamaIstri" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="combo_golDarahIstri" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="combo_metodeKB" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -111,6 +103,13 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_nrp_istri" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_insert_istri" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -134,12 +133,12 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_agama_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_agamaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="combo_agamaIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_gol_darah_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_golDarahIstri" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="combo_golDarahIstri" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -154,7 +153,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_kb_istri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_metodeKb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="combo_metodeKB" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -194,7 +193,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DATA ISTRI"/>
+            <Property name="text" type="java.lang.String" value="DATA PASANGAN"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[262, 44]"/>
             </Property>
@@ -208,7 +207,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="label_nama_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nama Istri :"/>
+            <Property name="text" type="java.lang.String" value="Nama Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_nrp_istri">
@@ -218,17 +217,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="label_agama_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agama Istri :"/>
+            <Property name="text" type="java.lang.String" value="Agama Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_gol_darah_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Golongan Darah Istri :"/>
+            <Property name="text" type="java.lang.String" value="Golongan Darah Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_kpi_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="KPI Istri :"/>
+            <Property name="text" type="java.lang.String" value="KPI Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_kta_istri">
@@ -243,12 +242,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="label_pendidikan_terakhir_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pendidikan Terakhir Istri :"/>
+            <Property name="text" type="java.lang.String" value="Pendidikan Terakhir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label_tmptlahir_istri">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tempat Lahir Istri :"/>
+            <Property name="text" type="java.lang.String" value="Tempat Lahir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="button_simpan_insert_istri">
@@ -269,15 +268,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_agamaIstri">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txt_golDarahIstri">
-        </Component>
         <Component class="javax.swing.JTextField" name="txt_KPIIstri">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_KTAJalasenastri">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txt_metodeKb">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_penTerakhirIstri">
         </Component>
@@ -285,7 +278,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tanggal Lahir Istri :"/>
+            <Property name="text" type="java.lang.String" value="Tanggal Lahir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="date_tglLahirIstri">
@@ -303,6 +296,65 @@
         <Component class="javax.swing.JTextField" name="txt_hobi1">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_hobi2">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="combo_agamaIstri">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="6">
+                <StringItem index="0" value="-"/>
+                <StringItem index="1" value="Islam"/>
+                <StringItem index="2" value="Kristen"/>
+                <StringItem index="3" value="Katolik"/>
+                <StringItem index="4" value="Hindu"/>
+                <StringItem index="5" value="Budha"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="combo_golDarahIstri">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="6">
+                <StringItem index="0" value="-"/>
+                <StringItem index="1" value="A"/>
+                <StringItem index="2" value="B"/>
+                <StringItem index="3" value="AB"/>
+                <StringItem index="4" value="O"/>
+                <StringItem index="5" value=" "/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="combo_metodeKB">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="8">
+                <StringItem index="0" value="IUP"/>
+                <StringItem index="1" value="PIL"/>
+                <StringItem index="2" value="SUNIK"/>
+                <StringItem index="3" value="WOW"/>
+                <StringItem index="4" value="MOP"/>
+                <StringItem index="5" value="KONDOM"/>
+                <StringItem index="6" value="SUSUK"/>
+                <StringItem index="7" value="SPIRAL"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

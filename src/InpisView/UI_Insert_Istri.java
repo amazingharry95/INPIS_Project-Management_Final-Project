@@ -6,8 +6,6 @@
 package InpisView;
 
 import InpisController.ControlMaster;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -47,11 +45,8 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         button_simpan_insert_istri = new javax.swing.JButton();
         txt_namaIstri = new javax.swing.JTextField();
         txt_NRP = new javax.swing.JTextField();
-        txt_agamaIstri = new javax.swing.JTextField();
-        txt_golDarahIstri = new javax.swing.JTextField();
         txt_KPIIstri = new javax.swing.JTextField();
         txt_KTAJalasenastri = new javax.swing.JTextField();
-        txt_metodeKb = new javax.swing.JTextField();
         txt_penTerakhirIstri = new javax.swing.JTextField();
         txt_tmptLahirIstri = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -60,6 +55,9 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txt_hobi1 = new javax.swing.JTextField();
         txt_hobi2 = new javax.swing.JTextField();
+        combo_agamaIstri = new javax.swing.JComboBox<>();
+        combo_golDarahIstri = new javax.swing.JComboBox<>();
+        combo_metodeKB = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(360, 112));
@@ -68,28 +66,28 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 510));
 
         label_insert_istri.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        label_insert_istri.setText("DATA ISTRI");
+        label_insert_istri.setText("DATA PASANGAN");
         label_insert_istri.setMaximumSize(new java.awt.Dimension(262, 44));
         label_insert_istri.setMinimumSize(new java.awt.Dimension(262, 44));
         label_insert_istri.setPreferredSize(new java.awt.Dimension(262, 44));
 
-        label_nama_istri.setText("Nama Istri :");
+        label_nama_istri.setText("Nama Pasangan :");
 
         label_nrp_istri.setText("NRP :");
 
-        label_agama_istri.setText("Agama Istri :");
+        label_agama_istri.setText("Agama Pasangan :");
 
-        label_gol_darah_istri.setText("Golongan Darah Istri :");
+        label_gol_darah_istri.setText("Golongan Darah Pasangan :");
 
-        label_kpi_istri.setText("KPI Istri :");
+        label_kpi_istri.setText("KPI Pasangan :");
 
         label_kta_istri.setText("KTA Jalasenastri :");
 
         label_kb_istri.setText("Metode KB :");
 
-        label_pendidikan_terakhir_istri.setText("Pendidikan Terakhir Istri :");
+        label_pendidikan_terakhir_istri.setText("Pendidikan Terakhir Pasangan :");
 
-        label_tmptlahir_istri.setText("Tempat Lahir Istri :");
+        label_tmptlahir_istri.setText("Tempat Lahir Pasangan :");
 
         button_simpan_insert_istri.setText("Simpan");
         button_simpan_insert_istri.addActionListener(new java.awt.event.ActionListener() {
@@ -100,11 +98,23 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
 
         txt_NRP.setEditable(false);
 
-        jLabel1.setText("Tanggal Lahir Istri :");
+        jLabel1.setText("Tanggal Lahir Pasangan :");
 
         jLabel2.setText("Hobi 1 :");
 
         jLabel3.setText("Hobi 2 :");
+
+        combo_agamaIstri.setEditable(true);
+        combo_agamaIstri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Islam", "Kristen", "Katolik", "Hindu", "Budha" }));
+        combo_agamaIstri.setSelectedIndex(-1);
+
+        combo_golDarahIstri.setEditable(true);
+        combo_golDarahIstri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "AB", "O", " " }));
+        combo_golDarahIstri.setSelectedIndex(-1);
+
+        combo_metodeKB.setEditable(true);
+        combo_metodeKB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IUP", "PIL", "SUNIK", "WOW", "MOP", "KONDOM", "SUSUK", "SPIRAL" }));
+        combo_metodeKB.setSelectedIndex(-1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,12 +123,6 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label_nrp_istri)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label_insert_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(156, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -140,22 +144,27 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
                                     .addComponent(label_tmptlahir_istri)
                                     .addComponent(label_nama_istri)
                                     .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_penTerakhirIstri, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(date_tglLahirIstri, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(txt_tmptLahirIstri, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txt_KTAJalasenastri, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txt_KPIIstri, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_golDarahIstri, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_agamaIstri, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txt_namaIstri, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txt_NRP, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_metodeKb, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addComponent(combo_agamaIstri, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(combo_golDarahIstri, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(combo_metodeKB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(button_simpan_insert_istri)))
-                        .addGap(31, 31, 31))))
+                        .addGap(31, 31, 31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_nrp_istri)
+                            .addComponent(label_insert_istri, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +182,11 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_agama_istri)
-                    .addComponent(txt_agamaIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_agamaIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_gol_darah_istri)
-                    .addComponent(txt_golDarahIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_golDarahIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_kpi_istri)
@@ -189,7 +198,7 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_kb_istri)
-                    .addComponent(txt_metodeKb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_metodeKB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_pendidikan_terakhir_istri)
@@ -237,11 +246,11 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         String KPIIstri = txt_KPIIstri.getText();
         String KTAJalasenastri = txt_KTAJalasenastri.getText();
         String NRP = txt_NRP.getText();
-        String agamaIstri = txt_agamaIstri.getText();
-        String golDarahIstri = txt_golDarahIstri.getText();
+        String agamaIstri = combo_agamaIstri.getSelectedItem().toString();
+        String golDarahIstri = combo_golDarahIstri.getSelectedItem().toString();
         String hobi1 = txt_hobi1.getText();
         String hobi2 = txt_hobi2.getText();
-        String metodeKb = txt_metodeKb.getText();
+        String metodeKb = combo_metodeKB.getSelectedItem().toString();
         String namaIstri = txt_namaIstri.getText();
         String penTerakhirIstri = txt_penTerakhirIstri.getText();
         String tmptLahirIstri = txt_tmptLahirIstri.getText();
@@ -292,6 +301,9 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_simpan_insert_istri;
+    private javax.swing.JComboBox<String> combo_agamaIstri;
+    private javax.swing.JComboBox<String> combo_golDarahIstri;
+    private javax.swing.JComboBox<String> combo_metodeKB;
     private com.toedter.calendar.JDateChooser date_tglLahirIstri;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -310,11 +322,8 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
     private javax.swing.JTextField txt_KPIIstri;
     private javax.swing.JTextField txt_KTAJalasenastri;
     public static javax.swing.JTextField txt_NRP;
-    private javax.swing.JTextField txt_agamaIstri;
-    private javax.swing.JTextField txt_golDarahIstri;
     private javax.swing.JTextField txt_hobi1;
     private javax.swing.JTextField txt_hobi2;
-    private javax.swing.JTextField txt_metodeKb;
     private javax.swing.JTextField txt_namaIstri;
     private javax.swing.JTextField txt_penTerakhirIstri;
     private javax.swing.JTextField txt_tmptLahirIstri;
