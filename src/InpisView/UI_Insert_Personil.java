@@ -7,9 +7,6 @@ package InpisView;
 
 import InpisController.ControlMaster;
 import java.awt.HeadlessException;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -81,30 +78,31 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         txt_noKTA = new javax.swing.JTextField();
         txt_noNPWP = new javax.swing.JTextField();
         txt_noTelepon = new javax.swing.JTextField();
-        txt_agamaPersonil = new javax.swing.JTextField();
         txt_alamatPersonil = new javax.swing.JTextField();
-        txt_golDarahPersonil = new javax.swing.JTextField();
         txt_jabatan = new javax.swing.JTextField();
-        txt_korps = new javax.swing.JTextField();
-        txt_pangkat = new javax.swing.JTextField();
-        txt_pendidikanMiliter = new javax.swing.JTextField();
         txt_pendidikanPengembang = new javax.swing.JTextField();
         txt_pendidikanUmum = new javax.swing.JTextField();
         txt_statusKeluarga = new javax.swing.JTextField();
         txt_statusRumah = new javax.swing.JTextField();
         txt_tempatLahirPersonil = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        date_tamatJabatan = new com.toedter.calendar.JDateChooser();
-        date_tamatTNI = new com.toedter.calendar.JDateChooser();
+        date_TMTJabatan = new com.toedter.calendar.JDateChooser();
+        date_TMTTNI = new com.toedter.calendar.JDateChooser();
         date_tglLahirPersonil = new com.toedter.calendar.JDateChooser();
         date_TMTPangkatPertama = new com.toedter.calendar.JDateChooser();
         date_TMTPangkatTerakhir = new com.toedter.calendar.JDateChooser();
+        combo_pangkat = new javax.swing.JComboBox<>();
+        combo_golDarahPersonil = new javax.swing.JComboBox<>();
+        combo_agamaPersonil = new javax.swing.JComboBox<>();
+        combo_pendidikanMiliter = new javax.swing.JComboBox<>();
+        combo_korps = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(460, 1100));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("DATA PERSONIL");
 
         jLabel2.setText("Nama Personil :");
@@ -141,9 +139,9 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
         jLabel19.setText("Status Rumah :");
 
-        jLabel20.setText("Tamat Jabatan :");
+        jLabel20.setText("TMT Jabatan :");
 
-        jLabel21.setText("Tamat TNI :");
+        jLabel21.setText("TMT TNI :");
 
         jLabel22.setText("Tempat Lahir Personil :");
 
@@ -216,45 +214,15 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
             }
         });
 
-        txt_agamaPersonil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_agamaPersonilActionPerformed(evt);
-            }
-        });
-
         txt_alamatPersonil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_alamatPersonilActionPerformed(evt);
             }
         });
 
-        txt_golDarahPersonil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_golDarahPersonilActionPerformed(evt);
-            }
-        });
-
         txt_jabatan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_jabatanActionPerformed(evt);
-            }
-        });
-
-        txt_korps.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_korpsActionPerformed(evt);
-            }
-        });
-
-        txt_pangkat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pangkatActionPerformed(evt);
-            }
-        });
-
-        txt_pendidikanMiliter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pendidikanMiliterActionPerformed(evt);
             }
         });
 
@@ -290,15 +258,35 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
         jLabel26.setText("Tanggal Lahir Personil :");
 
-        date_tamatJabatan.setDateFormatString("dd-MM-yyyy");
+        date_TMTJabatan.setDateFormatString("dd-MM-yyyy");
 
-        date_tamatTNI.setDateFormatString("dd-MM-yyyy");
+        date_TMTTNI.setDateFormatString("dd-MM-yyyy");
 
         date_tglLahirPersonil.setDateFormatString("dd MMMM yyyy");
 
         date_TMTPangkatPertama.setDateFormatString("dd-MM-yyyy");
 
         date_TMTPangkatTerakhir.setDateFormatString("dd-MM-yyyy");
+
+        combo_pangkat.setEditable(true);
+        combo_pangkat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kolonel", "Letkol", "Mayor", "Kapten", "Lettu", "Letda", "Peltu", "Pelda", "Serma", "Serka", "Sertu", "Serda", "Kopka", "Koptu", "Kopda", "Klk", "Kls", "Kld" }));
+        combo_pangkat.setSelectedIndex(-1);
+
+        combo_golDarahPersonil.setEditable(true);
+        combo_golDarahPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "AB", "O", " " }));
+        combo_golDarahPersonil.setSelectedIndex(-1);
+
+        combo_agamaPersonil.setEditable(true);
+        combo_agamaPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Islam", "Kristen", "Katolik", "Hindu", "Budha" }));
+        combo_agamaPersonil.setSelectedIndex(-1);
+
+        combo_pendidikanMiliter.setEditable(true);
+        combo_pendidikanMiliter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AAL", "SEPA PK", "Dik Tukpa Reg", "Dik Tukba Reg", "Dik Tukba", "Dik Cata" }));
+        combo_pendidikanMiliter.setSelectedIndex(-1);
+
+        combo_korps.setEditable(true);
+        combo_korps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "(P)", "(T)", "(S)", "(KH)" }));
+        combo_korps.setSelectedIndex(-1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -309,7 +297,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(178, 178, 178))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -342,30 +330,31 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                                     .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txt_NRPPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_noASABRI, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_noBPJS, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_noKTA, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_noNPWP, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_noTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_agamaPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_alamatPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_golDarahPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_jabatan, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_korps, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_pangkat, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_pendidikanUmum, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_pendidikanMiliter, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_pendidikanPengembang, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_statusKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_statusRumah, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(txt_tempatLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(date_tamatJabatan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_tamatTNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_tglLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGap(51, 51, 51)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txt_NRPPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_noASABRI, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_noBPJS, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_noKTA, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_noNPWP, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_noTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_alamatPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_jabatan, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_pendidikanUmum, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_pendidikanPengembang, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_statusKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_statusRumah, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(txt_tempatLahirPersonil, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                        .addComponent(date_TMTJabatan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(date_TMTTNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(combo_pangkat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(combo_golDarahPersonil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(combo_agamaPersonil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(combo_pendidikanMiliter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(combo_korps, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(date_tglLahirPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -412,7 +401,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txt_agamaPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_agamaPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -420,7 +409,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txt_golDarahPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_golDarahPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -428,15 +417,15 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(txt_korps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_korps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(txt_pangkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo_pangkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_pendidikanMiliter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25))
+                    .addComponent(jLabel25)
+                    .addComponent(combo_pendidikanMiliter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
@@ -456,11 +445,11 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel20)
-                    .addComponent(date_tamatJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date_TMTJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel21)
-                    .addComponent(date_tamatTNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date_TMTTNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
@@ -469,7 +458,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel26)
                     .addComponent(date_tglLahirPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel23)
                     .addComponent(date_TMTPangkatPertama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -491,11 +480,13 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -521,33 +512,13 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_pendidikanPengembangActionPerformed
 
-    private void txt_pendidikanMiliterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pendidikanMiliterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pendidikanMiliterActionPerformed
-
-    private void txt_pangkatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pangkatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pangkatActionPerformed
-
-    private void txt_korpsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_korpsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_korpsActionPerformed
-
     private void txt_jabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_jabatanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_jabatanActionPerformed
 
-    private void txt_golDarahPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_golDarahPersonilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_golDarahPersonilActionPerformed
-
     private void txt_alamatPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_alamatPersonilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_alamatPersonilActionPerformed
-
-    private void txt_agamaPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_agamaPersonilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_agamaPersonilActionPerformed
 
     private void txt_noTeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_noTeleponActionPerformed
         // TODO add your handling code here:
@@ -594,24 +565,24 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
 
     private void btnInsertPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPersonilActionPerformed
         String NRP = txt_NRPPersonil.getText();
-        String agamaPersonil = txt_agamaPersonil.getText();
-        String golDarahPersonil = txt_golDarahPersonil.getText(); 
+        String agamaPersonil = combo_agamaPersonil.getSelectedItem().toString();
+        String golDarahPersonil = combo_golDarahPersonil.getSelectedItem().toString(); 
         String jabatan = txt_jabatan.getText();
-        String korps = txt_korps.getText();
+        String korps = combo_korps.getSelectedItem().toString();
         String namaPersonil = txt_namaPersonil.getText();
         String noASABRI = txt_noASABRI.getText();
         String noBPJS = txt_noBPJS.getText();
         String noKTA = txt_noKTA.getText();
         String noNPWP = txt_noNPWP.getText();
         String noTelepon = txt_noTelepon.getText();
-        String pangkat = txt_pangkat.getText();
-        String penMiliter = txt_pendidikanMiliter.getText();
+        String pangkat = combo_pangkat.getSelectedItem().toString();
+        String penMiliter = combo_pendidikanMiliter.getSelectedItem().toString();
         String penPengembang = txt_pendidikanPengembang.getText(); 
         String penUmum = txt_pendidikanUmum.getText();
         String statusKeluarga = txt_statusKeluarga.getText();
         String statusRumah = txt_statusRumah.getText();
-        Date tamatJabatan = date_tamatJabatan.getDate();
-        Date tamatTNI = date_tamatTNI.getDate();
+        Date tamatJabatan = date_TMTJabatan.getDate();
+        Date tamatTNI = date_TMTTNI.getDate();
         String tmptLahirPersonil = txt_tempatLahirPersonil.getText();
 //        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
 //        String tglLahirPersonil= fmt.format(this.date_tanggalLahirPersonil.getDate());
@@ -682,10 +653,15 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     private javax.swing.JButton btnInsertPersonil;
     private javax.swing.JButton button_insert_tambah_anak;
     private javax.swing.JButton button_insert_tambah_istri;
+    private javax.swing.JComboBox<String> combo_agamaPersonil;
+    private javax.swing.JComboBox<String> combo_golDarahPersonil;
+    private javax.swing.JComboBox<String> combo_korps;
+    private javax.swing.JComboBox<String> combo_pangkat;
+    private javax.swing.JComboBox<String> combo_pendidikanMiliter;
+    private com.toedter.calendar.JDateChooser date_TMTJabatan;
     private com.toedter.calendar.JDateChooser date_TMTPangkatPertama;
     private com.toedter.calendar.JDateChooser date_TMTPangkatTerakhir;
-    private com.toedter.calendar.JDateChooser date_tamatJabatan;
-    private com.toedter.calendar.JDateChooser date_tamatTNI;
+    private com.toedter.calendar.JDateChooser date_TMTTNI;
     private com.toedter.calendar.JDateChooser date_tglLahirPersonil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -715,19 +691,14 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTextField txt_NRPPersonil;
-    private javax.swing.JTextField txt_agamaPersonil;
     private javax.swing.JTextField txt_alamatPersonil;
-    private javax.swing.JTextField txt_golDarahPersonil;
     private javax.swing.JTextField txt_jabatan;
-    private javax.swing.JTextField txt_korps;
     private javax.swing.JTextField txt_namaPersonil;
     private javax.swing.JTextField txt_noASABRI;
     private javax.swing.JTextField txt_noBPJS;
     private javax.swing.JTextField txt_noKTA;
     private javax.swing.JTextField txt_noNPWP;
     private javax.swing.JTextField txt_noTelepon;
-    private javax.swing.JTextField txt_pangkat;
-    private javax.swing.JTextField txt_pendidikanMiliter;
     private javax.swing.JTextField txt_pendidikanPengembang;
     private javax.swing.JTextField txt_pendidikanUmum;
     private javax.swing.JTextField txt_statusKeluarga;

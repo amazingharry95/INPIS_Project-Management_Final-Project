@@ -23,12 +23,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="466" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="1" pref="466" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" min="-2" pref="545" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jScrollPane1" pref="903" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,11 +51,11 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -88,30 +91,32 @@
                                           <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel26" alignment="0" pref="160" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txt_NRPPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_noASABRI" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_noBPJS" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_noKTA" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_noNPWP" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_noTelepon" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_agamaPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_alamatPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_golDarahPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_jabatan" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_korps" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_pangkat" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_pendidikanUmum" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_pendidikanMiliter" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_pendidikanPengembang" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_statusKeluarga" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_statusRumah" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="txt_tempatLahirPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="date_tamatJabatan" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="date_tamatTNI" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="date_tglLahirPersonil" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txt_namaPersonil" alignment="1" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txt_NRPPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_noASABRI" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_noBPJS" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_noKTA" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_noNPWP" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_noTelepon" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_alamatPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_jabatan" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_pendidikanUmum" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_pendidikanPengembang" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_statusKeluarga" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_statusRumah" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="txt_tempatLahirPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
+                                              <Component id="date_TMTJabatan" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="date_TMTTNI" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txt_namaPersonil" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="combo_pangkat" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="combo_golDarahPersonil" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="combo_agamaPersonil" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="combo_pendidikanMiliter" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="combo_korps" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="date_tglLahirPersonil" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -126,7 +131,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -175,7 +180,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_agamaPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_agamaPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -185,7 +190,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_golDarahPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_golDarahPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -195,17 +200,17 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_korps" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_korps" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_pangkat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_pangkat" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txt_pendidikanMiliter" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_pendidikanMiliter" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -230,12 +235,12 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                          <Component id="date_tamatJabatan" min="-2" max="-2" attributes="0"/>
+                          <Component id="date_TMTJabatan" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                          <Component id="date_tamatTNI" min="-2" max="-2" attributes="0"/>
+                          <Component id="date_TMTTNI" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -247,7 +252,7 @@
                           <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                           <Component id="date_tglLahirPersonil" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                           <Component id="date_TMTPangkatPertama" min="-2" max="-2" attributes="0"/>
@@ -274,6 +279,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="36" style="0"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="DATA PERSONIL"/>
               </Properties>
             </Component>
@@ -364,12 +370,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tamat Jabatan :"/>
+                <Property name="text" type="java.lang.String" value="TMT Jabatan :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tamat TNI :"/>
+                <Property name="text" type="java.lang.String" value="TMT TNI :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
@@ -454,39 +460,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_noTeleponActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_agamaPersonil">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_agamaPersonilActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txt_alamatPersonil">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_alamatPersonilActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_golDarahPersonil">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_golDarahPersonilActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txt_jabatan">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_jabatanActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_korps">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_korpsActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_pangkat">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_pangkatActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_pendidikanMiliter">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_pendidikanMiliterActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_pendidikanPengembang">
@@ -519,12 +500,12 @@
                 <Property name="text" type="java.lang.String" value="Tanggal Lahir Personil :"/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="date_tamatJabatan">
+            <Component class="com.toedter.calendar.JDateChooser" name="date_TMTJabatan">
               <Properties>
                 <Property name="dateFormatString" type="java.lang.String" value="dd-MM-yyyy"/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="date_tamatTNI">
+            <Component class="com.toedter.calendar.JDateChooser" name="date_TMTTNI">
               <Properties>
                 <Property name="dateFormatString" type="java.lang.String" value="dd-MM-yyyy"/>
               </Properties>
@@ -543,6 +524,112 @@
               <Properties>
                 <Property name="dateFormatString" type="java.lang.String" value="dd-MM-yyyy"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_pangkat">
+              <Properties>
+                <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="18">
+                    <StringItem index="0" value="Kolonel"/>
+                    <StringItem index="1" value="Letkol"/>
+                    <StringItem index="2" value="Mayor"/>
+                    <StringItem index="3" value="Kapten"/>
+                    <StringItem index="4" value="Lettu"/>
+                    <StringItem index="5" value="Letda"/>
+                    <StringItem index="6" value="Peltu"/>
+                    <StringItem index="7" value="Pelda"/>
+                    <StringItem index="8" value="Serma"/>
+                    <StringItem index="9" value="Serka"/>
+                    <StringItem index="10" value="Sertu"/>
+                    <StringItem index="11" value="Serda"/>
+                    <StringItem index="12" value="Kopka"/>
+                    <StringItem index="13" value="Koptu"/>
+                    <StringItem index="14" value="Kopda"/>
+                    <StringItem index="15" value="Klk"/>
+                    <StringItem index="16" value="Kls"/>
+                    <StringItem index="17" value="Kld"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_golDarahPersonil">
+              <Properties>
+                <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="-"/>
+                    <StringItem index="1" value="A"/>
+                    <StringItem index="2" value="B"/>
+                    <StringItem index="3" value="AB"/>
+                    <StringItem index="4" value="O"/>
+                    <StringItem index="5" value=" "/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_agamaPersonil">
+              <Properties>
+                <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="-"/>
+                    <StringItem index="1" value="Islam"/>
+                    <StringItem index="2" value="Kristen"/>
+                    <StringItem index="3" value="Katolik"/>
+                    <StringItem index="4" value="Hindu"/>
+                    <StringItem index="5" value="Budha"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_pendidikanMiliter">
+              <Properties>
+                <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="AAL"/>
+                    <StringItem index="1" value="SEPA PK"/>
+                    <StringItem index="2" value="Dik Tukpa Reg"/>
+                    <StringItem index="3" value="Dik Tukba Reg"/>
+                    <StringItem index="4" value="Dik Tukba"/>
+                    <StringItem index="5" value="Dik Cata"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_korps">
+              <Properties>
+                <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="-"/>
+                    <StringItem index="1" value="(P)"/>
+                    <StringItem index="2" value="(T)"/>
+                    <StringItem index="3" value="(S)"/>
+                    <StringItem index="4" value="(KH)"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
