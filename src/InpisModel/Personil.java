@@ -199,9 +199,9 @@ public class Personil {
             String sql = "Update personil set AGAMA_PERSONIL='"+agamaPersonil+"', GOL_DARAH_PERSONIL='"+golDarahPersonil+"', JABATAN='"
                     +jabatan+"', KORPS='"+korps+"', NAMA_PERSONIL='"+namaPersonil+"', NO_ASABRI='"+noASABRI+"', NO_BPJS='"+noBPJS+"', NO_KTA='"
                     +noKTA+"', NO_NPWP='"+noNPWP+"', NO_TELPON='"+noTelepon+"', PANGKAT='"+pangkat+"', PENDIDIKAN_MILITER='"+penMiliter+"', PENDIDIKAN_PENGEMBANG='"
-                    +penPengembang+"', PENDIDIKAN_UMUM='"+penUmum+"', STATUS_KELUARGA='"+statusKeluarga+"', STATUS_RUMAH='"+statusRumah+"', TMT_JABATAN=DATE(STR_TO_DATE('"+tamatJabatan+"', '%Y-%m-%d'))"+
-                    ", TMT_TNI=DATE(STR_TO_DATE('"+tamatTNI+"', '%Y-%m-%d'))"+",TANGGAL_LAHIR_PERSONIL=DATE(STR_TO_DATE('"+tglLahirPersonil+"', '%d-%m-%Y'))"+",TEMPAT_LAHIR_PERSONIL='"+tmptLahirPersonil+"', TMT_PANGKAT_PERTAMA=DATE(STR_TO_DATE('"+tmtPangkatPertama+"', '%Y-%m-%d'))"+
-                    ", TMT_PANGKAT_TERAKHIR=DATE(STR_TO_DATE('"+tamatTNI+"', '%Y-%m-%d'))"+", ALAMAT_PERSONIL='"+alamatPersonil+"' where NRP='"+NRP+"'";
+                    +penPengembang+"', PENDIDIKAN_UMUM='"+penUmum+"', STATUS_KELUARGA='"+statusKeluarga+"', STATUS_RUMAH='"+statusRumah+"', TMT_JABATAN=DATE(STR_TO_DATE('"+tamatJabatan+"', '%d-%m-%Y'))"+
+                    ", TMT_TNI=DATE(STR_TO_DATE('"+tamatTNI+"', '%d-%m-%Y'))"+",TANGGAL_LAHIR_PERSONIL=DATE(STR_TO_DATE('"+tglLahirPersonil+"', '%d-%m-%Y'))"+",TEMPAT_LAHIR_PERSONIL='"+tmptLahirPersonil+"', TMT_PANGKAT_PERTAMA=DATE(STR_TO_DATE('"+tmtPangkatPertama+"', '%d-%m-%Y'))"+
+                    ", TMT_PANGKAT_TERAKHIR=DATE(STR_TO_DATE('"+tamatTNI+"', '%d-%m-%Y'))"+", ALAMAT_PERSONIL='"+alamatPersonil+"' where NRP='"+NRP+"'";
             pst = conn.prepareStatement(sql);
             status = pst.executeUpdate();
             //JOptionPane.showMessageDialog(null, "EDIT BERHASIL");

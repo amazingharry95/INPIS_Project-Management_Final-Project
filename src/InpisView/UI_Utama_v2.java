@@ -263,9 +263,17 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             //Date tanggalLahirPersonil = DATE(STR_TO_DATE(tanggalLahir, '%Y-%m-%d'));
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             String dateInString = Personil.get(10);
-            System.out.println("ini atas:"+dateInString);
+            String dateJabatan = Personil.get(5);
+            String dateTNI = Personil.get(6);
+            String datepertama = Personil.get(7);
+            String dateterakhir = Personil.get(8);
             Date tanggalLahir = formatter.parse(dateInString);
-            System.out.println("ini akhir:"+tanggalLahir);
+            Date tmtjabatan = formatter.parse(dateJabatan);
+            Date tmttni = formatter.parse(dateTNI);
+            Date tmtpertama = formatter.parse(datepertama);
+            Date tmtterakhir = formatter.parse(dateterakhir);
+           //System.out.println("ini akhir:"+tanggalLahir);
+            //System.out.println("ini atas:"+dateInString);
             
             
             this.jtRowData.setVisible(true);
@@ -276,10 +284,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             this.jtRowData.jTextField_Korps.setText(Personil.get(2));
             this.jtRowData.jTextField_NRP.setText(Personil.get(3));
             this.jtRowData.jTextField_Jabatan.setText(Personil.get(4));
-            this.jtRowData.jTextField_TamatJabatan.setText(Personil.get(5));
-            this.jtRowData.jTextField_TamatTNI.setText(Personil.get(6));
-            this.jtRowData.jTextField_TamatPangkatPertama.setText(Personil.get(7));
-            this.jtRowData.jTextField_TamatPangkatTerakhir.setText(Personil.get(8));
+            this.jtRowData.jabatan.setDate(tmtjabatan);
+            this.jtRowData.tmttni.setDate(tmttni);
+            this.jtRowData.pangkatpertama.setDate(tmtpertama);
+            this.jtRowData.pangkatterakhir.setDate(tmtterakhir);
             this.jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
             this.jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
             this.jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
