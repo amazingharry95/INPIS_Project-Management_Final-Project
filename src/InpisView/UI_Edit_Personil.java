@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import InpisController.ControlMaster;
 import InpisModel.Personil;
 import java.text.DateFormat;
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -488,29 +489,33 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
            this.jtRowDataIstri.pack();
            
             //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-           this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(0));
-           this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(1));
-           this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(2));
-           this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(3));
-           this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(4));
-           this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(5));
-           this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(6));
-           this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(7));
-           this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(8));
-           this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(9));
-           this.jtRowDataIstri.hobi_2.setText(Istri.get(10));
+           this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(1));
+           this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(2));
+           this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(3));
            this.jtRowDataIstri.date_tglLahirIstri.setDate(lahirIstriTanggal);
+           this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(5));
+           this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(6));
+           this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(7));
+           this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(8));
+           this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(9));
+           this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(10));
+           this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(11));
+           this.jtRowDataIstri.hobi_2.setText(Istri.get(12));
+           
+      
             
-            
-            
-            
-        }catch(Exception e){
+           
+            }catch(Exception e){
             
         }
     }//GEN-LAST:event_lihatIstriActionPerformed
 
     private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
         // TODO add your handling code here:
+        Format formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date tanggalLahirPersonil = this.jDateChooser_tanggalLahir.getDate();
+        String tanggalLahir = formatter.format(tanggalLahirPersonil);
+        
         String nrp = jTextField_NRP.getText();
         String agama = this.jTextField_Agama.getText();
         String golDarah = this.jTextField_GolonganDarah.getText();
@@ -530,8 +535,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         String statusRumah = this.jTextField_StatusRumah.getText();
         String tmtJabatan = this.jTextField_TamatJabatan.getText();
         String tmtTNI = this.jTextField_TamatTNI.getText();
-        String tmptLahir = this.jTextField_TempatLahir.getText();
-        String tanggalLahir = this.jDateChooser_tanggalLahir.getDateFormatString();
+        String tmptLahir = this.jTextField_TempatLahir.getText();    
+        //String tanggalLahir = 
+        System.out.println(tanggalLahir);
         String tmtPangkatPertama = this.jTextField_TamatPangkatPertama.getText();
         String tmtPangkatTerakhir = this.jTextField_TamatPangkatTerakhir.getText();
         String alamat = this.jTextField_Alamat.getText();

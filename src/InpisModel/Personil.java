@@ -200,7 +200,7 @@ public class Personil {
                     +jabatan+"', KORPS='"+korps+"', NAMA_PERSONIL='"+namaPersonil+"', NO_ASABRI='"+noASABRI+"', NO_BPJS='"+noBPJS+"', NO_KTA='"
                     +noKTA+"', NO_NPWP='"+noNPWP+"', NO_TELPON='"+noTelepon+"', PANGKAT='"+pangkat+"', PENDIDIKAN_MILITER='"+penMiliter+"', PENDIDIKAN_PENGEMBANG='"
                     +penPengembang+"', PENDIDIKAN_UMUM='"+penUmum+"', STATUS_KELUARGA='"+statusKeluarga+"', STATUS_RUMAH='"+statusRumah+"', TMT_JABATAN=DATE(STR_TO_DATE('"+tamatJabatan+"', '%Y-%m-%d'))"+
-                    ", TMT_TNI=DATE(STR_TO_DATE('"+tamatTNI+"', '%Y-%m-%d'))"+",TANGGAL_LAHIR_PERSONIL=DATE(STR_TO_DATE('"+tglLahirPersonil+"', '%Y-%m-%d'))"+",TEMPAT_LAHIR_PERSONIL='"+tmptLahirPersonil+"', TMT_PANGKAT_PERTAMA=DATE(STR_TO_DATE('"+tmtPangkatPertama+"', '%Y-%m-%d'))"+
+                    ", TMT_TNI=DATE(STR_TO_DATE('"+tamatTNI+"', '%Y-%m-%d'))"+",TANGGAL_LAHIR_PERSONIL=DATE(STR_TO_DATE('"+tglLahirPersonil+"', '%d-%m-%Y'))"+",TEMPAT_LAHIR_PERSONIL='"+tmptLahirPersonil+"', TMT_PANGKAT_PERTAMA=DATE(STR_TO_DATE('"+tmtPangkatPertama+"', '%Y-%m-%d'))"+
                     ", TMT_PANGKAT_TERAKHIR=DATE(STR_TO_DATE('"+tamatTNI+"', '%Y-%m-%d'))"+", ALAMAT_PERSONIL='"+alamatPersonil+"' where NRP='"+NRP+"'";
             pst = conn.prepareStatement(sql);
             status = pst.executeUpdate();

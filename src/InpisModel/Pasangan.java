@@ -129,4 +129,21 @@ public class Pasangan {
         }
         return rs;
     }
+    
+    public int updateDataIstri(String nrp, String nama, String tmptLahir, 
+            Date tanggalLahir, String agama, String golDarah, String KPI, String KTA, String metodeKB, String pendidikanTerakhir, String hobby1, String hobby2){
+       int status = 0;
+       try{
+            String sql = "Updtae pasangan set NAMA='"+nama+"', TEMPAT_LAHIR='"+tmptLahir+"', TANGGAL_LAHIR='"+tanggalLahir+"', AGAMA='"+agama+"', GOL_DARAH='"+golDarah
+                          +"', KPI='"+KPI+"', KTA_JALASENASTRI='"+KTA+"', METODE_KB='"+metodeKB+"', PENDIDIKAN_TERAKHIR='"+pendidikanTerakhir+"', HOBBY1='"+hobby1
+                          +"', HOBBY2='"+hobby2+"' where NRP='"+nrp+"'";
+            pst = conn.prepareStatement(sql);
+            status = pst.executeUpdate();
+       }catch(Exception e){
+           JOptionPane.showMessageDialog(null, e);
+           status = 0;
+       }
+       
+       return status;
+    }
 }

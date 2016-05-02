@@ -261,9 +261,11 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             //if(evt.getClickCount() == 2){
             //String tanggalLahir = Personil.get(10);
             //Date tanggalLahirPersonil = DATE(STR_TO_DATE(tanggalLahir, '%Y-%m-%d'));
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             String dateInString = Personil.get(10);
+            System.out.println("ini atas:"+dateInString);
             Date tanggalLahir = formatter.parse(dateInString);
+            System.out.println("ini akhir:"+tanggalLahir);
             
             
             this.jtRowData.setVisible(true);
@@ -282,7 +284,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             this.jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
             this.jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
             this.jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
-            //ini pendidikan pengembangan
+            this.jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(13));//ini pendidikan pengembangan
             this.jtRowData.jTextField_Agama.setText(Personil.get(14));
             this.jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
             this.jtRowData.jTextField_NoKTA.setText(Personil.get(16));
