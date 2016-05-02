@@ -64,7 +64,7 @@ public class ControlMaster {
     }
     
     //control untuk login
-    public ResultSet Login(String username, String password) {
+    public List<String> Login(String username, String password) {
         return admin.Login(username, password);
     }
     
