@@ -6,6 +6,8 @@
 package InpisView;
 
 import InpisController.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.WindowConstants;
 //import javax.swing.table.DefaultTableModel;
@@ -257,6 +259,12 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
             
             //if(evt.getClickCount() == 2){
+            //String tanggalLahir = Personil.get(10);
+            //Date tanggalLahirPersonil = DATE(STR_TO_DATE(tanggalLahir, '%Y-%m-%d'));
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+            String dateInString = Personil.get(10);
+            Date tanggalLahir = formatter.parse(dateInString);
+            
             
             this.jtRowData.setVisible(true);
             this.jtRowData.pack();
@@ -271,7 +279,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             this.jtRowData.jTextField_TamatPangkatPertama.setText(Personil.get(7));
             this.jtRowData.jTextField_TamatPangkatTerakhir.setText(Personil.get(8));
             this.jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
-            this.jtRowData.jTextField_TanggalLahir.setText(Personil.get(10));
+            this.jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
             this.jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
             this.jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
             //ini pendidikan pengembangan
