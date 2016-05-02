@@ -71,6 +71,15 @@ public class ControlMaster {
     public Boolean deletePersonil(String nrp){
         return personil.deletePersonil(nrp);
     }
+    
+    public int updatePersonil(String NRP, String agamaPersonil, String golDarahPersonil, String jabatan, 
+            String korps, String namaPersonil, String noASABRI, String noBPJS, String noKTA, String noNPWP, 
+            String noTelepon, String pangkat, String penMiliter, String penPengembang, String penUmum, 
+            String statusKeluarga, String statusRumah, String tamatJabatan, 
+            String tamatTNI, String tglLahirPersonil, String tmptLahirPersonil, 
+            String tmtPangkatPertama, String tmtPangkatTerakhir, String alamatPersonil){
+        return personil.updatePersonil(NRP, agamaPersonil, golDarahPersonil, jabatan, korps, namaPersonil, noASABRI, noBPJS, noKTA, noNPWP, noTelepon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah, tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir, alamatPersonil);
+    }
         
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {
