@@ -434,6 +434,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void buttonDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDeleteMouseClicked
@@ -454,33 +455,21 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
            String nrp = jTextField_NRP.getText();
-           /*List<String> Istri = new ArrayList<String>();
-            Istri = ControlMaster.ambilDataIstrilbyID(nrp);*/
-          // System.out.println("Masuk sini");
            List<String> Istri = controlMaster.ambilDataIstrilbyID(nrp);
-           System.out.println("Data istri:"+Istri);
            String lahirIstri = Istri.get(4);
-           System.out.println("Atas tangal");
-           System.out.println("Lahir Istri: "+lahirIstri);
+           SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+           String dateIstri = Istri.get(4);
+           Date tanggalLahirIstri = formatter.parse(dateIstri);
            //java.util.Date lahirIstriTanggal = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
-           DateFormat lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-           Date lahirIstriTanggal = lahirIstriDate.parse(lahirIstri);
-           System.out.println("Tangal Lahir istri: " + lahirIstriTanggal);
+           //DateFormat lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+           //Date lahirIstriTanggal = lahirIstriDate.parse(lahirIstri);
           
-           
-           
-           
-           //System.out.println(lahirIstriDate);
-          
-           System.out.println("masuk bawah tabwl"); 
            this.jtRowDataIstri.setVisible(true);
            this.jtRowDataIstri.pack();
-           
-            //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
            this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(1));
            this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(2));
            this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(3));
-           this.jtRowDataIstri.date_tglLahirIstri.setDate(lahirIstriTanggal);
+           this.jtRowDataIstri.date_tglLahirIstri.setDate(tanggalLahirIstri);
            this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(5));
            this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(6));
            this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(7));
@@ -489,10 +478,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
            this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(10));
            this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(11));
            this.jtRowDataIstri.hobi_2.setText(Istri.get(12));
-           
-      
-            
-           
             }catch(Exception e){
             
         }

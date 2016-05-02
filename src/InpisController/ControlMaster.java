@@ -50,10 +50,10 @@ public class ControlMaster {
                 tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
     }
     
-    public ResultSet EditIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
+    public int EditIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
             String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
-            Date tglLahirIstri, String hobi1, String hobi2) {
-        return istri.setIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
+            String tglLahirIstri, String hobi1, String hobi2) {
+        return istri.updateDataIstri(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
                 tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
     }
             
