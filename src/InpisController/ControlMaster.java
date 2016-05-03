@@ -29,6 +29,9 @@ public class ControlMaster {
     public List<String> ambilDataIstrilbyID(String nrp){
         return istri.getIstribyID(nrp);
     }
+    public List<String> ambilDataAnaklbyID(String nrp){
+        return anak.getAnakbyID(nrp);
+    }
     
     //control untuk insert data Personil
     public ResultSet InsertPersonilData(String NRP, String agamaPersonil, String golDarahPersonil, String jabatan, String korps, 
@@ -55,6 +58,10 @@ public class ControlMaster {
             String tglLahirIstri, String hobi1, String hobi2) {
         return istri.updateDataIstri(NRP, namaIstri, tmptLahirIstri, tglLahirIstri, agamaIstri, golDarahIstri, KPIIstri, 
                 KTAJalasenastri, metodeKb, penTerakhirIstri, hobi1, hobi2);
+    }
+    
+    public int EditAnakData(String NRP, String NamaAnak,String IDAnak,String tglLahirAnak, String tmptlahiranak) {
+        return anak.updateDataAnak(NRP, NamaAnak,IDAnak,tglLahirAnak,tmptlahiranak);
     }
             
     //control untuk insert data Anak

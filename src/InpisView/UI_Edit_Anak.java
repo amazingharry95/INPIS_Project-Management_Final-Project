@@ -5,12 +5,18 @@
  */
 package InpisView;
 
+import InpisController.ControlMaster;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
  */
 public class UI_Edit_Anak extends javax.swing.JFrame {
-
+ControlMaster controlMaster = new ControlMaster();
     /**
      * Creates new form UI_Edit_Anak
      */
@@ -39,6 +45,8 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
         tf_nrp_anak = new javax.swing.JTextField();
         tf_ttl_anak = new javax.swing.JTextField();
         button_simpan_ubah_anak = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        date_anak = new com.toedter.calendar.JDateChooser();
 
         jLabel4.setText("jLabel4");
 
@@ -54,15 +62,15 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
 
         jLabel8.setText("NRP :");
 
-        jLabel9.setText("Tempat Tanggal Lahir Anak :");
+        jLabel9.setText("Tempat Lahir Anak :");
 
-        TF_ID_Anak.setPreferredSize(new java.awt.Dimension(200, 20));
+        TF_ID_Anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
-        TF_Nama_Anak.setPreferredSize(new java.awt.Dimension(200, 20));
+        TF_Nama_Anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
-        tf_nrp_anak.setPreferredSize(new java.awt.Dimension(200, 20));
+        tf_nrp_anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
-        tf_ttl_anak.setPreferredSize(new java.awt.Dimension(200, 20));
+        tf_ttl_anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
         button_simpan_ubah_anak.setText("Simpan");
         button_simpan_ubah_anak.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +79,8 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Tanggal Lahir Anak :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -78,23 +88,27 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(button_simpan_ubah_anak))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_ttl_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_nrp_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_Nama_Anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_ID_Anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_simpan_ubah_anak)
+                            .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel1))
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_ttl_anak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tf_nrp_anak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Nama_Anak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_ID_Anak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(date_anak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 51, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,22 +117,26 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(TF_ID_Anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(TF_Nama_Anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(tf_nrp_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(tf_ttl_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(date_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(button_simpan_ubah_anak)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -139,6 +157,20 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
 
     private void button_simpan_ubah_anakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_simpan_ubah_anakActionPerformed
         // TODO add your handling code here:
+        Format formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date tanggalLahirAnak = this.date_anak.getDate();
+        String tglLahirAnak = formatter.format(tanggalLahirAnak);
+        String IDAnak = TF_ID_Anak.getText();
+        String NamaAnak = TF_Nama_Anak.getText();
+        String NRP = tf_nrp_anak.getText();
+        String tmptlahiranak = tf_ttl_anak.getText();
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan edit", "Edit Anak", JOptionPane.YES_NO_OPTION);
+        
+        if(p==0){
+            if(this.controlMaster.EditAnakData(NRP, NamaAnak,IDAnak,tglLahirAnak,tmptlahiranak)==1)
+                JOptionPane.showMessageDialog(null, "Berhasil Edit");
+        }
+        
         this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_anakActionPerformed
 
@@ -179,9 +211,11 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TF_ID_Anak;
-    private javax.swing.JTextField TF_Nama_Anak;
+    public javax.swing.JTextField TF_ID_Anak;
+    public javax.swing.JTextField TF_Nama_Anak;
     private javax.swing.JButton button_simpan_ubah_anak;
+    public com.toedter.calendar.JDateChooser date_anak;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -189,7 +223,7 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_data_anak;
-    private javax.swing.JTextField tf_nrp_anak;
-    private javax.swing.JTextField tf_ttl_anak;
+    public javax.swing.JTextField tf_nrp_anak;
+    public javax.swing.JTextField tf_ttl_anak;
     // End of variables declaration//GEN-END:variables
 }

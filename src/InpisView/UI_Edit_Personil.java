@@ -22,6 +22,7 @@ import java.util.Locale;
  */
 public class UI_Edit_Personil extends javax.swing.JFrame {
     UI_Edit_Istri jtRowDataIstri = new UI_Edit_Istri();
+    UI_Edit_Anak rowAnak= new UI_Edit_Anak(); 
 
     /**
      * Creates new form UI_Edit_Personil
@@ -434,6 +435,23 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try{
+           String nrp = jTextField_NRP.getText();
+           List<String> Anak = controlMaster.ambilDataAnaklbyID(nrp);
+           SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+           String dateAnak = Anak.get(4);
+           Date tanggalLahirAnak = formatter.parse(dateAnak);
+ 
+           this.rowAnak.setVisible(true);
+           this.rowAnak.pack();
+           this.rowAnak.TF_ID_Anak.setText(Anak.get(0));
+           this.rowAnak.tf_nrp_anak.setText(Anak.get(1));
+           this.rowAnak.TF_Nama_Anak.setText(Anak.get(2));
+           this.rowAnak.date_anak.setDate(tanggalLahirAnak);
+           this.rowAnak.tf_ttl_anak.setText(Anak.get(3));
+            }catch(Exception e){
+            
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
