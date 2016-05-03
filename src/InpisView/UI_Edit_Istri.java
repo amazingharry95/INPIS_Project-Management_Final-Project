@@ -307,6 +307,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         
         controlMaster.EditIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, 
                 metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2);
+        this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_istriActionPerformed
 
     private void TextField_kpi_istriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_kpi_istriActionPerformed

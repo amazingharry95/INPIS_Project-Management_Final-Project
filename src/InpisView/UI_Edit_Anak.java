@@ -139,6 +139,7 @@ public class UI_Edit_Anak extends javax.swing.JFrame {
 
     private void button_simpan_ubah_anakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_simpan_ubah_anakActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_anakActionPerformed
 
     /**

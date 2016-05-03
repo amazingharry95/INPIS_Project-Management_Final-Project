@@ -260,6 +260,7 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         
         controlMaster.InsertIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, 
                 metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2);
+        this.dispose();
     }//GEN-LAST:event_button_simpan_insert_istriActionPerformed
 
     /**

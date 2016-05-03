@@ -148,6 +148,7 @@ public class UI_Insert_Anak extends javax.swing.JFrame {
         Date tglLahirAnak = date_tglLahirAnak.getDate();
         
         controlMaster.InsertAnakData(NRP, tglLahirAnak, tmptLahirAnak, namaAnak);
+        this.dispose();
     }//GEN-LAST:event_button_simpan_insert_anakActionPerformed
 
     /**

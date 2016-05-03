@@ -528,6 +528,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
             if(this.controlMaster.updatePersonil(nrp, agama, golDarah, jabatan, korps, nama, noASABRI, noBPJS, noKTA, noNPWP, noTelpon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah, tmtJabatan, tmtTNI, tanggalLahir, tmptLahir, tmtpertama, tmtterakhir, alamat)==1)
                 JOptionPane.showMessageDialog(null, "Berhasil Edit");
         }
+        this.dispose();
     }//GEN-LAST:event_buttonSimpanActionPerformed
 
     /**
