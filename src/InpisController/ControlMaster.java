@@ -53,8 +53,8 @@ public class ControlMaster {
     public int EditIstriData(String NRP, String agamaIstri, String golDarahIstri, String KPIIstri, 
             String KTAJalasenastri, String metodeKb, String penTerakhirIstri, String tmptLahirIstri, String namaIstri,
             String tglLahirIstri, String hobi1, String hobi2) {
-        return istri.updateDataIstri(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, 
-                tmptLahirIstri, tglLahirIstri, namaIstri, hobi1, hobi2);
+        return istri.updateDataIstri(NRP, namaIstri, tmptLahirIstri, tglLahirIstri, agamaIstri, golDarahIstri, KPIIstri, 
+                KTAJalasenastri, metodeKb, penTerakhirIstri, hobi1, hobi2);
     }
             
     //control untuk insert data Anak

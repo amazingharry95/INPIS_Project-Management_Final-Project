@@ -449,6 +449,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
             if(this.controlMaster.deletePersonil(jTextField_NRP.getText()))
                 JOptionPane.showMessageDialog(null, "Terhapus");
         }
+        this.dispose();
     }//GEN-LAST:event_buttonDeleteActionPerformed
 
     private void lihatIstriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatIstriActionPerformed

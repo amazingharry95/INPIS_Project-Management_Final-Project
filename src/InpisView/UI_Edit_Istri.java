@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -304,9 +305,12 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         //Date tglLahirIstri = date_tglLahirIstri.getDate();
 //        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
        // String tglLahirIstri = fmt.format(this.jDateChooser1.getDate());
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan edit", "Edit Pasangan", JOptionPane.YES_NO_OPTION);
         
-        controlMaster.EditIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, 
-                metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2);
+        if(p==0){
+            if(this.controlMaster.EditIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2)==1)
+                JOptionPane.showMessageDialog(null, "Berhasil Edit");
+        }
         this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_istriActionPerformed
 
