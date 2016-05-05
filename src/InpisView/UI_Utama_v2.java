@@ -9,7 +9,7 @@ import InpisController.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import javax.swing.WindowConstants;
+import java.awt.Toolkit;
 //import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -19,7 +19,6 @@ import net.proteanit.sql.DbUtils;
  */
 
 public class UI_Utama_v2 extends javax.swing.JFrame {
-
     /**
      * Creates new form UI_Utama
      */
@@ -32,6 +31,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     
     public UI_Utama_v2() {
         initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xsize = (int) tk.getScreenSize().getWidth();
+        int ysize = (int) tk.getScreenSize().getHeight();
+        this.setSize(xsize, ysize);
         getAllData();
 //        tabelModel = new DefaultTableModel();
 //        tabelPersonil.setModel(tabelModel);
@@ -89,6 +92,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UI_Utama");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("UI_Utama"); // NOI18N
         setSize(new java.awt.Dimension(1024, 768));
 
@@ -128,27 +132,12 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
 
         tablePersonil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, "Lihat", "Istri", "Anak", "Hapus"}
+
             },
             new String [] {
-                "NRP", "Nama Personil", "Jabatan", "KORPS", "action #1", "action #2", "action #3", "action #4"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tablePersonil.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tablePersonil.setCellSelectionEnabled(true);
         tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -204,7 +193,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                             .addComponent(btnCari))))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCari, btnTambahPersonil});
