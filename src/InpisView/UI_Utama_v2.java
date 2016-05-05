@@ -149,6 +149,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tablePersonil.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tablePersonil.setCellSelectionEnabled(true);
         tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tablePersonil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,7 +204,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                             .addComponent(btnCari))))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCari, btnTambahPersonil});

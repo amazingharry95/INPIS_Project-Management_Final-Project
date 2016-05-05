@@ -27,7 +27,7 @@ public class Personil {
     
     public ResultSet getAllData(){
         try{
-            String sql = "select NRP, NAMA_PERSONIL, JABATAN, KORPS from personil order by NRP";
+            String sql = "select * from personil order by NRP";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
         }catch(Exception e){
