@@ -95,7 +95,7 @@ public class Personil {
 
     public ResultSet cariPersonilByKeyword(String filter, String keyword) {
         try{
-            String sql = "select NRP, NAMA_PERSONIL, JABATAN, KORPS from personil where " + filter + " LIKE '%"+ keyword +"%'";
+            String sql = "select * from personil where " + filter + " LIKE '%"+ keyword +"%'";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
         }catch(Exception e){
