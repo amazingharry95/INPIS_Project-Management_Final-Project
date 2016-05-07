@@ -195,10 +195,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
         jTextField_StatusKeluarga.setText("jTextField24");
 
-        jTextField_Istri.setText("jTextField24");
-
-        jTextField_Anak.setText("jTextField24");
-
         jButton2.setText("LIHAT ANAK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,7 +508,8 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
             }
         }else{
-            lihatIstri.setText("Tambah Istri");
+            UI_Insert_Istri uiInsertIstri = new UI_Insert_Istri();
+            uiInsertIstri.setVisible(true);
         }
     }//GEN-LAST:event_lihatIstriActionPerformed
 
