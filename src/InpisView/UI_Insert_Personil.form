@@ -23,14 +23,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="1" pref="466" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane1" pref="542" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="919" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,83 +57,78 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="69" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="button_insert_tambah_istri" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="button_insert_tambah_anak" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnInsertPersonil" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel11" max="32767" attributes="0"/>
-                                          <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel21" max="32767" attributes="0"/>
-                                          <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txt_NRPPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_noASABRI" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_noBPJS" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_noKTA" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_noNPWP" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_noTelepon" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_alamatPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_jabatan" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_pendidikanUmum" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_pendidikanPengembang" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_statusKeluarga" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_statusRumah" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="txt_tempatLahirPersonil" alignment="0" pref="195" max="32767" attributes="0"/>
-                                              <Component id="date_TMTJabatan" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="date_TMTTNI" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txt_namaPersonil" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="combo_pangkat" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="combo_golDarahPersonil" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="combo_agamaPersonil" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="combo_pendidikanMiliter" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="combo_korps" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel11" max="32767" attributes="0"/>
+                                              <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel21" max="32767" attributes="0"/>
+                                              <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="date_tglLahirPersonil" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel23" max="32767" attributes="0"/>
+                                              <Component id="jLabel24" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel23" max="32767" attributes="0"/>
-                                          <Component id="jLabel24" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="date_TMTPangkatPertama" max="32767" attributes="0"/>
-                                          <Component id="date_TMTPangkatTerakhir" max="32767" attributes="0"/>
+                                          <Component id="txt_namaPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_NRPPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_noASABRI" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_noBPJS" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_noKTA" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_noNPWP" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_noTelepon" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="combo_agamaPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_alamatPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="combo_golDarahPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_jabatan" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="combo_korps" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="combo_pangkat" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="combo_pendidikanMiliter" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_pendidikanPengembang" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_pendidikanUmum" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_statusKeluarga" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_statusRumah" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="date_TMTJabatan" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="date_TMTTNI" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txt_tempatLahirPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="date_tglLahirPersonil" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="date_TMTPangkatPertama" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="date_TMTPangkatTerakhir" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -253,19 +248,19 @@
                           <Component id="txt_tempatLahirPersonil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                          <Component id="date_tglLahirPersonil" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="date_tglLahirPersonil" max="32767" attributes="0"/>
+                          <Component id="jLabel26" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="date_TMTPangkatPertama" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel23" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                          <Component id="date_TMTPangkatTerakhir" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="date_TMTPangkatTerakhir" max="32767" attributes="0"/>
+                          <Component id="jLabel24" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
