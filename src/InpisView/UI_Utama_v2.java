@@ -27,6 +27,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     
     ControlMaster controlMaster = new ControlMaster();
     ControlPencarian controlPencarian = new ControlPencarian();
+    List<String> Personil;
     //UI_Edit_Personil jtRowData = new UI_Edit_Personil();
    
     
@@ -141,12 +142,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             }
         ));
         tablePersonil.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tablePersonil.setCellSelectionEnabled(true);
-        tablePersonil.setColumnSelectionAllowed(true);
         tablePersonil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tablePersonil.setEditingColumn(-1);
-        tablePersonil.setEditingRow(-1);
-        tablePersonil.setRowSelectionAllowed(true);
         tablePersonil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablePersonilMouseClicked(evt);
@@ -247,14 +243,22 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         String keyword = textSearch.getText();
         cariPersonilByKeyword(filter, keyword);
     }//GEN-LAST:event_btnCariActionPerformed
-
+    
+    private List<String> ambilPersonil(String nrp){
+        System.out.println("NRP yang di parsing: "+nrp);
+        return new ControlPencarian().ambilDataPersonilbyID(nrp);
+    }
     private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePersonilMouseClicked
         // TODO add your handling code here:
          try{
             if(evt.getClickCount()==1){
                 int row = tablePersonil.getSelectedRow();
                 String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
-                List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
+                System.out.println("ini yang di click: "+ table_click);
+                System.out.println("Click: "+this.ambilPersonil(table_click));
+                //List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
+                Personil = this.ambilPersonil(table_click);
+                //System.out.println("Personil: "+Personil);
 
                 //if(evt.getClickCount() == 2){
                 //String tanggalLahir = Personil.get(10);
@@ -272,7 +276,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 Date tmtterakhir = formatter.parse(dateterakhir);
                //System.out.println("ini akhir:"+tanggalLahir);
                 //System.out.println("ini atas:"+dateInString);
-                
+                System.out.println("Ini adalah nrp: "+Personil.get(3));
                 
                 UI_Edit_Personil jtRowData = new UI_Edit_Personil();
                 jtRowData.cekPasangan(Personil.get(3));
