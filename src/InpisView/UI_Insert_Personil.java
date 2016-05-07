@@ -270,24 +270,19 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         date_TMTPangkatTerakhir.setDateFormatString("dd-MM-yyyy");
 
         combo_pangkat.setEditable(true);
-        combo_pangkat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kolonel", "Letkol", "Mayor", "Kapten", "Lettu", "Letda", "Peltu", "Pelda", "Serma", "Serka", "Sertu", "Serda", "Kopka", "Koptu", "Kopda", "Klk", "Kls", "Kld" }));
-        combo_pangkat.setSelectedIndex(-1);
+        combo_pangkat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Kolonel", "Letkol", "Mayor", "Kapten", "Lettu", "Letda", "Peltu", "Pelda", "Serma", "Serka", "Sertu", "Serda", "Kopka", "", "", "", "", "-", "Koptu", "Kopda", "Klk", "Kls", "Kld" }));
 
         combo_golDarahPersonil.setEditable(true);
-        combo_golDarahPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "AB", "O", " " }));
-        combo_golDarahPersonil.setSelectedIndex(-1);
+        combo_golDarahPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "-", "A", "B", "AB", "O", "" }));
 
         combo_agamaPersonil.setEditable(true);
-        combo_agamaPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Islam", "Kristen", "Katolik", "Hindu", "Budha" }));
-        combo_agamaPersonil.setSelectedIndex(-1);
+        combo_agamaPersonil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "-", "Islam", "Kristen", "Katolik", "Hindu", "Budha" }));
 
         combo_pendidikanMiliter.setEditable(true);
-        combo_pendidikanMiliter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AAL", "SEPA PK", "Dik Tukpa Reg", "Dik Tukba Reg", "Dik Tukba", "Dik Cata" }));
-        combo_pendidikanMiliter.setSelectedIndex(-1);
+        combo_pendidikanMiliter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "AAL", "SEPA PK", "Dik Tukpa Reg", "Dik Tukba Reg", "Dik Tukba", "Dik Cata" }));
 
         combo_korps.setEditable(true);
-        combo_korps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "(P)", "(T)", "(S)", "(KH)" }));
-        combo_korps.setSelectedIndex(-1);
+        combo_korps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "-", "(P)", "(T)", "(S)", "(KH)" }));
 
         backButton.setText("BACK");
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -603,14 +598,25 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         Date tmtPangkatTerakhir = date_TMTPangkatTerakhir.getDate(); 
         String alamatPersonil = txt_alamatPersonil.getText();
         
-        controlMaster.InsertPersonilData(NRP, agamaPersonil, golDarahPersonil, jabatan, korps, namaPersonil, noASABRI, noBPJS, 
+        if(NRP.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Pastikan NRP Personil sudah diisi dan disimpan terlebih dahulu");
+        }
+        else if(agamaPersonil.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Pastikan Data sudah terisi");
+        }
+        else
+        {
+            controlMaster.InsertPersonilData(NRP, agamaPersonil, golDarahPersonil, jabatan, korps, namaPersonil, noASABRI, noBPJS, 
                 noKTA, noNPWP, noTelepon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah,
                 tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir,
                 alamatPersonil);
-        
-        this.dispose();
+            this.dispose();
        // UI_Utama_v2.dispose();
-        new UI_Utama_v2().setVisible(true);
+            new UI_Utama_v2().setVisible(true);
+        }
+        
         
        
     }//GEN-LAST:event_btnInsertPersonilActionPerformed
