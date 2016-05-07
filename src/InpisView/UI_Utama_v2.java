@@ -91,6 +91,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePersonil = new javax.swing.JTable();
         btnCari = new javax.swing.JButton();
+        buttonRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UI_Utama");
@@ -157,6 +158,13 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             }
         });
 
+        buttonRefresh.setText("Refresh");
+        buttonRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonRefreshMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -169,7 +177,9 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(label_datapersonil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addComponent(buttonRefresh)
+                        .addGap(18, 18, 18)
                         .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,7 +202,8 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                             .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnTambahPersonil)
-                            .addComponent(btnCari))))
+                            .addComponent(btnCari)
+                            .addComponent(buttonRefresh))))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(216, Short.MAX_VALUE))
@@ -350,6 +361,12 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tablePersonilMouseClicked
 
+    private void buttonRefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRefreshMouseClicked
+        // TODO add your handling code here:
+        getAllData();
+      
+    }//GEN-LAST:event_buttonRefreshMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +406,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
     private javax.swing.JButton btnTambahPersonil;
+    private javax.swing.JButton buttonRefresh;
     private javax.swing.JComboBox<String> comboFilter;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

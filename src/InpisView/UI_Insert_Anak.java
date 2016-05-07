@@ -15,7 +15,7 @@ import java.util.Date;
  * @author USER
  */
 public class UI_Insert_Anak extends javax.swing.JFrame {
-
+    static String nrp;
     ControlMaster controlMaster = new ControlMaster();
     
     /**
@@ -25,6 +25,11 @@ public class UI_Insert_Anak extends javax.swing.JFrame {
         initComponents();
     }
 
+        public UI_Insert_Anak(String nrp){
+        initComponents();
+        txt_NRP.setText(nrp);
+        this.nrp = nrp;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -183,7 +188,7 @@ public class UI_Insert_Anak extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UI_Insert_Anak().setVisible(true);
+                new UI_Insert_Anak(nrp).setVisible(true);
             }
         });
     }

@@ -13,13 +13,20 @@ import java.util.Date;
  * @author USER
  */
 public class UI_Insert_Istri extends javax.swing.JFrame {
-
+    static String nrp;
     ControlMaster controlMaster = new ControlMaster();
     /**
      * Creates new form UI_INSERT_ISTRI
      */
     public UI_Insert_Istri() {
         initComponents();
+        //txt_NRP.setText(nrp);
+    }
+    
+    public UI_Insert_Istri(String nrp){
+        initComponents();
+        txt_NRP.setText(nrp);
+        this.nrp = nrp;
     }
 
     /**
@@ -293,7 +300,7 @@ public class UI_Insert_Istri extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new UI_Insert_Istri().setVisible(true);
+                new UI_Insert_Istri(nrp).setVisible(true);
             }
         });
     }

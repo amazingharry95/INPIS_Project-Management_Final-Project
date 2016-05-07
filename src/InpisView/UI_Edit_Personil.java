@@ -159,20 +159,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
         jLabel26.setText("NAMA ANAK");
 
-        jTextField_Nama.setText("jTextField1");
-
-        jTextField_Pangkat.setText("jTextField1");
-
-        jTextField_Korps.setText("jTextField1");
-
-        jTextField_NRP.setText("jTextField1");
-
-        jTextField_Jabatan.setText("jTextField1");
-
-        jTextField_TempatLahir.setText("jTextField1");
-
-        jTextField_PendidikanUmum.setText("jTextField1");
-
         jTextField_PendidikanMiliter.setText("jTextField1");
 
         jTextField_Agama.setText("jTextField1");
@@ -453,9 +439,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
             }
         }else{
-           // UI_Insert_Anak uiInsertAnak = new UI_Insert_Anak();
-           this.rowAnak.setVisible(true);
-           this.rowAnak.tf_nrp_anak.setText(nrp);
+           UI_Insert_Anak uiInsertAnak = new UI_Insert_Anak(nrp);
+            uiInsertAnak.setVisible(true);
+ 
             //uiInsertAnak.setVisible(true);
             //uiInsertAna
         }
@@ -524,7 +510,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
             }
         }else{
-            UI_Insert_Istri uiInsertIstri = new UI_Insert_Istri();
+            UI_Insert_Istri uiInsertIstri = new UI_Insert_Istri(nrp);
             uiInsertIstri.setVisible(true);
             //uiInsertIstri
             //jtRowDataIstri.setVisible(true);
