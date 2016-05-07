@@ -86,4 +86,35 @@ public class Anak {
        
        return status;
     }
+    
+     public Boolean punyaAnak(String nrp){
+        Boolean punya = false;
+        
+        try{
+           // System.out.println("masuk pasnagan");
+            //System.out.println("ini nrp:"+nrp);
+            String sql = "SELECT COUNT(NAMA_ANAK) from anak WHERE NRP='"+nrp+"'";
+            System.out.println("bawah sini");
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            int hasil;
+            if(rs.next()){
+                System.out.println("masuk sini");
+                hasil = rs.getInt(1);
+                System.out.println("hasil"+ hasil);
+                  if(hasil==1){
+                      punya=true;
+                  }
+                       
+            }
+            
+          
+            
+            
+        }catch(Exception e){
+            
+        }
+        
+        return punya;
+    }
 }

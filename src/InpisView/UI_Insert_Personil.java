@@ -96,6 +96,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         combo_agamaPersonil = new javax.swing.JComboBox<>();
         combo_pendidikanMiliter = new javax.swing.JComboBox<>();
         combo_korps = new javax.swing.JComboBox<>();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -288,6 +289,13 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         combo_korps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "(P)", "(T)", "(S)", "(KH)" }));
         combo_korps.setSelectedIndex(-1);
 
+        backButton.setText("BACK");
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -297,7 +305,9 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(178, 178, 178))
+                        .addGap(51, 51, 51)
+                        .addComponent(backButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -369,7 +379,9 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backButton))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -595,8 +607,12 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 noKTA, noNPWP, noTelepon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah,
                 tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir,
                 alamatPersonil);
+        
         this.dispose();
-        new UI_Utama_v2().getAllData();
+       // UI_Utama_v2.dispose();
+        new UI_Utama_v2().setVisible(true);
+        
+       
     }//GEN-LAST:event_btnInsertPersonilActionPerformed
 
     private void button_insert_tambah_istriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_istriActionPerformed
@@ -614,6 +630,13 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_button_insert_tambah_istriActionPerformed
+
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        
+        new UI_Utama_v2().setVisible(true);
+    }//GEN-LAST:event_backButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -652,6 +675,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton btnInsertPersonil;
     private javax.swing.JButton button_insert_tambah_anak;
     private javax.swing.JButton button_insert_tambah_istri;

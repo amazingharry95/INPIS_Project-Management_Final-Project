@@ -227,6 +227,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void btnTambahPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahPersonilActionPerformed
         UI_Insert_Personil ui_personil = new UI_Insert_Personil();
         ui_personil.setVisible(true);
+        this.dispose();
         //this.getAllData();
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
@@ -245,13 +246,13 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCariActionPerformed
     
     private List<String> ambilPersonil(String nrp){
-        System.out.println("NRP yang di parsing: "+nrp);
+        //System.out.println("NRP yang di parsing: "+nrp);
         return new ControlPencarian().ambilDataPersonilbyID(nrp);
     }
     private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePersonilMouseClicked
         // TODO add your handling code here:
          try{
-            if(evt.getClickCount()==1){
+            if(evt.getClickCount()==2){
                 int row = tablePersonil.getSelectedRow();
                 String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
                 System.out.println("ini yang di click: "+ table_click);
@@ -280,6 +281,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 
                 UI_Edit_Personil jtRowData = new UI_Edit_Personil();
                 jtRowData.cekPasangan(Personil.get(3));
+                jtRowData.cekAnak(Personil.get(3));
                 jtRowData.setVisible(true);
                 jtRowData.pack();
                 //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

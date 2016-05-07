@@ -432,22 +432,32 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        try{
-           String nrp = jTextField_NRP.getText();
-           List<String> Anak = controlMaster.ambilDataAnaklbyID(nrp);
-           SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-           String dateAnak = Anak.get(4);
-           Date tanggalLahirAnak = formatter.parse(dateAnak);
- 
+        String nrp = jTextField_NRP.getText();
+        
+        if(controlMaster.punyaAnak(nrp)){
+            try{
+
+               List<String> Anak = controlMaster.ambilDataAnaklbyID(nrp);
+               SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+               String dateAnak = Anak.get(4);
+               Date tanggalLahirAnak = formatter.parse(dateAnak);
+
+               this.rowAnak.setVisible(true);
+               this.rowAnak.pack();
+               this.rowAnak.TF_ID_Anak.setText(Anak.get(0));
+               this.rowAnak.tf_nrp_anak.setText(Anak.get(1));
+               this.rowAnak.TF_Nama_Anak.setText(Anak.get(2));
+               this.rowAnak.date_anak.setDate(tanggalLahirAnak);
+               this.rowAnak.tf_ttl_anak.setText(Anak.get(3));
+                }catch(Exception e){
+
+            }
+        }else{
+           // UI_Insert_Anak uiInsertAnak = new UI_Insert_Anak();
            this.rowAnak.setVisible(true);
-           this.rowAnak.pack();
-           this.rowAnak.TF_ID_Anak.setText(Anak.get(0));
-           this.rowAnak.tf_nrp_anak.setText(Anak.get(1));
-           this.rowAnak.TF_Nama_Anak.setText(Anak.get(2));
-           this.rowAnak.date_anak.setDate(tanggalLahirAnak);
-           this.rowAnak.tf_ttl_anak.setText(Anak.get(3));
-            }catch(Exception e){
-            
+           this.rowAnak.tf_nrp_anak.setText(nrp);
+            //uiInsertAnak.setVisible(true);
+            //uiInsertAna
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -473,6 +483,12 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         if(controlMaster.punyaIstri(nrp)==false){
             System.out.println("masuk sini");
             lihatIstri.setText("Tambah Istri");
+        }
+    }
+    
+    public void cekAnak(String nrp){
+        if(controlMaster.punyaAnak(nrp)==false){
+            jButton2.setText("Tambah Anak");
         }
     }
     private void lihatIstriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatIstriActionPerformed

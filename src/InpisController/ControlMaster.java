@@ -92,7 +92,10 @@ public class ControlMaster {
         System.out.println("masuk master");
         return istri.punyaPasangan(nrp);
     }
-        
+    
+    public Boolean punyaAnak(String nrp){
+        return anak.punyaAnak(nrp);
+    }
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {
 //        return personil.getPersonilbyID(NRP);
