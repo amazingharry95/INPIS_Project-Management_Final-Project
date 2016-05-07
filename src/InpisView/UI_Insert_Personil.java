@@ -596,6 +596,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir,
                 alamatPersonil);
         this.dispose();
+        new UI_Utama_v2().getAllData();
     }//GEN-LAST:event_btnInsertPersonilActionPerformed
 
     private void button_insert_tambah_istriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_insert_tambah_istriActionPerformed

@@ -29,6 +29,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
      */
     public UI_Edit_Personil() {
         initComponents();
+        //cekPasangan();
     }
     
     ControlMaster controlMaster = new ControlMaster();
@@ -103,7 +104,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
         jTextField23.setText("jTextField1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("EDIT PERSONIL");
@@ -470,38 +471,52 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_buttonDeleteActionPerformed
 
+    public void cekPasangan(String nrp){
+        //System.out.println("masuk sini");
+        
+        if(controlMaster.punyaIstri(nrp)==false){
+            System.out.println("masuk sini");
+            lihatIstri.setText("Tambah Istri");
+        }
+    }
     private void lihatIstriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatIstriActionPerformed
         // TODO add your handling code here:
-        try{
-           String nrp = jTextField_NRP.getText();
-           List<String> Istri = controlMaster.ambilDataIstrilbyID(nrp);
-           String lahirIstri = Istri.get(4);
-           SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-           String dateIstri = Istri.get(4);
-           Date tanggalLahirIstri = formatter.parse(dateIstri);
-           //java.util.Date lahirIstriTanggal = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
-           //DateFormat lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-           //Date lahirIstriTanggal = lahirIstriDate.parse(lahirIstri);
-          
-           this.jtRowDataIstri.setVisible(true);
-           this.jtRowDataIstri.pack();
-           this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(1));
-           this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(2));
-           this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(3));
-           this.jtRowDataIstri.date_tglLahirIstri.setDate(tanggalLahirIstri);
-           this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(5));
-           this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(6));
-           this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(7));
-           this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(8));
-           this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(9));
-           this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(10));
-           this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(11));
-           this.jtRowDataIstri.hobi_2.setText(Istri.get(12));
-            }catch(Exception e){
-            
+        String nrp = jTextField_NRP.getText();
+        if(controlMaster.punyaIstri(nrp)){
+            try{
+
+               List<String> Istri = controlMaster.ambilDataIstrilbyID(nrp);
+               //String lahirIstri = Istri.get(4);
+               SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+               String dateIstri = Istri.get(4);
+               Date tanggalLahirIstri = formatter.parse(dateIstri);
+               //java.util.Date lahirIstriTanggal = new SimpleDateFormat("dd-MM-yyyy").parse(lahirIstri);
+               //DateFormat lahirIstriDate = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+               //Date lahirIstriTanggal = lahirIstriDate.parse(lahirIstri);
+
+               this.jtRowDataIstri.setVisible(true);
+               this.jtRowDataIstri.pack();
+               this.jtRowDataIstri.TextField_nrp_istri.setText(Istri.get(1));
+               this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(2));
+               this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(3));
+               this.jtRowDataIstri.date_tglLahirIstri.setDate(tanggalLahirIstri);
+               this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(5));
+               this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(6));
+               this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(7));
+               this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(8));
+               this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(9));
+               this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(10));
+               this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(11));
+               this.jtRowDataIstri.hobi_2.setText(Istri.get(12));
+                }catch(Exception e){
+
+            }
+        }else{
+            lihatIstri.setText("Tambah Istri");
         }
     }//GEN-LAST:event_lihatIstriActionPerformed
 
+    
     private void buttonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanActionPerformed
         // TODO add your handling code here:
         Format formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -548,6 +563,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Berhasil Edit");
         }
         this.dispose();
+        new UI_Utama_v2().getAllData();
     }//GEN-LAST:event_buttonSimpanActionPerformed
 
     /**

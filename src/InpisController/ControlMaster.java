@@ -87,6 +87,11 @@ public class ControlMaster {
             String tmtPangkatPertama, String tmtPangkatTerakhir, String alamatPersonil){
         return personil.updatePersonil(NRP, agamaPersonil, golDarahPersonil, jabatan, korps, namaPersonil, noASABRI, noBPJS, noKTA, noNPWP, noTelepon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah, tamatJabatan, tamatTNI, tglLahirPersonil, tmptLahirPersonil, tmtPangkatPertama, tmtPangkatTerakhir, alamatPersonil);
     }
+    
+    public Boolean punyaIstri(String nrp){
+        System.out.println("masuk master");
+        return istri.punyaPasangan(nrp);
+    }
         
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {

@@ -27,7 +27,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     
     ControlMaster controlMaster = new ControlMaster();
     ControlPencarian controlPencarian = new ControlPencarian();
-    UI_Edit_Personil jtRowData = new UI_Edit_Personil();
+    //UI_Edit_Personil jtRowData = new UI_Edit_Personil();
    
     
     public UI_Utama_v2() {
@@ -46,7 +46,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
 //        loadTabelPersonil();
     }
     
-    private void getAllData(){
+    public void getAllData(){
         tablePersonil.setModel(DbUtils.resultSetToTableModel(controlMaster.getPersonilData()));
     }
  
@@ -231,6 +231,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void btnTambahPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahPersonilActionPerformed
         UI_Insert_Personil ui_personil = new UI_Insert_Personil();
         ui_personil.setVisible(true);
+        //this.getAllData();
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
     private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed
@@ -271,8 +272,41 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 Date tmtterakhir = formatter.parse(dateterakhir);
                //System.out.println("ini akhir:"+tanggalLahir);
                 //System.out.println("ini atas:"+dateInString);
-
-
+                
+                
+                UI_Edit_Personil jtRowData = new UI_Edit_Personil();
+                jtRowData.cekPasangan(Personil.get(3));
+                jtRowData.setVisible(true);
+                jtRowData.pack();
+                //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                jtRowData.jTextField_Nama.setText(Personil.get(0));
+                jtRowData.jTextField_Pangkat.setText(Personil.get(1));
+                jtRowData.jTextField_Korps.setText(Personil.get(2));
+                jtRowData.jTextField_NRP.setText(Personil.get(3));
+                jtRowData.jTextField_Jabatan.setText(Personil.get(4));
+                jtRowData.jabatan.setDate(tmtjabatan);
+                jtRowData.tmttni.setDate(tmttni);
+                jtRowData.pangkatpertama.setDate(tmtpertama);
+                jtRowData.pangkatterakhir.setDate(tmtterakhir);
+                jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
+                jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
+                jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
+                jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
+                jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(13));//ini pendidikan pengembangan
+                jtRowData.jTextField_Agama.setText(Personil.get(14));
+                jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
+                jtRowData.jTextField_NoKTA.setText(Personil.get(16));
+                jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
+                jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
+                jtRowData.jTextField_NoNPWP.setText(Personil.get(19));
+                jtRowData.jTextField_Alamat.setText(Personil.get(20));
+                jtRowData.jTextField_StatusRumah.setText(Personil.get(21));
+                jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
+                jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
+                jtRowData.jTextField_Istri.setText(Personil.get(24));
+                jtRowData.jTextField_Anak.setText(Personil.get(25));
+                
+                /*
                 this.jtRowData.setVisible(true);
                 this.jtRowData.pack();
                 //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -301,7 +335,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 this.jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
                 this.jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
                 this.jtRowData.jTextField_Istri.setText(Personil.get(24));
-                this.jtRowData.jTextField_Anak.setText(Personil.get(25));
+                this.jtRowData.jTextField_Anak.setText(Personil.get(25));*/
                 //}
             }  
         }catch(Exception e){
