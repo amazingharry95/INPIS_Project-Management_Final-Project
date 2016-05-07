@@ -53,7 +53,7 @@ ControlMaster controlMaster = new ControlMaster();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         label_data_anak.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        label_data_anak.setText("DATA ANAK");
+        label_data_anak.setText("EDIT ANAK");
         label_data_anak.setPreferredSize(new java.awt.Dimension(262, 44));
 
         jLabel6.setText("ID Anak :");
@@ -68,6 +68,7 @@ ControlMaster controlMaster = new ControlMaster();
 
         TF_Nama_Anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
+        tf_nrp_anak.setEditable(false);
         tf_nrp_anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
         tf_ttl_anak.setPreferredSize(new java.awt.Dimension(200, 30));

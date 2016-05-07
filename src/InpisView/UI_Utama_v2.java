@@ -228,6 +228,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         UI_Insert_Personil ui_personil = new UI_Insert_Personil();
         ui_personil.setVisible(true);
         this.dispose();
+        //this.setVisible(false);
         //this.getAllData();
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
@@ -252,7 +253,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void tablePersonilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePersonilMouseClicked
         // TODO add your handling code here:
          try{
-            if(evt.getClickCount()==2){
+            if(evt.getClickCount()==1){
                 int row = tablePersonil.getSelectedRow();
                 String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
                 System.out.println("ini yang di click: "+ table_click);

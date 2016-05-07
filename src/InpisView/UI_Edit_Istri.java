@@ -69,7 +69,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1004, 746));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("DATA ISTRI");
+        jLabel1.setText("EDIT ISTRI");
 
         jLabel3.setText("Nama Istri :");
 
@@ -99,6 +99,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
             }
         });
 
+        TextField_nrp_istri.setEditable(false);
         TextField_nrp_istri.setName(""); // NOI18N
         TextField_nrp_istri.setPreferredSize(new java.awt.Dimension(400, 25));
 

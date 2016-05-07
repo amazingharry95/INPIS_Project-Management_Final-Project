@@ -574,7 +574,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_button_insert_tambah_anakActionPerformed
-
+  
     private void btnInsertPersonilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPersonilActionPerformed
         String NRP = txt_NRPPersonil.getText();
         String agamaPersonil = combo_agamaPersonil.getSelectedItem().toString();

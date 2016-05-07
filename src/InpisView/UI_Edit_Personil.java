@@ -526,6 +526,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         }else{
             UI_Insert_Istri uiInsertIstri = new UI_Insert_Istri();
             uiInsertIstri.setVisible(true);
+            //uiInsertIstri
+            //jtRowDataIstri.setVisible(true);
+            //jtRowDataIstri.TextField_nrp_istri.setText(nrp);
         }
     }//GEN-LAST:event_lihatIstriActionPerformed
 
