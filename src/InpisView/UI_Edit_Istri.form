@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="516" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="446" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -96,8 +96,8 @@
                               <Component id="TextField_hobby_istri" alignment="0" max="32767" attributes="0"/>
                               <Component id="TextField_nrp_istri" alignment="0" max="32767" attributes="0"/>
                               <Component id="TextField_nama_istri" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TextField_agama_istri" min="-2" max="-2" attributes="0"/>
-                              <Component id="TextField_gol_darah_istri" min="-2" max="-2" attributes="0"/>
+                              <Component id="TextField_agama_istri" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TextField_gol_darah_istri" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -106,13 +106,13 @@
                               <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TextField_kb_istri" min="-2" max="-2" attributes="0"/>
-                              <Component id="TextField_kta_istri" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="TextField_kta_istri" max="32767" attributes="0"/>
+                              <Component id="TextField_kb_istri" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="80" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
