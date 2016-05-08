@@ -621,14 +621,18 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         Date tmtPangkatPertama = date_TMTPangkatPertama.getDate();
         Date tmtPangkatTerakhir = date_TMTPangkatTerakhir.getDate();
         String alamatPersonil = txt_alamatPersonil.getText();
-
+        int panjang = NRP.length();
         if(NRP.isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Pastikan NRP Personil sudah diisi dan disimpan terlebih dahulu");
         }
-        else if(agamaPersonil.equals(""))
+        else if(namaPersonil.isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Pastikan Data sudah terisi");
+        }
+        else if(panjang > 10)
+        {
+            JOptionPane.showMessageDialog(null, "NRP yang dimasukkan terlalu panjang");
         }
         else
         {
