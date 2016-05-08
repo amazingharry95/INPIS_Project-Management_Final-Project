@@ -262,8 +262,8 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.pack();
                 
                 jtRowData.jTextField_Nama.setText(Personil.get(0));
-                jtRowData.jTextField_Pangkat.setText(Personil.get(1));
-                jtRowData.jTextField_Korps.setText(Personil.get(2));
+                jtRowData.jTextField_Pangkat.setSelectedItem(Personil.get(1));
+                jtRowData.jTextField_Korps.setSelectedItem(Personil.get(2));
                 jtRowData.jTextField_NRP.setText(Personil.get(3));
                 jtRowData.jTextField_Jabatan.setText(Personil.get(4));
                 jtRowData.jabatan.setDate(tmtjabatan);
@@ -273,10 +273,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
                 jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
                 jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
-                jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
-                jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(14));//ini pendidikan pengembangan
+                jtRowData.jTextField_PendidikanMiliter.setSelectedItem(Personil.get(12));
+                jtRowData.jTextField_PendidikanPengembang.setSelectedItem(Personil.get(14));//ini pendidikan pengembangan
                 jtRowData.jTextField_Agama.setText(Personil.get(13));
-                jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
+                jtRowData.jTextField_GolonganDarah.setSelectedItem(Personil.get(15));
                 jtRowData.jTextField_NoKTA.setText(Personil.get(16));
                 jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
                 jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
