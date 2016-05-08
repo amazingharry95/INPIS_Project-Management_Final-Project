@@ -558,11 +558,11 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                this.jtRowDataIstri.TextField_nama_istri.setText(Istri.get(2));
                this.jtRowDataIstri.TextField_ttl_istri.setText(Istri.get(3));
                this.jtRowDataIstri.date_tglLahirIstri.setDate(tanggalLahirIstri);
-               this.jtRowDataIstri.TextField_agama_istri.setText(Istri.get(5));
-               this.jtRowDataIstri.TextField_gol_darah_istri.setText(Istri.get(6));
+               this.jtRowDataIstri.TextField_agama_istri.setSelectedItem(Istri.get(5));
+               this.jtRowDataIstri.TextField_gol_darah_istri.setSelectedItem(Istri.get(6));
                this.jtRowDataIstri.TextField_kpi_istri.setText(Istri.get(7));
                this.jtRowDataIstri.TextField_kta_istri.setText(Istri.get(8));
-               this.jtRowDataIstri.TextField_kb_istri.setText(Istri.get(9));
+               this.jtRowDataIstri.TextField_kb_istri.setSelectedItem(Istri.get(9));
                this.jtRowDataIstri.TextField_pendidikan_terakhir_istri.setText(Istri.get(10));
                this.jtRowDataIstri.TextField_hobby_istri.setText(Istri.get(11));
                this.jtRowDataIstri.hobi_2.setText(Istri.get(12));

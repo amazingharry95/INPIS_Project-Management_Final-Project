@@ -50,12 +50,9 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         TextField_nama_istri = new javax.swing.JTextField();
         TextField_nrp_istri = new javax.swing.JTextField();
-        TextField_agama_istri = new javax.swing.JTextField();
-        TextField_gol_darah_istri = new javax.swing.JTextField();
         TextField_hobby_istri = new javax.swing.JTextField();
         TextField_kpi_istri = new javax.swing.JTextField();
         TextField_kta_istri = new javax.swing.JTextField();
-        TextField_kb_istri = new javax.swing.JTextField();
         TextField_pendidikan_terakhir_istri = new javax.swing.JTextField();
         TextField_ttl_istri = new javax.swing.JTextField();
         button_simpan_ubah_istri = new javax.swing.JButton();
@@ -64,6 +61,9 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         hobi_2 = new javax.swing.JTextField();
         date_tglLahirIstri = new com.toedter.calendar.JDateChooser();
         hapusIstri = new javax.swing.JButton();
+        TextField_agama_istri = new javax.swing.JComboBox<>();
+        TextField_gol_darah_istri = new javax.swing.JComboBox<>();
+        TextField_kb_istri = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -104,12 +104,6 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         TextField_nrp_istri.setName(""); // NOI18N
         TextField_nrp_istri.setPreferredSize(new java.awt.Dimension(220, 20));
 
-        TextField_agama_istri.setName(""); // NOI18N
-        TextField_agama_istri.setPreferredSize(new java.awt.Dimension(220, 20));
-
-        TextField_gol_darah_istri.setName(""); // NOI18N
-        TextField_gol_darah_istri.setPreferredSize(new java.awt.Dimension(220, 20));
-
         TextField_hobby_istri.setName(""); // NOI18N
         TextField_hobby_istri.setPreferredSize(new java.awt.Dimension(220, 20));
 
@@ -128,9 +122,6 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                 TextField_kta_istriActionPerformed(evt);
             }
         });
-
-        TextField_kb_istri.setName(""); // NOI18N
-        TextField_kb_istri.setPreferredSize(new java.awt.Dimension(220, 20));
 
         TextField_pendidikan_terakhir_istri.setName(""); // NOI18N
         TextField_pendidikan_terakhir_istri.setPreferredSize(new java.awt.Dimension(220, 20));
@@ -167,6 +158,15 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
             }
         });
 
+        TextField_agama_istri.setEditable(true);
+        TextField_agama_istri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "-", "Islam", "Kristen", "Katolik", "Hindu", "Budha" }));
+
+        TextField_gol_darah_istri.setEditable(true);
+        TextField_gol_darah_istri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "-", "A", "B", "AB", "O", " " }));
+
+        TextField_kb_istri.setEditable(true);
+        TextField_kb_istri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "IUP", "PIL", "SUNIK", "WOW", "MOP", "KONDOM", "SUSUK", "SPIRAL" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -186,14 +186,6 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(TextField_pendidikan_terakhir_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TextField_kb_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TextField_kta_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,10 +209,18 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TextField_hobby_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TextField_gol_darah_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextField_nrp_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextField_nama_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TextField_agama_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(TextField_agama_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextField_gol_darah_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TextField_kb_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextField_kta_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -240,12 +240,12 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextField_agama_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(TextField_agama_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextField_gol_darah_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(TextField_gol_darah_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextField_hobby_istri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,11 +315,11 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         String KPIIstri = TextField_kpi_istri.getText();
         String KTAJalasenastri = TextField_kta_istri.getText();
         String NRP = TextField_nrp_istri.getText();
-        String agamaIstri = TextField_agama_istri.getText();
-        String golDarahIstri = TextField_gol_darah_istri.getText();
+        String agamaIstri = TextField_agama_istri.getSelectedItem().toString();
+        String golDarahIstri = TextField_gol_darah_istri.getSelectedItem().toString();
         String hobi1 = TextField_hobby_istri.getText();
         String hobi2 = hobi_2.getText();
-        String metodeKb = TextField_kb_istri.getText();
+        String metodeKb = TextField_kb_istri.getSelectedItem().toString();
         String namaIstri = TextField_nama_istri.getText();
         String penTerakhirIstri = TextField_pendidikan_terakhir_istri.getText();
         String tmptLahirIstri = TextField_ttl_istri.getText();
@@ -391,10 +391,10 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField TextField_agama_istri;
-    public javax.swing.JTextField TextField_gol_darah_istri;
+    public javax.swing.JComboBox<String> TextField_agama_istri;
+    public javax.swing.JComboBox<String> TextField_gol_darah_istri;
     public javax.swing.JTextField TextField_hobby_istri;
-    public javax.swing.JTextField TextField_kb_istri;
+    public javax.swing.JComboBox<String> TextField_kb_istri;
     public javax.swing.JTextField TextField_kpi_istri;
     public javax.swing.JTextField TextField_kta_istri;
     public javax.swing.JTextField TextField_nama_istri;
