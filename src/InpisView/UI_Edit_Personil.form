@@ -65,7 +65,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="jTextField_PendidikanUmum" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jTextField_PendidikanUmum" linkSize="4" min="-2" pref="220" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -81,14 +81,14 @@
                               </Group>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField_NoTelpon" pref="230" max="32767" attributes="0"/>
-                                  <Component id="jTextField_Alamat" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoNPWP" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoBPJS" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoASABRI" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoKTA" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_PendidikanPengembang" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="jTextField_StatusRumah" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoTelpon" linkSize="4" pref="230" max="32767" attributes="0"/>
+                                  <Component id="jTextField_Alamat" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoNPWP" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoBPJS" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoASABRI" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoKTA" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_PendidikanPengembang" linkSize="4" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jTextField_StatusRumah" linkSize="4" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -99,9 +99,9 @@
                       <Component id="buttonDelete" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="jTextField_GolonganDarah" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                      <Component id="jTextField_GolonganDarah" linkSize="4" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jTextField_PendidikanMiliter" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="jTextField_PendidikanMiliter" linkSize="4" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
@@ -132,7 +132,7 @@
                                   <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jTextField_Agama" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jTextField_Agama" linkSize="4" min="-2" pref="220" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

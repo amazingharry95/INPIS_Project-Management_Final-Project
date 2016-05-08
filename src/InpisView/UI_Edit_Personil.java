@@ -346,6 +346,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                                 .addComponent(jTextField_Istri, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(19, 19, 19))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField_Agama, jTextField_Alamat, jTextField_GolonganDarah, jTextField_NoASABRI, jTextField_NoBPJS, jTextField_NoKTA, jTextField_NoNPWP, jTextField_NoTelpon, jTextField_PendidikanMiliter, jTextField_PendidikanPengembang, jTextField_PendidikanUmum, jTextField_StatusRumah});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
