@@ -89,7 +89,7 @@ public class ControlMaster {
     }
     
     public Boolean punyaIstri(String nrp){
-        System.out.println("masuk master");
+        //System.out.println("masuk master");
         return istri.punyaPasangan(nrp);
     }
     

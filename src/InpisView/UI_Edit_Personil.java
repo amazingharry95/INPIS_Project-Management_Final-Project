@@ -492,7 +492,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         //System.out.println("masuk sini");
         
         if(controlMaster.punyaIstri(nrp)==false){
-            System.out.println("masuk sini");
+            //System.out.println("masuk sini");
             lihatIstri.setText("Tambah Pasangan");
         }
     }
@@ -504,7 +504,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
     }
     
     public void getAllAnak(String nrp){
-        System.out.println("NRP di anak: "+ jTextField_NRP.getText());
+       // System.out.println("NRP di anak: "+ jTextField_NRP.getText());
         tableAnak.setModel(DbUtils.resultSetToTableModel(controlMaster.getAllAnak(nrp)));
     }
     private void lihatIstriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatIstriActionPerformed
