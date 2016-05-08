@@ -289,7 +289,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
         combo_korps.setEditable(true);
         combo_korps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "-", "(P)", "(T)", "(S)", "(KH)" }));
 
-        backButton.setText("BACK");
+        backButton.setText("Kembali");
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backButtonMouseClicked(evt);
@@ -305,7 +305,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(31, 31, 31)
+                        .addGap(18, 18, 18)
                         .addComponent(backButton))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -368,7 +368,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                                 .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txt_NRPPersonil, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(date_TMTPangkatTerakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
