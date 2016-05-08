@@ -28,7 +28,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     ControlMaster controlMaster = new ControlMaster();
     ControlPencarian controlPencarian = new ControlPencarian();
     List<String> Personil;
-    //UI_Edit_Personil jtRowData = new UI_Edit_Personil();
+
    
     
     public UI_Utama_v2() {
@@ -38,13 +38,6 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         int ysize = (int) tk.getScreenSize().getHeight();
         this.setSize(xsize, ysize);
         getAllData();
-//        tabelModel = new DefaultTableModel();
-//        tabelPersonil.setModel(tabelModel);
-//        tabelModel.addColumn("NRP");
-//        tabelModel.addColumn("Nama_Personil");
-//        tabelModel.addColumn("Agama");
-//        
-//        loadTabelPersonil();
     }
     
     public void getAllData(){
@@ -54,25 +47,6 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
     private void cariPersonilByKeyword(String filter, String keyword) {
         tablePersonil.setModel(DbUtils.resultSetToTableModel(controlPencarian.ambilDataPersonil(filter, keyword)));
     }
-//    private void loadTabelPersonil() {
-//        Connection connection = Database.getConnection();
-//        String sql = "SELECT * from Personil";
-//        try {
-//            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
-//            ResultSet result = statement.executeQuery();
-//            while(result.next()) {
-//                Object[] o = new Object[3];
-//                o[0] = result.getString("NRP");
-//                o[1] = result.getString("Nama_Personil");
-//                o[2] = result.getString("Agama_Personil");
-//                
-//                tabelModel.addRow(o);
-//            }
-//        }catch(SQLException e) {
-//            System.out.println(e);
-//        }
-//                
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -239,8 +213,6 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
         UI_Insert_Personil ui_personil = new UI_Insert_Personil();
         ui_personil.setVisible(true);
         this.dispose();
-        //this.setVisible(false);
-        //this.getAllData();
     }//GEN-LAST:event_btnTambahPersonilActionPerformed
 
     private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed
@@ -267,15 +239,9 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             if(evt.getClickCount()==1){
                 int row = tablePersonil.getSelectedRow();
                 String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
-                //System.out.println("ini yang di click: "+ table_click);
-                //System.out.println("Click: "+this.ambilPersonil(table_click));
-                //List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
+                
                 Personil = this.ambilPersonil(table_click);
-                //System.out.println("Personil: "+Personil);
-
-                //if(evt.getClickCount() == 2){
-                //String tanggalLahir = Personil.get(10);
-                //Date tanggalLahirPersonil = DATE(STR_TO_DATE(tanggalLahir, '%Y-%m-%d'));
+               
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
                 String dateInString = Personil.get(10);
                 String dateJabatan = Personil.get(5);
@@ -287,19 +253,17 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 Date tmttni = formatter.parse(dateTNI);
                 Date tmtpertama = formatter.parse(datepertama);
                 Date tmtterakhir = formatter.parse(dateterakhir);
-               //System.out.println("ini akhir:"+tanggalLahir);
-                //System.out.println("ini atas:"+dateInString);
-                //System.out.println("Ini adalah nrp: "+Personil.get(3));
+              
                 
                 UI_Edit_Personil jtRowData = new UI_Edit_Personil(table_click);
                 jtRowData.cekPasangan(Personil.get(3));
                 jtRowData.cekAnak(Personil.get(3));
                 jtRowData.setVisible(true);
                 jtRowData.pack();
-                //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                
                 jtRowData.jTextField_Nama.setText(Personil.get(0));
-                jtRowData.jTextField_Pangkat.setText(Personil.get(1));
-                jtRowData.jTextField_Korps.setText(Personil.get(2));
+                jtRowData.jTextField_Pangkat.setSelectedItem(Personil.get(1));
+                jtRowData.jTextField_Korps.setSelectedItem(Personil.get(2));
                 jtRowData.jTextField_NRP.setText(Personil.get(3));
                 jtRowData.jTextField_Jabatan.setText(Personil.get(4));
                 jtRowData.jabatan.setDate(tmtjabatan);
@@ -309,10 +273,10 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
                 jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
                 jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
-                jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
-                jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(14));//ini pendidikan pengembangan
+                jtRowData.jTextField_PendidikanMiliter.setSelectedItem(Personil.get(12));
+                jtRowData.jTextField_PendidikanPengembang.setSelectedItem(Personil.get(14));//ini pendidikan pengembangan
                 jtRowData.jTextField_Agama.setText(Personil.get(13));
-                jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
+                jtRowData.jTextField_GolonganDarah.setSelectedItem(Personil.get(15));
                 jtRowData.jTextField_NoKTA.setText(Personil.get(16));
                 jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
                 jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
@@ -322,39 +286,6 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
                 jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
                 jtRowData.jTextField_Istri.setText(Personil.get(24));
-               // jtRowData.jTextField_Anak.setText(Personil.get(25));
-                
-                /*
-                this.jtRowData.setVisible(true);
-                this.jtRowData.pack();
-                //this.jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                this.jtRowData.jTextField_Nama.setText(Personil.get(0));
-                this.jtRowData.jTextField_Pangkat.setText(Personil.get(1));
-                this.jtRowData.jTextField_Korps.setText(Personil.get(2));
-                this.jtRowData.jTextField_NRP.setText(Personil.get(3));
-                this.jtRowData.jTextField_Jabatan.setText(Personil.get(4));
-                this.jtRowData.jabatan.setDate(tmtjabatan);
-                this.jtRowData.tmttni.setDate(tmttni);
-                this.jtRowData.pangkatpertama.setDate(tmtpertama);
-                this.jtRowData.pangkatterakhir.setDate(tmtterakhir);
-                this.jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
-                this.jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
-                this.jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
-                this.jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
-                this.jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(13));//ini pendidikan pengembangan
-                this.jtRowData.jTextField_Agama.setText(Personil.get(14));
-                this.jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
-                this.jtRowData.jTextField_NoKTA.setText(Personil.get(16));
-                this.jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
-                this.jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
-                this.jtRowData.jTextField_NoNPWP.setText(Personil.get(19));
-                this.jtRowData.jTextField_Alamat.setText(Personil.get(20));
-                this.jtRowData.jTextField_StatusRumah.setText(Personil.get(21));
-                this.jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
-                this.jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
-                this.jtRowData.jTextField_Istri.setText(Personil.get(24));
-                this.jtRowData.jTextField_Anak.setText(Personil.get(25));*/
-                //}
             }  
         }catch(Exception e){
             

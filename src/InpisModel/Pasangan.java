@@ -151,17 +151,17 @@ public class Pasangan {
         Boolean punya = false;
         
         try{
-            System.out.println("masuk pasnagan");
-            System.out.println("ini nrp:"+nrp);
+            //System.out.println("masuk pasnagan");
+            //System.out.println("ini nrp:"+nrp);
             String sql = "SELECT COUNT(NAMA) from pasangan WHERE NRP='"+nrp+"'";
-            System.out.println("bawah sini");
+           // System.out.println("bawah sini");
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             int hasil;
             if(rs.next()){
-                System.out.println("masuk sini");
+                //System.out.println("masuk sini");
                 hasil = rs.getInt(1);
-                System.out.println("hasil"+ hasil);
+                //System.out.println("hasil"+ hasil);
                   if(hasil==1){
                       punya=true;
                   }

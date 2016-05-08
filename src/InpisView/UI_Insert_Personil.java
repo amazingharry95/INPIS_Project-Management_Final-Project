@@ -368,7 +368,7 @@ public class UI_Insert_Personil extends javax.swing.JFrame {
                                 .addComponent(txt_namaPersonil, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txt_NRPPersonil, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(date_TMTPangkatTerakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
