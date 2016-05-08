@@ -310,8 +310,8 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
                 jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
                 jtRowData.jTextField_PendidikanMiliter.setText(Personil.get(12));
-                jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(13));//ini pendidikan pengembangan
-                jtRowData.jTextField_Agama.setText(Personil.get(14));
+                jtRowData.jTextField_PendidikanPengembang.setText(Personil.get(14));//ini pendidikan pengembangan
+                jtRowData.jTextField_Agama.setText(Personil.get(13));
                 jtRowData.jTextField_GolonganDarah.setText(Personil.get(15));
                 jtRowData.jTextField_NoKTA.setText(Personil.get(16));
                 jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
