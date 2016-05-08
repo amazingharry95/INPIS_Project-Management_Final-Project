@@ -47,6 +47,7 @@ ControlMaster controlMaster = new ControlMaster();
         button_simpan_ubah_anak = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         date_anak = new com.toedter.calendar.JDateChooser();
+        buttonHapus = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
 
@@ -83,6 +84,14 @@ ControlMaster controlMaster = new ControlMaster();
 
         jLabel1.setText("Tanggal Lahir Anak :");
 
+        buttonHapus.setBackground(new java.awt.Color(255, 51, 51));
+        buttonHapus.setText("HAPUS");
+        buttonHapus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonHapusMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -95,7 +104,10 @@ ControlMaster controlMaster = new ControlMaster();
                         .addComponent(button_simpan_ubah_anak))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonHapus))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
@@ -117,7 +129,9 @@ ControlMaster controlMaster = new ControlMaster();
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(label_data_anak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_data_anak, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -175,6 +189,18 @@ ControlMaster controlMaster = new ControlMaster();
         this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_anakActionPerformed
 
+    private void buttonHapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonHapusMouseClicked
+        // TODO add your handling code here:
+     
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus", "Hapus Anak", JOptionPane.YES_NO_OPTION);
+        
+        if(p==0){
+            if(this.controlMaster.deleteAnak(TF_ID_Anak.getText()))
+                JOptionPane.showMessageDialog(null, "Terhapus");
+        }
+        this.dispose();
+    }//GEN-LAST:event_buttonHapusMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +240,7 @@ ControlMaster controlMaster = new ControlMaster();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField TF_ID_Anak;
     public javax.swing.JTextField TF_Nama_Anak;
+    private javax.swing.JButton buttonHapus;
     private javax.swing.JButton button_simpan_ubah_anak;
     public com.toedter.calendar.JDateChooser date_anak;
     private javax.swing.JLabel jLabel1;

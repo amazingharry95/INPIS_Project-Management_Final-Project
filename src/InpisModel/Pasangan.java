@@ -177,4 +177,20 @@ public class Pasangan {
         
         return punya;
     }
+    
+    public Boolean deleteIstri(String nrp){
+        String sql = "delete from pasangan where NRP=?";
+        Boolean status = false;
+        try{
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, nrp);
+            pst.execute();
+            //JOptionPane.showMessageDialog(null, "Terhapus");
+            status = true;
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return status;
+    }
 }

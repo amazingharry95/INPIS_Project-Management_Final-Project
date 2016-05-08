@@ -130,4 +130,19 @@ public class Anak {
          
          return rs;
      }
+     
+      public Boolean deleteAnak(String nrp){
+        String sql = "delete from anak where ID_ANAK=?";
+        Boolean status = false;
+        try{
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, nrp);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Terhapus");
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return status;
+    }
 }

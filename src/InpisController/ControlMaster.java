@@ -104,6 +104,14 @@ public class ControlMaster {
     public List<String> getAnakbyID(String ID){
         return anak.getAnakbyID(ID);
     }
+    
+    public Boolean deleteAnak(String id){
+        return anak.deleteAnak(id);
+    }
+    
+    public Boolean deleteIstri(String nrp){
+        return istri.deleteIstri(nrp);
+    }
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {
 //        return personil.getPersonilbyID(NRP);

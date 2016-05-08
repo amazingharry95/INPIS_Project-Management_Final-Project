@@ -63,6 +63,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         hobi_2 = new javax.swing.JTextField();
         date_tglLahirIstri = new com.toedter.calendar.JDateChooser();
+        hapusIstri = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -154,6 +155,14 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         date_tglLahirIstri.setMinimumSize(new java.awt.Dimension(6, 20));
         date_tglLahirIstri.setName(""); // NOI18N
 
+        hapusIstri.setBackground(new java.awt.Color(255, 51, 51));
+        hapusIstri.setText("HAPUS");
+        hapusIstri.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hapusIstriMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,7 +170,10 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(hapusIstri))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -203,8 +215,10 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hapusIstri))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -320,6 +334,17 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_kta_istriActionPerformed
 
+    private void hapusIstriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hapusIstriMouseClicked
+        // TODO add your handling code here:
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus pasangan personil", "Hapus Istri", JOptionPane.YES_NO_OPTION);
+        
+        if(p==0){
+            if(this.controlMaster.deleteIstri(TextField_nrp_istri.getText()))
+                JOptionPane.showMessageDialog(null, "Terhapus");
+        }
+        this.dispose();
+    }//GEN-LAST:event_hapusIstriMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -369,6 +394,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
     public javax.swing.JTextField TextField_ttl_istri;
     private javax.swing.JButton button_simpan_ubah_istri;
     public com.toedter.calendar.JDateChooser date_tglLahirIstri;
+    private javax.swing.JButton hapusIstri;
     public javax.swing.JTextField hobi_2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

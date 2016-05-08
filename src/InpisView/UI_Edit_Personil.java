@@ -176,7 +176,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         });
 
         buttonDelete.setBackground(new java.awt.Color(255, 0, 51));
-        buttonDelete.setText("DELETE");
+        buttonDelete.setText("HAPUS");
         buttonDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonDeleteMouseClicked(evt);

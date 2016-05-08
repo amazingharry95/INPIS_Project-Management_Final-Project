@@ -152,6 +152,8 @@ public class Personil {
             
             if(rs.next()){
                 Personil.add(rs.getString("NAMA"));
+            }else{
+                Personil.add(null);
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
