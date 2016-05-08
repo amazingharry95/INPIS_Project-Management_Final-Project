@@ -517,11 +517,11 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
 
     private void buttonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteActionPerformed
         // TODO add your handling code here:
-        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus", "Hapus Personil", JOptionPane.YES_NO_OPTION);
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus?", "Hapus Data Personil", JOptionPane.YES_NO_OPTION);
         
         if(p==0){
             if(this.controlMaster.deletePersonil(jTextField_NRP.getText()))
-                JOptionPane.showMessageDialog(null, "Terhapus");
+                JOptionPane.showMessageDialog(null, "Data Personil Sudah Dihapus");
         }
         this.dispose();
     }//GEN-LAST:event_buttonDeleteActionPerformed
@@ -625,11 +625,11 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         //String tmtPangkatTerakhir = this.jTextField_TamatPangkatTerakhir.getText();
         String alamat = this.jTextField_Alamat.getText();
         
-        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan edit", "Edit Personil", JOptionPane.YES_NO_OPTION);
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan perubahan?", "Edit Data Personil", JOptionPane.YES_NO_OPTION);
         
         if(p==0){
             if(this.controlMaster.updatePersonil(nrp, agama, golDarah, jabatan, korps, nama, noASABRI, noBPJS, noKTA, noNPWP, noTelpon, pangkat, penMiliter, penPengembang, penUmum, statusKeluarga, statusRumah, tmtJabatan, tmtTNI, tanggalLahir, tmptLahir, tmtpertama, tmtterakhir, alamat)==1)
-                JOptionPane.showMessageDialog(null, "Berhasil Edit");
+                JOptionPane.showMessageDialog(null, "Data Berhasil Diubah");
         }
         this.dispose();
         new UI_Utama_v2().getAllData();

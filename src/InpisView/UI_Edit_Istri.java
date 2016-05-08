@@ -6,7 +6,6 @@
 package InpisView;
 
 import InpisController.ControlMaster;
-import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -70,7 +69,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1004, 746));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel1.setText("EDIT DATA SUAMI/ISTRI");
+        jLabel1.setText("DATA SUAMI/ISTRI");
 
         jLabel3.setText("Nama Pasangan :");
 
@@ -196,7 +195,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                         .addComponent(hobi_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(hapusIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(button_simpan_ubah_istri)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -221,7 +220,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TextField_kta_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextField_kb_istri, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,11 +325,11 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         //Date tglLahirIstri = date_tglLahirIstri.getDate();
 //        DateFormat fmt = new SimpleDateFormat("dd MMMM yyyy");
        // String tglLahirIstri = fmt.format(this.jDateChooser1.getDate());
-        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan edit", "Edit Pasangan", JOptionPane.YES_NO_OPTION);
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menyimpan perubahan?", "Edit Data Pasangan", JOptionPane.YES_NO_OPTION);
         
         if(p==0){
             if(this.controlMaster.EditIstriData(NRP, agamaIstri, golDarahIstri, KPIIstri, KTAJalasenastri, metodeKb, penTerakhirIstri, tmptLahirIstri, namaIstri, tglLahirIstri, hobi1, hobi2)==1)
-                JOptionPane.showMessageDialog(null, "Berhasil Edit");
+                JOptionPane.showMessageDialog(null, "Data Berhasil Diubah");
         }
         this.dispose();
     }//GEN-LAST:event_button_simpan_ubah_istriActionPerformed
@@ -345,11 +344,11 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
 
     private void hapusIstriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hapusIstriMouseClicked
         // TODO add your handling code here:
-        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus pasangan personil", "Hapus Istri", JOptionPane.YES_NO_OPTION);
+        int p = JOptionPane.showConfirmDialog(null, "Apakah anda yakin akan menghapus data pasangan personil?", "Hapus Data Pasangan", JOptionPane.YES_NO_OPTION);
         
         if(p==0){
             if(this.controlMaster.deleteIstri(TextField_nrp_istri.getText()))
-                JOptionPane.showMessageDialog(null, "Terhapus");
+                JOptionPane.showMessageDialog(null, "Data Pasangan Sudah Dihapus");
         }
         this.dispose();
     }//GEN-LAST:event_hapusIstriMouseClicked
