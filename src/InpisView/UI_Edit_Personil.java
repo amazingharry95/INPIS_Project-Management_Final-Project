@@ -6,7 +6,7 @@
 package InpisView;
 
 import javax.swing.JOptionPane;
-import InpisController.ControlMaster;
+import InpisController.*;
 import InpisModel.Personil;
 import java.text.DateFormat;
 import java.text.Format;
@@ -26,6 +26,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
     UI_Edit_Anak rowAnak= new UI_Edit_Anak(); 
     List<String> Anak;
     String NRP;
+    ControlPencarian refresh;
 
     /**
      * Creates new form UI_Edit_Personil
@@ -110,6 +111,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         jTextField_Korps = new javax.swing.JComboBox<>();
         jTextField_GolonganDarah = new javax.swing.JComboBox<>();
         jTextField_PendidikanMiliter = new javax.swing.JComboBox<>();
+        jRefresh = new javax.swing.JButton();
 
         jTextField23.setText("jTextField1");
 
@@ -237,6 +239,13 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
         jTextField_PendidikanMiliter.setEditable(true);
         jTextField_PendidikanMiliter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "AAL", "SEPA PK", "Dik Tukpa Reg", "Dik Tukba Reg", "Dik Tukba", "Dik Cata" }));
 
+        jRefresh.setText("Refresh");
+        jRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,59 +253,6 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                .addComponent(pangkatpertama, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField_NRP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Jabatan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jabatan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tmttni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser_tanggalLahir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField_TempatLahir)
-                                    .addComponent(pangkatterakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jTextField_Nama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Pangkat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(59, 59, 59)
-                                .addComponent(jTextField_PendidikanUmum, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel23))
-                                .addGap(59, 59, 59)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField_NoTelpon, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                    .addComponent(jTextField_Alamat)
-                                    .addComponent(jTextField_NoNPWP)
-                                    .addComponent(jTextField_NoBPJS)
-                                    .addComponent(jTextField_NoASABRI)
-                                    .addComponent(jTextField_NoKTA)
-                                    .addComponent(jTextField_PendidikanPengembang, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_StatusRumah, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jTextField_GolonganDarah, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -325,7 +281,62 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel27))
                                 .addGap(22, 22, 22)
-                                .addComponent(jTextField_Agama, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jTextField_Agama, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                    .addComponent(pangkatpertama, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextField_NRP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField_Jabatan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jabatan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tmttni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel10)
+                                        .addComponent(jLabel11)
+                                        .addComponent(jLabel12))
+                                    .addGap(33, 33, 33)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jDateChooser_tanggalLahir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField_TempatLahir)
+                                        .addComponent(pangkatterakhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jTextField_Nama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField_Pangkat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRefresh)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(59, 59, 59)
+                                .addComponent(jTextField_PendidikanUmum, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_NoTelpon, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                    .addComponent(jTextField_Alamat)
+                                    .addComponent(jTextField_NoNPWP)
+                                    .addComponent(jTextField_NoBPJS)
+                                    .addComponent(jTextField_NoASABRI)
+                                    .addComponent(jTextField_NoKTA)
+                                    .addComponent(jTextField_PendidikanPengembang, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField_StatusRumah, javax.swing.GroupLayout.Alignment.TRAILING))))))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -355,7 +366,9 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRefresh)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,6 +667,67 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_tableAnakMouseClicked
+    
+    private List<String> ambilPersonil(String nrp){
+        return new ControlPencarian().ambilDataPersonilbyID(nrp);
+    }
+    
+    private void jRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRefreshActionPerformed
+        try{
+        UI_Edit_Personil jtRowData = new UI_Edit_Personil(this.NRP);
+        jtRowData.cekPasangan(this.NRP);
+        System.out.println(this.NRP);
+        jtRowData.cekAnak(this.NRP);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        List<String> Personil = this.ambilPersonil(this.NRP);
+        String dateInString = Personil.get(10);
+        String dateJabatan = Personil.get(5);
+        String dateTNI = Personil.get(6);
+        String datepertama = Personil.get(7);
+        String dateterakhir = Personil.get(8);
+        Date tanggalLahir = formatter.parse(dateInString);
+        Date tmtjabatan = formatter.parse(dateJabatan);
+        Date tmttni = formatter.parse(dateTNI);
+        Date tmtpertama = formatter.parse(datepertama);
+        Date tmtterakhir = formatter.parse(dateterakhir);
+     
+        jtRowData.jTextField_Nama.setText(Personil.get(0));
+                jtRowData.jTextField_Pangkat.setSelectedItem(Personil.get(1));
+                jtRowData.jTextField_Korps.setSelectedItem(Personil.get(2));
+                jtRowData.jTextField_NRP.setText(Personil.get(3));
+                jtRowData.jTextField_Jabatan.setText(Personil.get(4));
+                jtRowData.jabatan.setDate(tmtjabatan);
+                jtRowData.tmttni.setDate(tmttni);
+                jtRowData.pangkatpertama.setDate(tmtpertama);
+                jtRowData.pangkatterakhir.setDate(tmtterakhir);
+                jtRowData.jTextField_TempatLahir.setText(Personil.get(9));
+                jtRowData.jDateChooser_tanggalLahir.setDate(tanggalLahir);
+                jtRowData.jTextField_PendidikanUmum.setText(Personil.get(11));
+                jtRowData.jTextField_PendidikanMiliter.setSelectedItem(Personil.get(12));
+                jtRowData.jTextField_PendidikanPengembang.setSelectedItem(Personil.get(14));//ini pendidikan pengembangan
+                jtRowData.jTextField_Agama.setText(Personil.get(13));
+                jtRowData.jTextField_GolonganDarah.setSelectedItem(Personil.get(15));
+                jtRowData.jTextField_NoKTA.setText(Personil.get(16));
+                jtRowData.jTextField_NoASABRI.setText(Personil.get(17));
+                jtRowData.jTextField_NoBPJS.setText(Personil.get(18));
+                jtRowData.jTextField_NoNPWP.setText(Personil.get(19));
+                jtRowData.jTextField_Alamat.setText(Personil.get(20));
+                jtRowData.jTextField_StatusRumah.setText(Personil.get(21));
+                jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
+                jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
+                jtRowData.jTextField_Istri.setText(Personil.get(24));
+        
+        jtRowData.setVisible(true);
+        jtRowData.pack();
+        
+        this.dispose();
+        }
+        catch(Exception e)
+        {
+        
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -721,6 +795,7 @@ public class UI_Edit_Personil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jRefresh;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField23;
     public javax.swing.JTextField jTextField_Agama;

@@ -33,71 +33,6 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="36" max="32767" attributes="0"/>
-                              <Component id="pangkatpertama" min="-2" pref="220" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jTextField_NRP" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jTextField_Jabatan" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jabatan" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="tmttni" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jDateChooser_tanggalLahir" max="32767" attributes="0"/>
-                                  <Component id="jTextField_TempatLahir" max="32767" attributes="0"/>
-                                  <Component id="pangkatterakhir" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jTextField_Nama" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jTextField_Pangkat" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="jTextField_PendidikanUmum" linkSize="4" min="-2" pref="220" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField_NoTelpon" linkSize="4" pref="230" max="32767" attributes="0"/>
-                                  <Component id="jTextField_Alamat" linkSize="4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoNPWP" linkSize="4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoBPJS" linkSize="4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoASABRI" linkSize="4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_NoKTA" linkSize="4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField_PendidikanPengembang" linkSize="4" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="jTextField_StatusRumah" linkSize="4" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="buttonDelete" min="-2" pref="73" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="jTextField_GolonganDarah" linkSize="4" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -136,6 +71,74 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <Component id="pangkatpertama" min="-2" pref="220" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jTextField_NRP" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jTextField_Jabatan" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jabatan" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="tmttni" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jDateChooser_tanggalLahir" max="32767" attributes="0"/>
+                                      <Component id="jTextField_TempatLahir" max="32767" attributes="0"/>
+                                      <Component id="pangkatterakhir" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jTextField_Nama" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jTextField_Pangkat" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="buttonDelete" min="-2" pref="73" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jRefresh" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jTextField_PendidikanUmum" linkSize="4" min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTextField_NoTelpon" linkSize="4" pref="230" max="32767" attributes="0"/>
+                                  <Component id="jTextField_Alamat" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoNPWP" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoBPJS" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoASABRI" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_NoKTA" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField_PendidikanPengembang" linkSize="4" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jTextField_StatusRumah" linkSize="4" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -171,7 +174,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel1" max="32767" attributes="0"/>
-                  <Component id="buttonDelete" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="buttonDelete" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jRefresh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -726,6 +732,14 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jRefresh">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Refresh"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRefreshActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
