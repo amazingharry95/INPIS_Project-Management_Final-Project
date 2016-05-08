@@ -64,6 +64,7 @@ ControlMaster controlMaster = new ControlMaster();
 
         jLabel9.setText("Tempat Lahir Anak :");
 
+        TF_ID_Anak.setEditable(false);
         TF_ID_Anak.setPreferredSize(new java.awt.Dimension(200, 30));
 
         TF_Nama_Anak.setPreferredSize(new java.awt.Dimension(200, 30));

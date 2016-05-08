@@ -177,14 +177,14 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(label_datapersonil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(buttonRefresh)
                         .addGap(18, 18, 18)
                         .addComponent(comboFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTambahPersonil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
@@ -267,8 +267,8 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
             if(evt.getClickCount()==1){
                 int row = tablePersonil.getSelectedRow();
                 String table_click = (tablePersonil.getModel().getValueAt(row, 0).toString());
-                System.out.println("ini yang di click: "+ table_click);
-                System.out.println("Click: "+this.ambilPersonil(table_click));
+                //System.out.println("ini yang di click: "+ table_click);
+                //System.out.println("Click: "+this.ambilPersonil(table_click));
                 //List<String> Personil = controlPencarian.ambilDataPersonilbyID(table_click);
                 Personil = this.ambilPersonil(table_click);
                 //System.out.println("Personil: "+Personil);
@@ -289,9 +289,9 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 Date tmtterakhir = formatter.parse(dateterakhir);
                //System.out.println("ini akhir:"+tanggalLahir);
                 //System.out.println("ini atas:"+dateInString);
-                System.out.println("Ini adalah nrp: "+Personil.get(3));
+                //System.out.println("Ini adalah nrp: "+Personil.get(3));
                 
-                UI_Edit_Personil jtRowData = new UI_Edit_Personil();
+                UI_Edit_Personil jtRowData = new UI_Edit_Personil(table_click);
                 jtRowData.cekPasangan(Personil.get(3));
                 jtRowData.cekAnak(Personil.get(3));
                 jtRowData.setVisible(true);
@@ -322,7 +322,7 @@ public class UI_Utama_v2 extends javax.swing.JFrame {
                 jtRowData.jTextField_NoTelpon.setText(Personil.get(22));
                 jtRowData.jTextField_StatusKeluarga.setText(Personil.get(23));
                 jtRowData.jTextField_Istri.setText(Personil.get(24));
-                jtRowData.jTextField_Anak.setText(Personil.get(25));
+               // jtRowData.jTextField_Anak.setText(Personil.get(25));
                 
                 /*
                 this.jtRowData.setVisible(true);

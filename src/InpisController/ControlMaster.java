@@ -96,6 +96,14 @@ public class ControlMaster {
     public Boolean punyaAnak(String nrp){
         return anak.punyaAnak(nrp);
     }
+    
+    public ResultSet getAllAnak(String nrp){
+        return anak.getAllAnak(nrp);
+    }
+    
+    public List<String> getAnakbyID(String ID){
+        return anak.getAnakbyID(ID);
+    }
 //    // control untuk lihat detail personil yang dipilih
 //    public ResultSet getPersonilData(String NRP) {
 //        return personil.getPersonilbyID(NRP);

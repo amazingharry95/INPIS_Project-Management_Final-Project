@@ -63,14 +63,14 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="label_datapersonil" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <EmptySpace pref="77" max="32767" attributes="0"/>
                           <Component id="buttonRefresh" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="comboFilter" min="-2" pref="120" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="textSearch" min="-2" pref="134" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnCari" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="btnCari" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTambahPersonil" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>

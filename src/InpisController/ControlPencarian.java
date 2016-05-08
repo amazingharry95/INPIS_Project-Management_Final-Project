@@ -23,4 +23,5 @@ public class ControlPencarian {
     public List<String> ambilDataPersonilbyID(String nrp){
         return personil.getPersonilbyID(nrp);
     }
+   
 }

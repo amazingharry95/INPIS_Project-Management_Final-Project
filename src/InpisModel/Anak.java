@@ -56,7 +56,7 @@ public class Anak {
     }
     public List<String> getAnakbyID(String nrp){
         try{
-             String sql = "select * from anak where NRP='"+nrp+"'";
+             String sql = "select * from anak where ID_ANAK='"+nrp+"'";
              pst = conn.prepareStatement(sql);
              rs = pst.executeQuery();
              
@@ -117,4 +117,17 @@ public class Anak {
         
         return punya;
     }
+     
+     public ResultSet getAllAnak(String nrp){
+         try{
+             String sql = "select *from anak where NRP='"+nrp+"' order by NAMA_ANAK";
+             pst = conn.prepareStatement(sql);
+             rs = pst.executeQuery();
+             
+         }catch(Exception e){
+             
+         }
+         
+         return rs;
+     }
 }
