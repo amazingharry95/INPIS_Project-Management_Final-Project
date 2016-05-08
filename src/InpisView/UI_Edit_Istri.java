@@ -72,25 +72,25 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel1.setText("EDIT DATA SUAMI/ISTRI");
 
-        jLabel3.setText("Nama Suami/Istri :");
+        jLabel3.setText("Nama Pasangan :");
 
         jLabel4.setText("NRP :");
 
-        jLabel5.setText("Agama Suami/Istri :");
+        jLabel5.setText("Agama Pasangan :");
 
-        jLabel6.setText("Golongan Darah Suami/Istri :");
+        jLabel6.setText("Golongan Darah Pasangan :");
 
         jLabel7.setText("Hobby 1 :");
 
-        jLabel8.setText("KPI Suami/Istri :");
+        jLabel8.setText("KPI Pasangan :");
 
         jLabel9.setText("KTA Jalansenastri :");
 
         jLabel10.setText("Metode KB :");
 
-        jLabel11.setText("Pendidikan Terakhir Suami/Istri :");
+        jLabel11.setText("Pendidikan Terakhir Pasangan :");
 
-        jLabel12.setText("Tempat Lahir Suami/Istri :");
+        jLabel12.setText("Tempat Lahir Pasangan :");
 
         TextField_nama_istri.setName(""); // NOI18N
         TextField_nama_istri.setPreferredSize(new java.awt.Dimension(220, 20));
@@ -145,7 +145,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setText("Tanggal Lahir Suami/Istri :");
+        jLabel13.setText("Tanggal Lahir Pasangan :");
 
         jLabel14.setText("Hobby 2 : ");
 
@@ -221,7 +221,7 @@ public class UI_Edit_Istri extends javax.swing.JFrame {
                             .addComponent(TextField_nrp_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextField_nama_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TextField_agama_istri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -111,7 +111,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <EmptySpace pref="80" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -201,7 +201,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nama Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Nama Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -211,12 +211,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agama Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Agama Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Golongan Darah Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Golongan Darah Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -226,7 +226,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="KPI Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="KPI Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
@@ -241,12 +241,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pendidikan Terakhir Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Pendidikan Terakhir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tempat Lahir Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Tempat Lahir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TextField_nama_istri">
@@ -379,7 +379,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tanggal Lahir Suami/Istri :"/>
+            <Property name="text" type="java.lang.String" value="Tanggal Lahir Pasangan :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
